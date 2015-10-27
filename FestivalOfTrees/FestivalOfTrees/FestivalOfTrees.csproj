@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5FBE590B-299F-4FD6-8684-7FDA48D215AD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FestivalOfTrees</RootNamespace>
+    <AssemblyName>FestivalOfTrees</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\components\accordion.css" />
+    <Content Include="assets\components\accordion.js" />
+    <Content Include="assets\components\accordion.min.css" />
+    <Content Include="assets\components\accordion.min.js" />
+    <Content Include="assets\components\ad.css" />
+    <Content Include="assets\components\ad.min.css" />
+    <Content Include="assets\components\api.js" />
+    <Content Include="assets\components\api.min.js" />
+    <Content Include="assets\components\breadcrumb.css" />
+    <Content Include="assets\components\breadcrumb.min.css" />
+    <Content Include="assets\components\button.css" />
+    <Content Include="assets\components\button.min.css" />
+    <Content Include="assets\components\card.css" />
+    <Content Include="assets\components\card.min.css" />
+    <Content Include="assets\components\checkbox.css" />
+    <Content Include="assets\components\checkbox.js" />
+    <Content Include="assets\components\checkbox.min.css" />
+    <Content Include="assets\components\checkbox.min.js" />
+    <Content Include="assets\components\comment.css" />
+    <Content Include="assets\components\comment.min.css" />
+    <Content Include="assets\components\container.css" />
+    <Content Include="assets\components\container.min.css" />
+    <Content Include="assets\components\dimmer.css" />
+    <Content Include="assets\components\dimmer.js" />
+    <Content Include="assets\components\dimmer.min.css" />
+    <Content Include="assets\components\dimmer.min.js" />
+    <Content Include="assets\components\divider.css" />
+    <Content Include="assets\components\divider.min.css" />
+    <Content Include="assets\components\dropdown.css" />
+    <Content Include="assets\components\dropdown.js" />
+    <Content Include="assets\components\dropdown.min.css" />
+    <Content Include="assets\components\dropdown.min.js" />
+    <Content Include="assets\components\embed.css" />
+    <Content Include="assets\components\embed.js" />
+    <Content Include="assets\components\embed.min.css" />
+    <Content Include="assets\components\embed.min.js" />
+    <Content Include="assets\components\feed.css" />
+    <Content Include="assets\components\feed.min.css" />
+    <Content Include="assets\components\flag.css" />
+    <Content Include="assets\components\flag.min.css" />
+    <Content Include="assets\components\form.css" />
+    <Content Include="assets\components\form.js" />
+    <Content Include="assets\components\form.min.css" />
+    <Content Include="assets\components\form.min.js" />
+    <Content Include="assets\components\grid.css" />
+    <Content Include="assets\components\grid.min.css" />
+    <Content Include="assets\components\header.css" />
+    <Content Include="assets\components\header.min.css" />
+    <Content Include="assets\components\icon.css" />
+    <Content Include="assets\components\icon.min.css" />
+    <Content Include="assets\components\image.css" />
+    <Content Include="assets\components\image.min.css" />
+    <Content Include="assets\components\input.css" />
+    <Content Include="assets\components\input.min.css" />
+    <Content Include="assets\components\item.css" />
+    <Content Include="assets\components\item.min.css" />
+    <Content Include="assets\components\label.css" />
+    <Content Include="assets\components\label.min.css" />
+    <Content Include="assets\components\list.css" />
+    <Content Include="assets\components\list.min.css" />
+    <Content Include="assets\components\loader.css" />
+    <Content Include="assets\components\loader.min.css" />
+    <Content Include="assets\components\menu.css" />
+    <Content Include="assets\components\menu.min.css" />
+    <Content Include="assets\components\message.css" />
+    <Content Include="assets\components\message.min.css" />
+    <Content Include="assets\components\modal.css" />
+    <Content Include="assets\components\modal.js" />
+    <Content Include="assets\components\modal.min.css" />
+    <Content Include="assets\components\modal.min.js" />
+    <Content Include="assets\components\nag.css" />
+    <Content Include="assets\components\nag.js" />
+    <Content Include="assets\components\nag.min.css" />
+    <Content Include="assets\components\nag.min.js" />
+    <Content Include="assets\components\popup.css" />
+    <Content Include="assets\components\popup.js" />
+    <Content Include="assets\components\popup.min.css" />
+    <Content Include="assets\components\popup.min.js" />
+    <Content Include="assets\components\progress.css" />
+    <Content Include="assets\components\progress.js" />
+    <Content Include="assets\components\progress.min.css" />
+    <Content Include="assets\components\progress.min.js" />
+    <Content Include="assets\components\rail.css" />
+    <Content Include="assets\components\rail.min.css" />
+    <Content Include="assets\components\rating.css" />
+    <Content Include="assets\components\rating.js" />
+    <Content Include="assets\components\rating.min.css" />
+    <Content Include="assets\components\rating.min.js" />
+    <Content Include="assets\components\reset.css" />
+    <Content Include="assets\components\reset.min.css" />
+    <Content Include="assets\components\reveal.css" />
+    <Content Include="assets\components\reveal.min.css" />
+    <Content Include="assets\components\search.css" />
+    <Content Include="assets\components\search.js" />
+    <Content Include="assets\components\search.min.css" />
+    <Content Include="assets\components\search.min.js" />
+    <Content Include="assets\components\segment.css" />
+    <Content Include="assets\components\segment.min.css" />
+    <Content Include="assets\components\shape.css" />
+    <Content Include="assets\components\shape.js" />
+    <Content Include="assets\components\shape.min.css" />
+    <Content Include="assets\components\shape.min.js" />
+    <Content Include="assets\components\sidebar.css" />
+    <Content Include="assets\components\sidebar.js" />
+    <Content Include="assets\components\sidebar.min.css" />
+    <Content Include="assets\components\sidebar.min.js" />
+    <Content Include="assets\components\site.css" />
+    <Content Include="assets\components\site.js" />
+    <Content Include="assets\components\site.min.css" />
+    <Content Include="assets\components\site.min.js" />
+    <Content Include="assets\components\state.js" />
+    <Content Include="assets\components\state.min.js" />
+    <Content Include="assets\components\statistic.css" />
+    <Content Include="assets\components\statistic.min.css" />
+    <Content Include="assets\components\step.css" />
+    <Content Include="assets\components\step.min.css" />
+    <Content Include="assets\components\sticky.css" />
+    <Content Include="assets\components\sticky.js" />
+    <Content Include="assets\components\sticky.min.css" />
+    <Content Include="assets\components\sticky.min.js" />
+    <Content Include="assets\components\tab.css" />
+    <Content Include="assets\components\tab.js" />
+    <Content Include="assets\components\tab.min.css" />
+    <Content Include="assets\components\tab.min.js" />
+    <Content Include="assets\components\table.css" />
+    <Content Include="assets\components\table.min.css" />
+    <Content Include="assets\components\transition.css" />
+    <Content Include="assets\components\transition.js" />
+    <Content Include="assets\components\transition.min.css" />
+    <Content Include="assets\components\transition.min.js" />
+    <Content Include="assets\components\visibility.js" />
+    <Content Include="assets\components\visibility.min.js" />
+    <Content Include="assets\custom_style.css" />
+    <Content Include="assets\image\bg1.jpg" />
+    <Content Include="assets\image\bg2.jpg" />
+    <Content Include="assets\image\bg3.jpg" />
+    <Content Include="assets\image\Logo.PNG" />
+    <Content Include="assets\image\Logo_FestTree - Copy.png" />
+    <Content Include="assets\image\Logo_FestTree.png" />
+    <Content Include="assets\image\noimage.png" />
+    <Content Include="assets\image\sock.jpg" />
+    <Content Include="assets\image\tree.jpg" />
+    <Content Include="assets\image\wr.jpg" />
+    <Content Include="assets\jquery-1.11.3.min.js" />
+    <Content Include="assets\semantic.css" />
+    <Content Include="assets\semantic.js" />
+    <Content Include="assets\semantic.min.css" />
+    <Content Include="assets\semantic.min.js" />
+    <Content Include="assets\themes\basic\assets\fonts\icons.svg" />
+    <Content Include="assets\themes\default\assets\fonts\icons.svg" />
+    <Content Include="assets\themes\default\assets\images\flags.png" />
+    <Content Include="assets\themes\github\assets\fonts\octicons.svg" />
+    <Content Include="Home.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="SignUp.aspx" />
+    <Content Include="Views\EnterNewItem.ascx" />
+    <Content Include="Views\ItemStatusView.ascx" />
+    <Content Include="Views\Search.ascx" />
+    <Content Include="Views\ViewSingleItem.ascx" />
+    <Content Include="Views\ViewSingleUser.ascx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EnterNewItem.ascx.cs">
+      <DependentUpon>EnterNewItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EnterNewItem.ascx.designer.cs">
+      <DependentUpon>EnterNewItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemStatusView.ascx.cs">
+      <DependentUpon>ItemStatusView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ItemStatusView.ascx.designer.cs">
+      <DependentUpon>ItemStatusView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Search.ascx.cs">
+      <DependentUpon>Search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Search.ascx.designer.cs">
+      <DependentUpon>Search.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewSingleItem.ascx.cs">
+      <DependentUpon>ViewSingleItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ViewSingleItem.ascx.designer.cs">
+      <DependentUpon>ViewSingleItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewSingleUser.ascx.cs">
+      <DependentUpon>ViewSingleUser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ViewSingleUser.ascx.designer.cs">
+      <DependentUpon>ViewSingleUser.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\themes\basic\assets\fonts\icons.eot" />
+    <Content Include="assets\themes\basic\assets\fonts\icons.ttf" />
+    <Content Include="assets\themes\basic\assets\fonts\icons.woff" />
+    <Content Include="assets\themes\default\assets\fonts\icons.eot" />
+    <Content Include="assets\themes\default\assets\fonts\icons.ttf" />
+    <Content Include="assets\themes\default\assets\fonts\icons.woff" />
+    <Content Include="assets\themes\default\assets\fonts\icons.woff2" />
+    <Content Include="assets\themes\github\assets\fonts\octicons-local.ttf" />
+    <Content Include="assets\themes\github\assets\fonts\octicons.ttf" />
+    <Content Include="assets\themes\github\assets\fonts\octicons.woff" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2609</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2609/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,71 @@
+﻿/*
+    Cross-page styles
+*/
+
+.ui.header>img{
+    width: 300px;
+}
+
+.ui.segment{
+    background-color: #f2f3ee;
+}
+
+#main-content{
+    margin-top: 100px;
+}
+
+h3{
+    color:#554843 !important;
+}
+
+label{
+    color: #554843 !important;
+}
+
+.ui.red.button{
+    background-color: #930a2c!important;
+}
+.ui.inverted.red.menu{
+    background-color: #930a2c!important;
+}
+
+.smoky-brown{
+    background-color:#554843;
+}
+/*
+    Log-in Page styles
+*/
+
+body {
+    background-image: url('image/bg1.jpg');
+}
+
+
+/*
+    Sign-up Page styles
+*/
+
+.signup{
+    margin-top: 50px !important; 
+}
+
+.ui.menu .item>img:not(.ui){
+    width: 200px !important;
+}
+
+/*
+    Home
+*/
+.home-bg{
+    background-image: url('image/bg3.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+/*
+    Add item page
+*/
+
+
+.upload-image{
+    width: 250px;
+}
