@@ -32,10 +32,7 @@
                         </div>
                         <div>
                             <input type="file" id="File1">
-                            <%--<label for="file" class="ui icon secondary button">
-                                <i class="file icon"></i>
-                                Choose Image</label>--%>
-                            <%--<input type="file" id="File1" style="display:none; margin-left:-50px">--%>
+                            
                         </div>
                    </div>
                 </div>

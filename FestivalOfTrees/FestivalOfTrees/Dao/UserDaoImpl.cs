@@ -18,11 +18,11 @@ namespace FestivalOfTrees.Dao
             SqlConnection conn = DBHelper.loadDB();
 
             String query =
-                        "SELECT * FROM USERINFO WHERE EMAIL = ?";
+                        "SELECT * FROM USERINFO WHERE EMAIL = @EMAIL";
             try
             {
                 SqlCommand command = new SqlCommand(query, conn);
-                command.Parameters.Add(new SqlParameter("email", email));
+                command.Parameters.Add(new SqlParameter("@EMAIL", email));
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.HasRows)
                 {

@@ -26,6 +26,14 @@
             <asp:LinkButton ID="Menu1" runat="server" CssClass="item" OnClick="Menu1_Click">Quick Item View</asp:LinkButton>
             <asp:LinkButton ID="Menu2" runat="server" CssClass="item" OnClick="Menu2_Click">Enter new item</asp:LinkButton>
             <asp:LinkButton ID="Menu3" runat="server" CssClass="item" OnClick="Menu3_Click">Search Items/Users</asp:LinkButton>
+            <div class="right menu">
+              <div class="item">
+                <asp:LinkButton ID="AdminDash" CssClass="ui inverted green basic button" runat="server"><i class="settings icon"></i>Admin</asp:LinkButton>
+              </div>
+              <div class="item">
+                <a class="ui inverted primary button">Log in</a>
+              </div>
+            </div>
         </div>
       </div>
     <div class="ui container"  id="main-content">
