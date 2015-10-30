@@ -98,7 +98,7 @@
     </div>
   </div>
 </div>
-
+    <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList><asp:FileUpload ID="FileUpload1" runat="server" /><asp:HyperLink ID="HyperLink1" runat="server">HyperLink</asp:HyperLink><asp:Image ID="Image1" runat="server" /><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label><asp:ListBox ID="ListBox1" runat="server"></asp:ListBox>
 
     <div class="ui modal">
       <div class="header">Sign up as a....</div>
