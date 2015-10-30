@@ -9,6 +9,10 @@ namespace FestivalOfTrees.Dao
 {
     interface UserDao
     {
+        bool checkDB(string email);
+
+        Credentials getCredentialsByEmail(string email);
+
         User getUserByEmail(string email);
 
         void getUserByNum(string bidNum);

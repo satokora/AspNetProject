@@ -39,6 +39,23 @@ namespace FestivalOfTrees.Model
             this.phone = phone;
             this.text = text;
         }
+        
+        public override string ToString()
+        {
+            return "UserID: " + userID
+                + "<br/>Email: " + email
+                + "<br/>First Name: " + firstName
+                + "<br/>Last Name: " + lastName
+                + "<br/>Address: " + address
+                + "<br/>City: " + city
+                + "<br/>State: " + state
+                + "<br/>Zip: " + zip
+                + "<br/>Admin: " + admin
+                + "<br/>Committee: " + committee
+                + "<br/>Donor: " + donor
+                + "<br/>Phone: " + phone
+                + "<br/>Text: " + text;
+        }
 
         public string UserID
         {
