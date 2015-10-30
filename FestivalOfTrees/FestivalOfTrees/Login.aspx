@@ -27,14 +27,14 @@
         .form({
           fields: {
             email: {
-              identifier  : 'email',
+                identifier: 'userEmailTxt',
               rules: [
                 {
                   type   : 'empty',
                   prompt : 'Please enter your e-mail'
                 },
                 {
-                  type   : 'email',
+                    type: 'email',
                   prompt : 'Please enter a valid e-mail'
                 }
               ]
@@ -77,13 +77,13 @@
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <input type="text" name="email" placeholder="E-mail address">
+              <asp:TextBox ID="userEmailTxt" runat="server" placeholder="E-mail address" TextMode="Email"></asp:TextBox>
           </div>
         </div>
         <div class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input type="password" name="password" placeholder="Password">
+            <asp:TextBox ID="password" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
           </div>
         </div>
         <asp:Button ID="LoginBtn" runat="server" Text="Log in" CssClass="ui fluid large red submit button" OnClick="LoginBtn_Click" />
@@ -103,12 +103,21 @@
     <div class="ui modal">
       <div class="header">Sign up as a....</div>
       <div class="content">
-        <div class="ui buttons">
-          <button class="ui green button">Steering Comittee</button>
-          <div class="or"></div>
-          <button class="ui primary button">Donator</button>
-           <div class="or"></div>
-          <button class="ui secondary button">Bidder</button>
+        <div class="ui center aligned grid">
+        <div class="row">
+        <%--<div class="ui buttons">--%>
+            <a href="SignUp.aspx?role=p"  class="fluid ui orange button" style="margin-bottom: 5px">Public</a>
+          <%--<button class="ui green button">Public</button>--%>
+          <%--<div class="or"></div>--%>
+            <a href="SignUp.aspx?role=d"  class="fluid ui primary button" style="margin-bottom: 5px">Donator/Designer</a>
+          <%--<button class="ui primary button">Donator/Designer</button>--%>
+           <%--<div class="or"></div>--%>
+            <a href="SignUp.aspx?role=s"  class="fluid ui green button" style="margin-bottom: 5px">Steering Comittee</a>
+          <%--<button class="ui secondary button">Steering Comittee</button>--%>
+             <%--<div class="or"></div>--%>
+            <a href="SignUp.aspx?role=a"  class="fluid ui secondary button" style="margin-bottom: 5px">Admin</a>
+        <%--</div>--%>
+        </div>
         </div>
       </div>
     </div>
