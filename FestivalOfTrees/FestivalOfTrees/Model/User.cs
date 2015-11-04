@@ -7,7 +7,7 @@ namespace FestivalOfTrees.Model
 {
     public class User
     {
-        private string userID;
+        private int userID;
         private string email;
         private string firstName;
         private string lastName;
@@ -21,7 +21,9 @@ namespace FestivalOfTrees.Model
         private string phone;
         private bool text;
 
-        public User(string userID, string email, string firstName, string lastName, 
+        public User() { }
+
+        public User(int userID, string email, string firstName, string lastName, 
                     string address, string city, string state, int zip, bool admin, 
                     bool committee, bool donor, string phone, bool text)
         {
@@ -57,7 +59,7 @@ namespace FestivalOfTrees.Model
                 + "<br/>Text: " + text;
         }
 
-        public string UserID
+        public int UserID
         {
             get
             {
