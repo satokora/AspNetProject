@@ -8,38 +8,28 @@ using System.Web;
 
 /*
     For Use Case 1: Sign-in User
-
+    This method is completed and passed alpha testing
 */
 namespace FestivalOfTrees.Controller
 {
-    // 10.30.15 satoko I added this code just as a reference so you can delete the following one and build your own code
+    
     public class LoginController
     {
-        private UserDao userDao;
+        private UserDaoImpl user;
+
         public LoginController()
         {
-            userDao = new UserDaoImpl();
+            user = new UserDaoImpl();
         }
         public bool authenticate(string userEmail, string pass)
         {
-            User loginUser = null;
-            loginUser = userDao.getUserByEmail(userEmail);
-            if (loginUser != null)
+            Credentials creds = user.getCredentialsByEmail(userEmail);
+            if (creds.Password.Equals(pass))
             {
-                //if (loginUser.getPassword().equals(pass)) // 
-                //{
-                    return true;
-                //}
-                //else
-                //{
-                //    return false;
-                //}
-                    
+                return true;
             }
             else
-            {
                 return false;
-            }
         }
     }
 }

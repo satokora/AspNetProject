@@ -45,6 +45,56 @@
                   <label>State</label>
                   <asp:DropDownList ID="DropDownList1" runat="server" CssClass="ui fluid dropdown">
                       <asp:ListItem Value="">State</asp:ListItem>
+                      <asp:ListItem Value="Alabama"></asp:ListItem>
+                      <asp:ListItem Value="Alaska"></asp:ListItem>
+                      <asp:ListItem Value="Arizona"></asp:ListItem>
+                      <asp:ListItem Value="Arkansas"></asp:ListItem>
+                      <asp:ListItem Value="California"></asp:ListItem>
+                      <asp:ListItem Value="Colorado"></asp:ListItem>
+                      <asp:ListItem Value="Connecticut"></asp:ListItem>
+                      <asp:ListItem Value="Delaware"></asp:ListItem>
+                      <asp:ListItem Value="Florida"></asp:ListItem>
+                      <asp:ListItem Value="Georgia"></asp:ListItem>
+                      <asp:ListItem Value="Hawaii"></asp:ListItem>
+                      <asp:ListItem Value="Idaho"></asp:ListItem>
+                      <asp:ListItem Value="Illinois"></asp:ListItem>
+                      <asp:ListItem Value="Indiana"></asp:ListItem>
+                      <asp:ListItem Value="Iowa"></asp:ListItem>
+                      <asp:ListItem Value="Kansas"></asp:ListItem>
+                      <asp:ListItem Value="Kentucky"></asp:ListItem>
+                      <asp:ListItem Value="Louisiana"></asp:ListItem>
+                      <asp:ListItem Value="Maine"></asp:ListItem>
+                      <asp:ListItem Value="Maryland"></asp:ListItem>
+                      <asp:ListItem Value="Massachuttes"></asp:ListItem>
+                      <asp:ListItem Value="Michigan"></asp:ListItem>
+                      <asp:ListItem Value="Minnesota"></asp:ListItem>
+                      <asp:ListItem Value="Mississippi"></asp:ListItem>
+                      <asp:ListItem Value="Missouri"></asp:ListItem>
+                      <asp:ListItem Value="Montana"></asp:ListItem>
+                      <asp:ListItem Value="Nebraska"></asp:ListItem>
+                      <asp:ListItem Value="Nevada"></asp:ListItem>
+                      <asp:ListItem Value="New Hampshire"></asp:ListItem>
+                      <asp:ListItem Value="New Jersey"></asp:ListItem>
+                      <asp:ListItem Value="New Mexico"></asp:ListItem>
+                      <asp:ListItem Value="New York"></asp:ListItem>
+                      <asp:ListItem Value="North Carolina"></asp:ListItem>
+                      <asp:ListItem Value="North Dakota"></asp:ListItem>
+                      <asp:ListItem Value="Ohio"></asp:ListItem>
+                      <asp:ListItem Value="Oklahoma"></asp:ListItem>
+                      <asp:ListItem Value="Oregon"></asp:ListItem>
+                      <asp:ListItem Value="Pennsylvania"></asp:ListItem>
+                      <asp:ListItem Value="Rhode Island"></asp:ListItem>
+                      <asp:ListItem Value="South Carolina"></asp:ListItem>
+                      <asp:ListItem Value="South Dakota"></asp:ListItem>
+                      <asp:ListItem Value="Tennessee"></asp:ListItem>
+                      <asp:ListItem Value="Texas"></asp:ListItem>
+                      <asp:ListItem Value="Utah"></asp:ListItem>
+                      <asp:ListItem Value="Vermont"></asp:ListItem>
+                      <asp:ListItem Value="Virginia"></asp:ListItem>
+                      <asp:ListItem Value="Washington"></asp:ListItem>
+                      <asp:ListItem Value="West Virginia"></asp:ListItem>
+                      <asp:ListItem Value="Wisconsin"></asp:ListItem>
+                      <asp:ListItem Value="Wyoming"></asp:ListItem>
                   </asp:DropDownList>
                 </div>
                 <div class="field">
