@@ -9,14 +9,22 @@ namespace FestivalOfTrees.Dao
 {
     interface UserDao
     {
+        int updateUser(User u);
+
+        void createUser(User user);
+
+        void createCredentials(Credentials creds);
+
+        User getUserByLastName(string lastName);
+
         bool checkDB(string email);
 
         Credentials getCredentialsByEmail(string email);
 
         User getUserByEmail(string email);
 
-        void getUserByNum(string bidNum);
+        User getUserByPhone(string phoneNumber);
 
-        User readerToUser(SqlDataReader reader);
+        User getUserByNum(string bidNum);
     }
 }

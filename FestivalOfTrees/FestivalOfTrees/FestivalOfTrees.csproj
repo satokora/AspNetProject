@@ -239,6 +239,10 @@
     <Compile Include="Controller\SignUpController.cs" />
     <Compile Include="Controller\TextCallController.cs" />
     <Compile Include="Dao\DBHelper.cs" />
+    <Compile Include="Dao\ItemDao.cs" />
+    <Compile Include="Dao\ItemDaoImpl.cs" />
+    <Compile Include="Dao\RequestDao.cs" />
+    <Compile Include="Dao\RequestDaoImpl.cs" />
     <Compile Include="Dao\UserDao.cs" />
     <Compile Include="Dao\UserDaoImpl.cs" />
     <Compile Include="DBTestPage.aspx.cs">
@@ -262,7 +266,12 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Model\Auction.cs" />
+    <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Credentials.cs" />
+    <Compile Include="Model\GoWith.cs" />
+    <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\Request.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignUp.aspx.cs">

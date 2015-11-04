@@ -10,6 +10,23 @@ namespace FestivalOfTrees.Dao
 {
     public class UserDaoImpl : UserDao
     {
++        public int updateUser(User u)
+        {
+            SqlConnection conn = DBHelper.loadDB();
+            String query = "UPDATE USERINFO SET "
+                    + "FIRSTNAME = '" + u.FirstName
+                    + "', LASTNAME = '" + u.LastName
+                    + "', STREETADDRESS = '" + u.Address
+                    + "', CITY = " + u.City
+                    + "', USERSTATE = '" + u.State
+                    + "', ZIP = " + u.Zip
+                    + ", PHONE = '" + u.Phone
+                    + "' WHERE EMAIL = '" + u.Email + "';";
+            SqlCommand command = new SqlCommand(query, conn);
+            int rows = command.ExecuteNonQuery();
+            return rows;
+        }
+
         public Credentials getCredentialsByEmail(string email)
         {
             Credentials creds = null;
@@ -33,13 +50,7 @@ namespace FestivalOfTrees.Dao
             return creds;
 
         }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="email"></param>
-        /// <returns>True if email is NOT present in DB</returns>
+        
         public bool checkDB(string email)
         {
             bool valid = false;
@@ -68,15 +79,56 @@ namespace FestivalOfTrees.Dao
             SqlConnection conn = DBHelper.loadDB();
 
             String query = "SELECT * FROM USERINFO WHERE EMAIL = @EMAIL";
+
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.Add(new SqlParameter("@EMAIL", email));
+
+            return user;
+        }
+
+        public User getUserByLastName(string lastName)
+        {
+            SqlConnection conn = DBHelper.loadDB();
+            String query = "SELECT * FROM USERINFO WHERE LASTNAME = @LASTNAME";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.Add(new SqlParameter("@LASTNAME", lastName));
+
+            User u = getUser(command);
+            return u;
+        }
+
+        public User getUserByPhone(string phoneNumber)
+        {
+            SqlConnection conn = DBHelper.loadDB();
+            String query = "SELECT * FROM USERINFO WHERE PHONE = @PHONE";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.Add(new SqlParameter("@PHONE", phoneNumber));
+
+            User u = getUser(command);
+            return u;
+        }
+        
+        public User getUserByNum(string bidNum)
+        {
+            SqlConnection conn = DBHelper.loadDB();
+            String query = "SELECT * FROM USERINFO WHERE USERID = @USERID";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.Add(new SqlParameter("@USERID", bidNum));
+
+            User u = getUser(command);
+            return u;
+        }
+
+        private User getUser(SqlCommand command)
+        {
+            User user = null;
+
             try
             {
-                SqlCommand command = new SqlCommand(query, conn);
-                command.Parameters.Add(new SqlParameter("@EMAIL", email));
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    Console.Error.Write("No Rows");
-                    
+
                     user = readerToUser(reader);
                 }
             }
@@ -87,29 +139,72 @@ namespace FestivalOfTrees.Dao
             return user;
         }
 
-        public void getUserByNum(string bidNum)
-        {
-            throw new NotImplementedException();
-        }
-
         private Credentials readerToCredentials(SqlDataReader reader)
         {
             reader.Read();
-            Credentials c = new Credentials(Convert.ToString(reader["email"]), Convert.ToString(reader["userpassword"]),
-                                            Convert.ToString(reader["question"]), Convert.ToString(reader["answer"]));
+            Credentials c = new Credentials() {
+                Email = Convert.ToString(reader["email"]),
+                Password = Convert.ToString(reader["userpassword"]),
+                Question = Convert.ToString(reader["question"]),
+                Answer = Convert.ToString(reader["answer"])
+            };
             return c;
         }
 
-        public User readerToUser(SqlDataReader reader)
+        private User readerToUser(SqlDataReader reader)
         {
             reader.Read();
-            User u = new User(Convert.ToString(reader["userid"]), Convert.ToString(reader["email"]), Convert.ToString(reader["firstname"]),
-                                Convert.ToString(reader["lastname"]), Convert.ToString(reader["streetaddress"]), Convert.ToString(reader["city"]),
-                                Convert.ToString(reader["userstate"]), Convert.ToInt32(reader["zip"]), Convert.ToBoolean(reader["admin"]),
-                                Convert.ToBoolean(reader["committee"]), Convert.ToBoolean(reader["donor"]), Convert.ToString(reader["phone"]), 
-                                Convert.ToBoolean(reader["text"]));
+            User u = new User()
+            {
+                UserID = Convert.ToString(reader["userid"]),
+                Email = Convert.ToString(reader["email"]),
+                FirstName = Convert.ToString(reader["firstname"]),
+                LastName = Convert.ToString(reader["lastname"]),
+                Address = Convert.ToString(reader["streetaddress"]),
+                City = Convert.ToString(reader["city"]),
+                State = Convert.ToString(reader["userstate"]),
+                Zip = Convert.ToInt32(reader["zip"]),
+                Admin = Convert.ToBoolean(reader["admin"]),
+                Committee = Convert.ToBoolean(reader["committee"]),
+                Donor = Convert.ToBoolean(reader["donor"]),
+                Phone = Convert.ToString(reader["phone"]),
+                Text = Convert.ToBoolean(reader["text"])
+            };
             return u;
         }
-        
+
+        public void createUser(User user)
+        {
+            SqlConnection conn = DBHelper.loadDB();
+            string query = "INSERT INTO USERINFO OUTPUT INSERTED.USERID VALUES ("
+                    + "'" + user.Email
+                    + "', '" + user.FirstName
+                    + "', '" + user.LastName
+                    + "', '" + user.Address
+                    + "', '" + user.City
+                    + "', '" + user.State
+                    + "', " + user.Zip
+                    + ", " + user.Admin
+                    + ", " + user.Committee
+                    + ", '" + user.Phone
+                    + "', " + user.Text
+                    + ", " + user.Donor
+                    + ")";
+            SqlCommand command = new SqlCommand(query, conn);
+            user.UserID = (int)command.ExecuteScalar();
+        }
+
+        public void createCredentials(Credentials creds)
+        {
+            SqlConnection conn = DBHelper.loadDB();
+            string query = "INSERT INTO USERCREDENTIALS VALUES ("
+                    + "'" + creds.Email
+                    + "', '" + creds.Password
+                    + "', '" + creds.Question
+                    + "', '" + creds.Answer
+                    + "')";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.ExecuteNonQuery();
+        }
     }
 }
