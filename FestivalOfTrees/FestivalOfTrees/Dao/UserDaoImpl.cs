@@ -10,7 +10,7 @@ namespace FestivalOfTrees.Dao
 {
     public class UserDaoImpl : UserDao
     {
-+        public int updateUser(User u)
+        public int updateUser(User u)
         {
             SqlConnection conn = DBHelper.loadDB();
             String query = "UPDATE USERINFO SET "
@@ -156,7 +156,7 @@ namespace FestivalOfTrees.Dao
             reader.Read();
             User u = new User()
             {
-                UserID = Convert.ToString(reader["userid"]),
+                UserID = Convert.ToInt32(reader["userid"]),
                 Email = Convert.ToString(reader["email"]),
                 FirstName = Convert.ToString(reader["firstname"]),
                 LastName = Convert.ToString(reader["lastname"]),
