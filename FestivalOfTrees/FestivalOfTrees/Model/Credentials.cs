@@ -13,12 +13,21 @@ namespace FestivalOfTrees.Model
         private string question;
         private string answer;
     
+
+        public Credentials() { }
+
         public Credentials(string email, string password, string question, string answer)
         {
             this.email = email;
             this.password = password;
             this.question = question;
             this.answer = answer;
+        }
+
+        public Credentials(string email, string password)
+        {
+            this.email = email;
+            this.password = password;
         }
 
         public override string ToString()
