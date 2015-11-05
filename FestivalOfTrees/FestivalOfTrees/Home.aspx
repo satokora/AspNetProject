@@ -58,8 +58,5 @@
     </div>
     </form>
     <script src="assets/semantic.min.js"></script>
-    <asp:BulletedList ID="BulletedList1" runat="server"></asp:BulletedList>
-    <asp:Button ID="Button1" runat="server" Text="Button" /><asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
-    <asp:CheckBox ID="CheckBox1" runat="server" /><asp:CheckBoxList ID="CheckBoxList1" runat="server"></asp:CheckBoxList><asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList><asp:FileUpload ID="FileUpload1" runat="server" />
-</body>
+    </body>
 </html>

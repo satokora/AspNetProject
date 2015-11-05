@@ -15,30 +15,49 @@ namespace FestivalOfTrees
         {
             if (Page.IsPostBack)
             {
-                //UserDaoImpl dao = new UserDaoImpl();
-                ItemDaoImpl dao = new ItemDaoImpl();
+                UserDaoImpl dao = new UserDaoImpl();
+                //ItemDaoImpl dao = new ItemDaoImpl();
 
                 //Credentials creds = dao.getCredentialsByEmail(TextBox1.Text.ToString());
                 //User user = dao.getUserByEmail(TextBox1.Text.ToString());
-                List<Item> list = dao.getItemsByCategory(TextBox1.Text.ToString());
+                //List<Item> list = dao.getItemsByCategory(TextBox1.Text.ToString());
                 //Item item = dao.getItemByNumber(TextBox1.Text.ToString());
                 //Response.Write(list.Count);
                 //list.ForEach(printItem );
                 //Response.Write(item.ToString());
 
-                Item i = new Item()
-                {
-                    CategoryID = "CP",
-                    UserID = 100,
-                    ItemName = "TestItem",
-                    ItemValue = 100,
-                    AngelPrice = 75,
-                    MinBid = 50,
-                    Paid = false
-                };
+                //Item i = new Item()
+                //{
+                //    CategoryID = "CP",
+                //    UserID = 100,
+                //    ItemName = "TestItem",
+                //    ItemValue = 100,
+                //    AngelPrice = 75,
+                //    MinBid = 50,
+                //    Paid = false
+                //};
 
-                int newID = dao.createItem(i);
-                Response.Write(i.ItemID);
+
+                User u = new User()
+                {
+                    Email = "tlenahan@ilstu.edu",
+                    FirstName = "Tim",
+                    LastName = "Lenahan",
+                    Address = "123 Easy st",
+                    City = "Normal",
+                    State = "IL",
+                    Zip = 61761,
+                    Admin = true,
+                    Committee = false,
+                    Donor = false,
+                    Phone = "6303106285",
+                    Text = true
+                };
+                dao.createUser(u);
+
+
+                //int newID = dao.createItem(i);
+                //Response.Write(i.ItemID);
 
             }
         }

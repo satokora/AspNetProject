@@ -10,18 +10,31 @@ namespace FestivalOfTrees.Dao
 {
     public class UserDaoImpl : UserDao
     {
-        public int updateUser(User u)
+        public int updateUser(User user)
         {
+            int admin = 0, committee = 0, donor = 0, text = 0;
+            if (user.Admin)
+                admin = 1;
+            if (user.Committee)
+                committee = 1;
+            if (user.Donor)
+                donor = 1;
+            if (user.Text)
+                text = 1;
             SqlConnection conn = DBHelper.loadDB();
             String query = "UPDATE USERINFO SET "
-                    + "FIRSTNAME = '" + u.FirstName
-                    + "', LASTNAME = '" + u.LastName
-                    + "', STREETADDRESS = '" + u.Address
-                    + "', CITY = " + u.City
-                    + "', USERSTATE = '" + u.State
-                    + "', ZIP = " + u.Zip
-                    + ", PHONE = '" + u.Phone
-                    + "' WHERE EMAIL = '" + u.Email + "';";
+                    + "FIRSTNAME = '" + user.FirstName
+                    + "', LASTNAME = '" + user.LastName
+                    + "', STREETADDRESS = '" + user.Address
+                    + "', CITY = " + user.City
+                    + "', USERSTATE = '" + user.State
+                    + "', ZIP = " + user.Zip
+                    + ", PHONE = '" + user.Phone
+                    + "', ADMIN = '" + admin
+                    +", COMMITTEE = '" +committee
+                    +", DONOR = '" + donor
+                    +", TEXT = '" + text
+                    + " WHERE EMAIL = '" + user.Email + "';";
             SqlCommand command = new SqlCommand(query, conn);
             int rows = command.ExecuteNonQuery();
             return rows;
@@ -175,6 +188,16 @@ namespace FestivalOfTrees.Dao
 
         public void createUser(User user)
         {
+            int admin = 0, committee = 0, donor = 0, text = 0;
+            if (user.Admin)
+                admin = 1;
+            if (user.Committee)
+                committee = 1;
+            if (user.Donor)
+                donor = 1;
+            if (user.Text)
+                text = 1;
+
             SqlConnection conn = DBHelper.loadDB();
             string query = "INSERT INTO USERINFO OUTPUT INSERTED.USERID VALUES ("
                     + "'" + user.Email
@@ -184,11 +207,11 @@ namespace FestivalOfTrees.Dao
                     + "', '" + user.City
                     + "', '" + user.State
                     + "', " + user.Zip
-                    + ", " + user.Admin
-                    + ", " + user.Committee
+                    + ", " + admin
+                    + ", " + committee
                     + ", '" + user.Phone
-                    + "', " + user.Text
-                    + ", " + user.Donor
+                    + "', " +text
+                    + ", " + donor
                     + ")";
             SqlCommand command = new SqlCommand(query, conn);
             user.UserID = (int)command.ExecuteScalar();

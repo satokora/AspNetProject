@@ -11,6 +11,10 @@ namespace FestivalOfTrees.Dao
     {
         public void createItem(Item item)
         {
+            int paid = 0;
+            if (item.Paid)
+                paid = 1;
+
             SqlConnection conn = DBHelper.loadDB();
             string query = "INSERT INTO ITEM OUTPUT INSERTED.ITEMID VALUES ("
                     + "'" + item.CategoryID + "'"
@@ -19,7 +23,8 @@ namespace FestivalOfTrees.Dao
                     + ", " + item.ItemValue
                     + ", " + item.AngelPrice
                     + ", " + item.MinBid
-                    + ", 0)";
+                    + ", " + paid
+                    + ")";
             SqlCommand command = new SqlCommand(query, conn);
             int id = (int)command.ExecuteScalar();
             item.ItemID = id;
@@ -27,6 +32,9 @@ namespace FestivalOfTrees.Dao
 
         public int updateItem(Item item)
         {
+            int paid = 0;
+            if (item.Paid)
+                paid = 1;
 
             SqlConnection conn = DBHelper.loadDB();
             String query = "UPDATE ITEM SET "
@@ -36,7 +44,7 @@ namespace FestivalOfTrees.Dao
                     + "', ITEMVALUE = " + item.ItemValue
                     + ", ANGELPRICE = " + item.AngelPrice
                     + ", MINBID = " + item.MinBid
-                    + ", PAID = " + item.Paid
+                    + ", PAID = " + paid
                     + " WHERE ITEMID = " + item.ItemID + ";";
             SqlCommand command = new SqlCommand(query, conn);
             int rows = command.ExecuteNonQuery();

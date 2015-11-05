@@ -11,12 +11,19 @@ namespace FestivalOfTrees.Dao
     {
         public int createRequest(Request req)
         {
+            int admin = 0, committee = 0, donor = 0;
+            if (req.Admin)
+                admin = 1;
+            if (req.Committee)
+                committee = 1;
+            if (req.Donor)
+                donor = 1;
             SqlConnection conn = DBHelper.loadDB();
             string query = "INSERT INTO REQUEST OUTPUT INSERTED.ID VALUES ("
                     + "'" + req.RequestEmail + "'"
-                    + ", " + req.Admin
-                    + ", '" + req.Committee
-                    + ", " + req.Donor
+                    + ", " + admin
+                    + ", '" + committee
+                    + ", " + donor
                     + ") ";
             SqlCommand command = new SqlCommand(query, conn);
             int id = (int)command.ExecuteScalar();
