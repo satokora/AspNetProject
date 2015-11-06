@@ -18,13 +18,10 @@ namespace FestivalOfTrees
 
         protected void LoginBtn_Click(object sender, EventArgs e)
         {
-            // delete the following line if you are done with implementing authentication logic here
-
             if (loginCtrl.authenticate(userEmailTxt.Text, password.Text))
             {
                 Response.Redirect("Home.aspx");
             }
-
         }
     }
 }

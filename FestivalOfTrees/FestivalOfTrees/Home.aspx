@@ -53,10 +53,14 @@
         <asp:View ID="View5" runat="server">
             <uc:ViewSingleUser runat="server" ID="ViewSingleUser" />
         </asp:View>
-        
     </asp:MultiView>
     </div>
+<<<<<<< HEAD
     </form>
     <script src="assets/semantic.min.js"></script>
     </body>
+=======
+</form>
+</body>
+>>>>>>> refs/remotes/origin/newStuff
 </html>

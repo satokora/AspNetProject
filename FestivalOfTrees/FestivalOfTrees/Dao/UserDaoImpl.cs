@@ -86,6 +86,71 @@ namespace FestivalOfTrees.Dao
             return valid;
         }
 
+        //Added this method to process sign ups specifically putting data in dob.USERINFO
+        public bool addNewUser(User user)
+        {
+            bool added = false;
+            SqlConnection conn = DBHelper.loadDB();
+            String query = "INSERT INTO USERINFO VALUES (@EMAIL, @FNAME, @LNAME, @ADDRESS, @CITY, @STATE, @ZIP, @ADMIN, @COMMITTEE, @PHONE, @TEXT, @DONOR)";
+            try
+            {
+                SqlCommand command = new SqlCommand(query, conn);
+                command.Parameters.Add(new SqlParameter("@EMAIL", user.Email));
+                command.Parameters.Add(new SqlParameter("@FNAME", user.FirstName));
+                command.Parameters.Add(new SqlParameter("@LNAME", user.LastName));
+                command.Parameters.Add(new SqlParameter("@ADDRESS", user.Address));
+                command.Parameters.Add(new SqlParameter("@CITY", user.City));
+                command.Parameters.Add(new SqlParameter("@STATE", user.State));
+                command.Parameters.Add(new SqlParameter("@ZIP", user.Zip));
+                command.Parameters.Add(new SqlParameter("@ADMIN", user.Admin));
+                command.Parameters.Add(new SqlParameter("@COMMITTEE", user.Committee));
+                command.Parameters.Add(new SqlParameter("@PHONE", user.Phone));
+                command.Parameters.Add(new SqlParameter("@TEXT", user.Text));
+                command.Parameters.Add(new SqlParameter("@DONOR", user.Donor));
+
+                int result = command.ExecuteNonQuery();
+
+                if (result == 1)
+                    added = true;
+                else
+                    added = false;
+            }
+            catch(SqlException ex)
+            {
+                //error handling
+            }
+            return added;
+        }
+
+        public bool addNewUserCredentials(string email, string password)
+        {
+            bool added = false;
+            SqlConnection conn = DBHelper.loadDB();
+            String query = "INSERT INTO USERCREDENTIALS VALUES (@EMAIL, @PASSWORD, @QUESTION, @ANSWER)";
+            try
+            {
+                SqlCommand command = new SqlCommand(query, conn);
+                command.Parameters.Add(new SqlParameter("@EMAIL", email));
+                command.Parameters.Add(new SqlParameter("@PASSWORD", password));
+                command.Parameters.Add(new SqlParameter("@QUESTION", ""));
+                command.Parameters.Add(new SqlParameter("@ANSWER", ""));
+
+                int result = command.ExecuteNonQuery();
+
+                if (result == 1)
+                    added = true;
+                else
+                    added = false;
+            }
+            catch (SqlException ex)
+            {
+                //error handling
+            }
+
+
+            return added;
+        }
+
         public User getUserByEmail(string email)
         {
             User user = null;
