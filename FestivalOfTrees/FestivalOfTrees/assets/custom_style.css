@@ -40,6 +40,11 @@ body {
     background-image: url('image/bg1.jpg');
 }
 
+.ui.modal .row{
+    max-width: 500px;
+}
+
+
 
 /*
     Sign-up Page styles

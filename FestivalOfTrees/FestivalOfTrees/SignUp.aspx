@@ -22,10 +22,10 @@
                 <label>Name</label>
                 <div class="two fields">
                   <div class="field">
-                    <input type="text" name="shipping[first-name]" placeholder="First Name">
+                    <asp:TextBox ID="firstName" runat="server"  placeholder="First Name"></asp:TextBox>
                   </div>
                   <div class="field">
-                    <input type="text" name="shipping[last-name]" placeholder="Last Name">
+                    <asp:TextBox ID="lastName" runat="server"  placeholder="Last Name"></asp:TextBox>
                   </div>
                 </div>
               </div>
@@ -33,83 +33,82 @@
                 <label>Address</label>
                 <div class="fields">
                   <div class="eight wide field">
-                    <input type="text" name="shipping[address]" placeholder="Address1">
+                      <asp:TextBox ID="address1" runat="server" placeholder="Address1"></asp:TextBox>
                   </div>
                   <div class="eight wide field">
-                    <input type="text" name="shipping[address-2]" placeholder="Address2">
+                    <asp:TextBox ID="address2" runat="server" placeholder="Address1"></asp:TextBox>
                   </div>
                 </div>
               </div>
               <div class="two fields">
                 <div class="field">
                   <label>State</label>
-                  <select class="ui fluid dropdown">
-                    <option value="">State</option>
-                <option value="AL">Alabama</option>
-                <option value="AK">Alaska</option>
-                <option value="AZ">Arizona</option>
-                <option value="AR">Arkansas</option>
-                <option value="CA">California</option>
-                <option value="CO">Colorado</option>
-                <option value="CT">Connecticut</option>
-                <option value="DE">Delaware</option>
-                <option value="DC">District Of Columbia</option>
-                <option value="FL">Florida</option>
-                <option value="GA">Georgia</option>
-                <option value="HI">Hawaii</option>
-                <option value="ID">Idaho</option>
-                <option value="IL">Illinois</option>
-                <option value="IN">Indiana</option>
-                <option value="IA">Iowa</option>
-                <option value="KS">Kansas</option>
-                <option value="KY">Kentucky</option>
-                <option value="LA">Louisiana</option>
-                <option value="ME">Maine</option>
-                <option value="MD">Maryland</option>
-                <option value="MA">Massachusetts</option>
-                <option value="MI">Michigan</option>
-                <option value="MN">Minnesota</option>
-                <option value="MS">Mississippi</option>
-                <option value="MO">Missouri</option>
-                <option value="MT">Montana</option>
-                <option value="NE">Nebraska</option>
-                <option value="NV">Nevada</option>
-                <option value="NH">New Hampshire</option>
-                <option value="NJ">New Jersey</option>
-                <option value="NM">New Mexico</option>
-                <option value="NY">New York</option>
-                <option value="NC">North Carolina</option>
-                <option value="ND">North Dakota</option>
-                <option value="OH">Ohio</option>
-                <option value="OK">Oklahoma</option>
-                <option value="OR">Oregon</option>
-                <option value="PA">Pennsylvania</option>
-                <option value="RI">Rhode Island</option>
-                <option value="SC">South Carolina</option>
-                <option value="SD">South Dakota</option>
-                <option value="TN">Tennessee</option>
-                <option value="TX">Texas</option>
-                <option value="UT">Utah</option>
-                <option value="VT">Vermont</option>
-                <option value="VA">Virginia</option>
-                <option value="WA">Washington</option>
-                <option value="WV">West Virginia</option>
-                <option value="WI">Wisconsin</option>
-                <option value="WY">Wyoming</option>
-                  </select>
+                  <asp:DropDownList ID="DropDownList1" runat="server" CssClass="ui fluid dropdown">
+                      <asp:ListItem Value="">State</asp:ListItem>
+                      <asp:ListItem Value="Alabama"></asp:ListItem>
+                      <asp:ListItem Value="Alaska"></asp:ListItem>
+                      <asp:ListItem Value="Arizona"></asp:ListItem>
+                      <asp:ListItem Value="Arkansas"></asp:ListItem>
+                      <asp:ListItem Value="California"></asp:ListItem>
+                      <asp:ListItem Value="Colorado"></asp:ListItem>
+                      <asp:ListItem Value="Connecticut"></asp:ListItem>
+                      <asp:ListItem Value="Delaware"></asp:ListItem>
+                      <asp:ListItem Value="Florida"></asp:ListItem>
+                      <asp:ListItem Value="Georgia"></asp:ListItem>
+                      <asp:ListItem Value="Hawaii"></asp:ListItem>
+                      <asp:ListItem Value="Idaho"></asp:ListItem>
+                      <asp:ListItem Value="Illinois"></asp:ListItem>
+                      <asp:ListItem Value="Indiana"></asp:ListItem>
+                      <asp:ListItem Value="Iowa"></asp:ListItem>
+                      <asp:ListItem Value="Kansas"></asp:ListItem>
+                      <asp:ListItem Value="Kentucky"></asp:ListItem>
+                      <asp:ListItem Value="Louisiana"></asp:ListItem>
+                      <asp:ListItem Value="Maine"></asp:ListItem>
+                      <asp:ListItem Value="Maryland"></asp:ListItem>
+                      <asp:ListItem Value="Massachuttes"></asp:ListItem>
+                      <asp:ListItem Value="Michigan"></asp:ListItem>
+                      <asp:ListItem Value="Minnesota"></asp:ListItem>
+                      <asp:ListItem Value="Mississippi"></asp:ListItem>
+                      <asp:ListItem Value="Missouri"></asp:ListItem>
+                      <asp:ListItem Value="Montana"></asp:ListItem>
+                      <asp:ListItem Value="Nebraska"></asp:ListItem>
+                      <asp:ListItem Value="Nevada"></asp:ListItem>
+                      <asp:ListItem Value="New Hampshire"></asp:ListItem>
+                      <asp:ListItem Value="New Jersey"></asp:ListItem>
+                      <asp:ListItem Value="New Mexico"></asp:ListItem>
+                      <asp:ListItem Value="New York"></asp:ListItem>
+                      <asp:ListItem Value="North Carolina"></asp:ListItem>
+                      <asp:ListItem Value="North Dakota"></asp:ListItem>
+                      <asp:ListItem Value="Ohio"></asp:ListItem>
+                      <asp:ListItem Value="Oklahoma"></asp:ListItem>
+                      <asp:ListItem Value="Oregon"></asp:ListItem>
+                      <asp:ListItem Value="Pennsylvania"></asp:ListItem>
+                      <asp:ListItem Value="Rhode Island"></asp:ListItem>
+                      <asp:ListItem Value="South Carolina"></asp:ListItem>
+                      <asp:ListItem Value="South Dakota"></asp:ListItem>
+                      <asp:ListItem Value="Tennessee"></asp:ListItem>
+                      <asp:ListItem Value="Texas"></asp:ListItem>
+                      <asp:ListItem Value="Utah"></asp:ListItem>
+                      <asp:ListItem Value="Vermont"></asp:ListItem>
+                      <asp:ListItem Value="Virginia"></asp:ListItem>
+                      <asp:ListItem Value="Washington"></asp:ListItem>
+                      <asp:ListItem Value="West Virginia"></asp:ListItem>
+                      <asp:ListItem Value="Wisconsin"></asp:ListItem>
+                      <asp:ListItem Value="Wyoming"></asp:ListItem>
+                  </asp:DropDownList>
                 </div>
                 <div class="field">
                   <label>Zip Code / Postal Code</label>
-                  <input type="text" name="postal" placeholder="XXXXX-XXXX">
+                    <asp:TextBox ID="zipCode" runat="server"  placeholder="XXXXX-XXXX"></asp:TextBox>
                 </div>
               </div>
-              <%--<div class="two fields">--%>
+             
 
               <div class="field">
                 <label>Home Phone</label>
                 <div class="fields">
                   <div class="eight wide field">
-                    <input type="text" name="shipping[address]" placeholder="(XXX)XXXX-XXXX">
+                      <asp:TextBox ID="phone" runat="server" TextMode="Phone" placeholder="(XXX)XXXX-XXXX"></asp:TextBox>
                   </div>
                 </div>
               </div>
@@ -118,11 +117,11 @@
                 <label>Mobile Phone</label>
                 <div class="fields">
                   <div class="eight wide field">
-                    <input type="text" name="shipping[address]" placeholder="(XXX)XXXX-XXXX">
+                    <asp:TextBox ID="TextBox1" runat="server" TextMode="Phone" placeholder="(XXX)XXXX-XXXX"></asp:TextBox>
                   </div>
                   <div class="eight wide field">
                     <div class="ui toggle checkbox">
-                        <input type="checkbox" name="gift">
+                        <asp:CheckBox ID="checkToText" runat="server" />
                         <label>Receive text notification</label>
                       </div>
                   </div>
@@ -133,11 +132,11 @@
                 
                 <div class="field">
                     <label>Email</label>
-                    <input type="email" name="email">
+                    <asp:TextBox ID="email" runat="server" TextMode="Email"></asp:TextBox>
                   </div>
                   <div class="field">
                     <label>Confirm Email</label>                
-                    <input type="email" name="confEmail">
+                    <asp:TextBox ID="confEmail" runat="server" TextMode="Email"></asp:TextBox>
                   </div>
               </div>
 
@@ -145,23 +144,15 @@
                 
                 <div class="field">
                     <label>Password</label>
-                    <input type="password" name="pass1">
+                    <asp:TextBox ID="password1" runat="server" TextMode="Password"></asp:TextBox>
                   </div>
-                  <div class="field">
-                    <label>Confirm Password</label>                
-                    <input type="password" name="pass2">
+                  <div class="field">     
+                     <label>Confirm Password</label>         
+                    <asp:TextBox ID="password2" runat="server" TextMode="Password"></asp:TextBox>
                   </div>
               </div>
-
-               <%--<div class="ui segment">
-                <div class="field">
-                  <div class="ui toggle checkbox">
-                    <input type="checkbox" name="gift" tabindex="0" class="hidden">
-                    <label>Approve Terms & Conditions</label>
-                  </div>
-                </div>
-              </div>--%>
-              <asp:Button ID="SignUpBtn" runat="server" Text="Button" CssClass="ui fluid large red submit button" OnClick="SignUpBtn_Click" />
+              
+              <asp:Button ID="SignUpBtn" runat="server" Text="Send Request" CssClass="ui fluid large red submit button" OnClick="SignUpBtn_Click" />
             </form>
     </div>
   </div>
