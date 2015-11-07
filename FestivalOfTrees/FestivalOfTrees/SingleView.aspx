@@ -1,12 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="FestivalOfTrees.Home" %>
-
-<%@ Register Src="~/Views/EnterNewItem.ascx" TagPrefix="uc" TagName="EnterNewItem" %>
-<%@ Register Src="~/Views/Search.ascx" TagPrefix="uc" TagName="Search" %>
-
-<%@ Register Src="~/Views/ItemStatusView.ascx" TagPrefix="uc" TagName="ItemStatusView" %>
-
-
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SingleView.aspx.cs" Inherits="FestivalOfTrees.SingleView" %>
+<%@ Register Src="~/Views/ViewSingleUser.ascx" TagPrefix="uc" TagName="ViewSingleUser" %>
+<%@ Register Src="~/Views/ViewSingleItem.ascx" TagPrefix="uc" TagName="ViewSingleItem" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,8 +12,8 @@
     <script src="assets/semantic.min.js"></script>
 </head>
 <body class="home-bg">
-    <form id="form1" runat="server" class="ui form">
-     <div class="ui fixed inverted menu">
+    <form id="form1" runat="server">
+    <div class="ui fixed inverted menu">
         <div class="ui container">
           <div href="#" class="header item">
               <img class="logo"  src="assets/image/Logo_FestTree.png" />
@@ -38,27 +32,21 @@
         </div>
       </div>
     <div class="ui container"  id="main-content">
-    <asp:MultiView ID="MultiView1" runat="server">
-        <asp:View ID="View1" runat="server">
-            <uc:ItemStatusView runat="server" id="ItemStatusView" />
-        </asp:View>
-        <asp:View ID="View2" runat="server">
-            <uc:EnterNewItem runat="server" ID="EnterNewItem" />
-        </asp:View>
-        <asp:View ID="View3" runat="server">
-            <uc:Search runat="server" ID="Search" />
-        </asp:View>
+    
+        <asp:MultiView ID="MultiView1" runat="server">
+            <asp:View ID="View1" runat="server">
+                <uc:ViewSingleItem runat="server" ID="ViewSingleItem" />
+            </asp:View>
+            <asp:View ID="View2" runat="server">
+                <uc:ViewSingleUser runat="server" ID="ViewSingleUser" />
+            </asp:View>
+        </asp:MultiView>
 
-        
-    </asp:MultiView>
+    <div>
+    
+    </div>
+    
     </div>
     </form>
-    <script>
-    $(document).ready(function () {
-        $('.special.cards .image').dimmer({
-            on: 'hover'
-        });
-    });
-</script>
 </body>
 </html>

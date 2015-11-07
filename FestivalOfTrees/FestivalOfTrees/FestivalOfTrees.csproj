@@ -217,6 +217,7 @@
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="SignUp.aspx" />
+    <Content Include="SingleView.aspx" />
     <Content Include="Views\AdminDashBoard.ascx" />
     <Content Include="Views\EnterNewItem.ascx" />
     <Content Include="Views\ItemStatusView.ascx" />
@@ -262,6 +263,13 @@
     </Compile>
     <Compile Include="SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SingleView.aspx.cs">
+      <DependentUpon>SingleView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SingleView.aspx.designer.cs">
+      <DependentUpon>SingleView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\AdminDashBoard.ascx.cs">
       <DependentUpon>AdminDashBoard.ascx</DependentUpon>

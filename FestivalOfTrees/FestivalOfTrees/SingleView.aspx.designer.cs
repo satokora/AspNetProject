@@ -10,7 +10,7 @@
 namespace FestivalOfTrees {
     
     
-    public partial class Home {
+    public partial class SingleView {
         
         /// <summary>
         /// form1 control.
@@ -76,13 +76,13 @@ namespace FestivalOfTrees {
         protected global::System.Web.UI.WebControls.View View1;
         
         /// <summary>
-        /// ItemStatusView control.
+        /// ViewSingleItem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FestivalOfTrees.Views.ItemStatusView ItemStatusView;
+        protected global::FestivalOfTrees.Views.ViewSingleItem ViewSingleItem;
         
         /// <summary>
         /// View2 control.
@@ -94,30 +94,12 @@ namespace FestivalOfTrees {
         protected global::System.Web.UI.WebControls.View View2;
         
         /// <summary>
-        /// EnterNewItem control.
+        /// ViewSingleUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FestivalOfTrees.EnterNewItem EnterNewItem;
-        
-        /// <summary>
-        /// View3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View View3;
-        
-        /// <summary>
-        /// Search control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::FestivalOfTrees.Views.SearchItems Search;
+        protected global::FestivalOfTrees.Views.ViewSingleUser ViewSingleUser;
     }
 }

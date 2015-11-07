@@ -11,8 +11,8 @@ namespace FestivalOfTrees.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
 
+            SearchView.ActiveViewIndex = 0;
         }
 
         protected void SearchBuyer_Click(object sender, EventArgs e)
@@ -56,6 +56,11 @@ namespace FestivalOfTrees.Views
             {
                 SearchResultView.ActiveViewIndex = 1;
             }
+
+        }
+
+        protected void ViewSingleItem_Click(object sender, EventArgs e)
+        {
 
         }
 

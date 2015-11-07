@@ -32,6 +32,10 @@ label{
 .smoky-brown{
     background-color:#554843;
 }
+
+.ui.image img{
+    width:100%;
+}
 /*
     Log-in Page styles
 */
