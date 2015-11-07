@@ -37,19 +37,6 @@ namespace FestivalOfTrees
             
         }
 
-        protected void Menu1_Click(object sender, EventArgs e)
-        {
-            MultiView1.ActiveViewIndex = 0;
-        }
-
-        protected void Menu2_Click(object sender, EventArgs e)
-        {
-            MultiView1.ActiveViewIndex = 1;
-        }
-
-        protected void Menu3_Click(object sender, EventArgs e)
-        {
-            MultiView1.ActiveViewIndex = 2;
-        }
+        
     }
 }

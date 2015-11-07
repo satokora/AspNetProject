@@ -7,7 +7,7 @@ namespace FestivalOfTrees.Model
 {
     public class User
     {
-        private string userID;
+        private int userID;
         private string email;
         private string firstName;
         private string lastName;
@@ -21,7 +21,9 @@ namespace FestivalOfTrees.Model
         private string phone;
         private bool text;
 
-        public User(string userID, string email, string firstName, string lastName, 
+        public User() { }
+
+        public User(int userID, string email, string firstName, string lastName, 
                     string address, string city, string state, int zip, bool admin, 
                     bool committee, bool donor, string phone, bool text)
         {
@@ -39,8 +41,25 @@ namespace FestivalOfTrees.Model
             this.phone = phone;
             this.text = text;
         }
+        
+        public override string ToString()
+        {
+            return "UserID: " + userID
+                + "<br/>Email: " + email
+                + "<br/>First Name: " + firstName
+                + "<br/>Last Name: " + lastName
+                + "<br/>Address: " + address
+                + "<br/>City: " + city
+                + "<br/>State: " + state
+                + "<br/>Zip: " + zip
+                + "<br/>Admin: " + admin
+                + "<br/>Committee: " + committee
+                + "<br/>Donor: " + donor
+                + "<br/>Phone: " + phone
+                + "<br/>Text: " + text;
+        }
 
-        public string UserID
+        public int UserID
         {
             get
             {

@@ -48,7 +48,7 @@
         </div>
         <asp:MultiView ID="SearchResultView" runat="server">
             <asp:View ID="View3" runat="server">
-                <asp:Table ID="Table1" runat="server">
+                <asp:Table ID="Table1" runat="server" CssClass="ui red table center aligned">
                 </asp:Table>
             </asp:View>
             <asp:View ID="View4" runat="server">
@@ -58,7 +58,7 @@
                         <div class="ui dimmer">
                             <div class="content">
                                 <div class="center">
-                                <div class="ui inverted button">View Item</div>
+                                <a class="ui inverted button" href="SingleView.aspx?item=CS001">View Item</a>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                         <div class="ui dimmer">
                             <div class="content">
                                 <div class="center">
-                                <div class="ui inverted button">View Item</div>
+                                <a class="ui inverted button" href="SingleView.aspx?item=CS001">View Item</a>
                                 </div>
                             </div>
                         </div>

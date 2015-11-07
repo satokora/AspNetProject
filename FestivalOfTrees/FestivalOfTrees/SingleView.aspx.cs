@@ -15,25 +15,12 @@ namespace FestivalOfTrees
             {
                 MultiView1.ActiveViewIndex = 0;
             }
-            else if (Request.QueryString["user"] != null)
+            else if (Request.QueryString["userId"] != null)
             {
                 MultiView1.ActiveViewIndex = 1;
             }
         }
 
-        protected void Menu1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Home.aspx?menu=1");
-        }
-
-        protected void Menu2_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Home.aspx?menu=2");
-        }
-
-        protected void Menu3_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Home.aspx?menu=3");
-        }
+        
     }
 }

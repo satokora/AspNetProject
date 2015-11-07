@@ -29,19 +29,28 @@ label{
     background-color: #930a2c!important;
 }
 
-.smoky-brown{
-    background-color:#554843;
+.ui.smoky-brown.button{
+    background:#554843!important;
+    color: #fff!important;
 }
+
+.footer.segment {
+      /*margin-top: 50px!important;*/
+      padding: 5em 0em;
+    }
 
 .ui.image img{
     width:100%;
 }
-/*
-    Log-in Page styles
-*/
+
+html, body {
+height: 100%;
+}
+
 
 body {
     background-image: url('image/bg1.jpg');
+    
 }
 
 .ui.modal .row{
@@ -67,7 +76,7 @@ body {
 */
 .home-bg{
     background-image: url('image/bg3.jpg');
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: 100%;
 }
 /*

@@ -210,12 +210,16 @@
     <Content Include="assets\semantic.js" />
     <Content Include="assets\semantic.min.css" />
     <Content Include="assets\semantic.min.js" />
+    <Content Include="assets\stickyfooter.css" />
     <Content Include="assets\themes\basic\assets\fonts\icons.svg" />
     <Content Include="assets\themes\default\assets\fonts\icons.svg" />
     <Content Include="assets\themes\default\assets\images\flags.png" />
     <Content Include="assets\themes\github\assets\fonts\octicons.svg" />
+    <Content Include="DBTestPage.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="PageComponent\Footer.ascx" />
+    <Content Include="PageComponent\Header.ascx" />
     <Content Include="SignUp.aspx" />
     <Content Include="SingleView.aspx" />
     <Content Include="Views\AdminDashBoard.ascx" />
@@ -239,8 +243,19 @@
     <Compile Include="Controller\SignUpController.cs" />
     <Compile Include="Controller\TextCallController.cs" />
     <Compile Include="Dao\DBHelper.cs" />
+    <Compile Include="Dao\ItemDao.cs" />
+    <Compile Include="Dao\ItemDaoImpl.cs" />
+    <Compile Include="Dao\RequestDao.cs" />
+    <Compile Include="Dao\RequestDaoImpl.cs" />
     <Compile Include="Dao\UserDao.cs" />
     <Compile Include="Dao\UserDaoImpl.cs" />
+    <Compile Include="DBTestPage.aspx.cs">
+      <DependentUpon>DBTestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DBTestPage.aspx.designer.cs">
+      <DependentUpon>DBTestPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -255,7 +270,27 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Model\Auction.cs" />
+    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Credentials.cs" />
+    <Compile Include="Model\GoWith.cs" />
+    <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\Request.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="PageComponent\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageComponent\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PageComponent\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageComponent\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
