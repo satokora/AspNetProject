@@ -7,13 +7,22 @@ namespace FestivalOfTrees.Model
 {
     public class Category
     {
-        private int categoryID;
+        private string categoryID;
         private int auctionID;
         private string categoryName;
         private bool sponsored;
         private string sponsorName;
-        private int parentID;
+        private string parentID;
 
+        public Category(string categoryID, int auctionID, string categoryName, bool sponsored, string sponsorName, string parentID)
+        {
+            this.categoryID = categoryID;
+            this.auctionID = auctionID;
+            this.categoryName = categoryName;
+            this.sponsored = sponsored;
+            this.sponsorName = sponsorName;
+            this.parentID = parentID;
+        }
 
         public override string ToString()
         {
@@ -25,7 +34,7 @@ namespace FestivalOfTrees.Model
                 + "</br>Parent ID: " + ParentID;
         }
 
-        public int CategoryID
+        public string CategoryID
         {
             get
             {
@@ -90,7 +99,7 @@ namespace FestivalOfTrees.Model
             }
         }
 
-        public int ParentID
+        public string ParentID
         {
             get
             {

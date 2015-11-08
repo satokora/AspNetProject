@@ -2,8 +2,8 @@
 
 <%@ Register Src="~/Views/ViewSingleUser.ascx" TagPrefix="uc" TagName="ViewSingleUser" %>
 <%@ Register Src="~/Views/ViewSingleItem.ascx" TagPrefix="uc" TagName="ViewSingleItem" %>
-<%@ Register Src="~/PageComponent/Header.ascx" TagPrefix="uc" TagName="Header" %>
-<%@ Register Src="~/PageComponent/Footer.ascx" TagPrefix="uc" TagName="Footer" %>
+<%@ Register Src="~/PageComponent/HeaderCtrl.ascx" TagPrefix="uc1" TagName="HeaderCtrl" %>
+<%@ Register Src="~/PageComponent/FooterCtrl.ascx" TagPrefix="uc1" TagName="FooterCtrl" %>
 
 
 
@@ -22,7 +22,7 @@
     <form id="form1" runat="server">
         <div id="wrap">
         <div id="main">
-        <uc:Header runat="server" id="Header" />
+        <uc1:headerctrl runat="server" id="HeaderCtrl" />
         <div class="ui container" id="main-content">
 
             <asp:MultiView ID="MultiView1" runat="server">
@@ -40,7 +40,7 @@
         </div>
         </div>
         </div>
-        <uc:Footer runat="server" id="Footer" />
+        <uc1:footerctrl runat="server" id="FooterCtrl" />
     </form>
 </body>
 </html>

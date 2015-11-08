@@ -1,6 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Search.ascx.cs" Inherits="FestivalOfTrees.Views.SearchItems" %>
-
-
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SearchItemUser.ascx.cs" Inherits="FestivalOfTrees.Views.SearchItemUser" %>
 <div class="ui conatiner">
     <div class="ui stacked segment" style="min-height: 250px">
         <h3 style="text-align:center">Search for Items/Buyers</h3>

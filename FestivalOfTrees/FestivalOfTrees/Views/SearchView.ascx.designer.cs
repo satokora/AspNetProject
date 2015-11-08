@@ -10,7 +10,7 @@
 namespace FestivalOfTrees.Views {
     
     
-    public partial class SearchItems {
+    public partial class Search1 {
         
         /// <summary>
         /// ItemBtn control.
