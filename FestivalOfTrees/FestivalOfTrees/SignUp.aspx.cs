@@ -54,21 +54,20 @@ namespace FestivalOfTrees
             string MPHONE = TextBox1.Text;
             bool TEXT = checkToText.Checked;
 
-            //commented out because of compile error(id should be integer), put them back if you need it
-            //toAdd = new User("id", EMAIL, FNAME, LNAME, ADDRESS, CITY, STATE, ZIP, ADMIN, COMMITTEE, DONOR, MPHONE, TEXT);
+            toAdd = new User("id", EMAIL, FNAME, LNAME, ADDRESS, CITY, STATE, ZIP, ADMIN, COMMITTEE, DONOR, MPHONE, TEXT);
 
-            //if (signUp.addUser(toAdd))
-            //{
-            //    //Do we wnat to add a message here letting user know request was submitted successfully?
-            //}
-            //else
-            //{
-            //    //Is this the preferred action if a user is already signed up or sign up fails?
-            //    Response.Redirect("Login.aspx");
-            //}
+            if (signUp.addUser(toAdd))
+            {
+                //Do we wnat to add a message here letting user know request was submitted successfully?
+            }
+            else
+            {
+                //Is this the preferred action if a user is already signed up or sign up fails?
+                Response.Redirect("Login.aspx");
+            }
 
-            ////This adds usercredentials right away ... needs to be modified if there is an approval action
-            //signUp.addUserCredentials(email.Text, password1.Text);
+            //This adds usercredentials right away ... needs to be modified if there is an approval action
+            signUp.addUserCredentials(email.Text, password1.Text);
         }
     }
 }

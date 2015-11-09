@@ -19,17 +19,7 @@ namespace FestivalOfTrees.Controller
         {
             userDaoImpl = new UserDaoImpl();
         }
-        public User searchUserByPhone(string phone)
-        {
-            UserDaoImpl userphone = new UserDaoImpl();
-            return userphone.getUserByPhone(phone);
-
-        }
-        //public User searchUserbyLastName(string lastName)
-        //{
-        //    UserDaoImpl userlastName = new UserDaoImpl();
-        //    return userlastName.getUserByLastName(lastName);
-        //}
+        
         public List<TableRow> getUserRows(string lastName, string phoneNum)
         {
             // this method is created by Satoko in order to check ui design.  Delete the following codes
