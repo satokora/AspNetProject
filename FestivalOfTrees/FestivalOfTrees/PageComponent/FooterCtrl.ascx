@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Footer.ascx.cs" Inherits="FestivalOfTrees.PageComponent.Footer" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FooterCtrl.ascx.cs" Inherits="FestivalOfTrees.PageComponent.Footer" %>
 <%--<footer id="crossfooter" class="black page-footer">--%>
 <div class="ui inverted vertical footer segment" id="footer">
     <div class="ui container">

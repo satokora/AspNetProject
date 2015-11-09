@@ -9,7 +9,7 @@
                 <i class="home icon"></i>
                 <div class="content">
                     <asp:Label ID="LblAddress" runat="server" >300 E Shelbourne Dr Apt 62</asp:Label>
-                    <asp:Label ID="LblCity" runat="server" >Normal</asp:Label>,<asp:Label ID="LblState" runat="server" >IL</asp:Label>
+                    ,<asp:Label ID="LblCity" runat="server" >Normal</asp:Label>,<asp:Label ID="LblState" runat="server" >IL</asp:Label>
                 </div>
               </div>
               
@@ -42,7 +42,7 @@
                 </div>
                 <i class="mail icon"></i>
                 <div class="middle aligned content">
-                  <a href="mailto:jack@semantic-ui.com">jack@semantic-ui.com</a>
+                    <asp:Label ID="LblEmail" runat="server" >jack@semantic-ui.com</asp:Label>
                 </div>
               </div>
             </div>

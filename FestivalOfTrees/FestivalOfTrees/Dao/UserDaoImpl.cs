@@ -151,15 +151,15 @@ namespace FestivalOfTrees.Dao
             return user;
         }
 
-        public User getUserByLastName(string lastName)
+        public List<User> getUserByLastName(string lastName)
         {
             SqlConnection conn = DBHelper.loadDB();
-            String query = "SELECT * FROM USERINFO WHERE LASTNAME = @LASTNAME";
+            String query = "SELECT * FROM USERINFO WHERE LASTNAME like '%' + @LASTNAME + '%'";
             SqlCommand command = new SqlCommand(query, conn);
             command.Parameters.Add(new SqlParameter("@LASTNAME", lastName));
 
-            User u = getUser(command);
-            return u;
+            List<User> uarray = getArrayUser(command);
+            return uarray;
         }
 
         public User getUserByPhone(string phoneNumber)
@@ -193,7 +193,7 @@ namespace FestivalOfTrees.Dao
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.HasRows)
                 {
-
+                    
                     user = readerToUser(reader);
                 }
             }
@@ -202,6 +202,46 @@ namespace FestivalOfTrees.Dao
                 // error handling
             }
             return user;
+        }
+        private List<User> getArrayUser(SqlCommand command)
+        {
+            List<User> array = new List<User>();
+
+            try
+            {
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    
+                    while (reader.Read())
+                    {
+                        User u = new User
+                        {
+                            UserID = Convert.ToInt32(reader["userid"]),
+                            Email = Convert.ToString(reader["email"]),
+                            FirstName = Convert.ToString(reader["firstname"]),
+                            LastName = Convert.ToString(reader["lastname"]),
+                            Address = Convert.ToString(reader["streetaddress"]),
+                            City = Convert.ToString(reader["city"]),
+                            State = Convert.ToString(reader["userstate"]),
+                            Zip = Convert.ToInt32(reader["zip"]),
+                            Admin = Convert.ToBoolean(reader["admin"]),
+                            Committee = Convert.ToBoolean(reader["committee"]),
+                            Donor = Convert.ToBoolean(reader["donor"]),
+                            Phone = Convert.ToString(reader["phone"]),
+                            Text = Convert.ToBoolean(reader["text"])
+                        };
+                        array.Add(u);
+                    }
+
+                    
+                }
+            }
+            catch (SqlException ex)
+            {
+                // error handling
+            }
+            return array;
         }
 
         private Credentials readerToCredentials(SqlDataReader reader)
@@ -219,7 +259,7 @@ namespace FestivalOfTrees.Dao
         private User readerToUser(SqlDataReader reader)
         {
             reader.Read();
-            User u = new User()
+            User u = new User
             {
                 UserID = Convert.ToInt32(reader["userid"]),
                 Email = Convert.ToString(reader["email"]),
@@ -270,6 +310,11 @@ namespace FestivalOfTrees.Dao
                     + "')";
             SqlCommand command = new SqlCommand(query, conn);
             command.ExecuteNonQuery();
+        }
+
+        User UserDao.getUserByLastName(string lastName)
+        {
+            throw new NotImplementedException();
         }
     }
 }

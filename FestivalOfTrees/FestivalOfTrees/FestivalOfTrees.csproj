@@ -218,14 +218,14 @@
     <Content Include="DBTestPage.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="PageComponent\Footer.ascx" />
-    <Content Include="PageComponent\Header.ascx" />
+    <Content Include="PageComponent\FooterCtrl.ascx" />
+    <Content Include="PageComponent\HeaderCtrl.ascx" />
     <Content Include="SignUp.aspx" />
     <Content Include="SingleView.aspx" />
     <Content Include="Views\AdminDashBoard.ascx" />
     <Content Include="Views\EnterNewItem.ascx" />
     <Content Include="Views\ItemStatusView.ascx" />
-    <Content Include="Views\Search.ascx" />
+    <Content Include="Views\SearchItemUser.ascx" />
     <Content Include="Views\ViewSingleItem.ascx" />
     <Content Include="Views\ViewSingleUser.ascx" />
     <Content Include="Web.config" />
@@ -242,6 +242,8 @@
     <Compile Include="Controller\SearchUserController.cs" />
     <Compile Include="Controller\SignUpController.cs" />
     <Compile Include="Controller\TextCallController.cs" />
+    <Compile Include="Dao\CategoryDao.cs" />
+    <Compile Include="Dao\CategoryDaoImpl.cs" />
     <Compile Include="Dao\DBHelper.cs" />
     <Compile Include="Dao\ItemDao.cs" />
     <Compile Include="Dao\ItemDaoImpl.cs" />
@@ -277,19 +279,19 @@
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\Request.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="PageComponent\Footer.ascx.cs">
-      <DependentUpon>Footer.ascx</DependentUpon>
+    <Compile Include="PageComponent\FooterCtrl.ascx.cs">
+      <DependentUpon>FooterCtrl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PageComponent\Footer.ascx.designer.cs">
-      <DependentUpon>Footer.ascx</DependentUpon>
+    <Compile Include="PageComponent\FooterCtrl.ascx.designer.cs">
+      <DependentUpon>FooterCtrl.ascx</DependentUpon>
     </Compile>
-    <Compile Include="PageComponent\Header.ascx.cs">
-      <DependentUpon>Header.ascx</DependentUpon>
+    <Compile Include="PageComponent\HeaderCtrl.ascx.cs">
+      <DependentUpon>HeaderCtrl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PageComponent\Header.ascx.designer.cs">
-      <DependentUpon>Header.ascx</DependentUpon>
+    <Compile Include="PageComponent\HeaderCtrl.ascx.designer.cs">
+      <DependentUpon>HeaderCtrl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignUp.aspx.cs">
@@ -327,12 +329,12 @@
     <Compile Include="Views\ItemStatusView.ascx.designer.cs">
       <DependentUpon>ItemStatusView.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Search.ascx.cs">
-      <DependentUpon>Search.ascx</DependentUpon>
+    <Compile Include="Views\SearchItemUser.ascx.cs">
+      <DependentUpon>SearchItemUser.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Search.ascx.designer.cs">
-      <DependentUpon>Search.ascx</DependentUpon>
+    <Compile Include="Views\SearchItemUser.ascx.designer.cs">
+      <DependentUpon>SearchItemUser.ascx</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewSingleItem.ascx.cs">
       <DependentUpon>ViewSingleItem.ascx</DependentUpon>

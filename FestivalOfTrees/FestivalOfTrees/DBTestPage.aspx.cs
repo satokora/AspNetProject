@@ -37,10 +37,9 @@ namespace FestivalOfTrees
                     Paid = false
                 };
 
-                
-                //Commented out because of compile error in the following lines, put them back if you need it
-                //int newID = dao.createItem(i);
-                //Response.Write(i.ItemID);
+
+                int newID = dao.createItem(i);
+                Response.Write(i.ItemID);
 
             }
         }

@@ -206,7 +206,7 @@ namespace FestivalOfTrees.Model
         {
             get
             {
-                return phone;
+                return "(" + phone.Substring(0, 3) + ")" + phone.Substring(3, 3) + "-" + phone.Substring(6); ;
             }
 
             set

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="FestivalOfTrees.PageComponent.Header" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HeaderCtrl.ascx.cs" Inherits="FestivalOfTrees.PageComponent.Header" %>
 <div class="ui fixed inverted menu">
     <div class="ui container">
         <div href="#" class="header item">

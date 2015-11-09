@@ -22,13 +22,13 @@ namespace FestivalOfTrees {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Header control.
+        /// HeaderCtrl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FestivalOfTrees.PageComponent.Header Header;
+        protected global::FestivalOfTrees.PageComponent.Header HeaderCtrl;
         
         /// <summary>
         /// MultiView1 control.
@@ -85,21 +85,21 @@ namespace FestivalOfTrees {
         protected global::System.Web.UI.WebControls.View View3;
         
         /// <summary>
-        /// Search control.
+        /// SearchItemUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FestivalOfTrees.Views.SearchItems Search;
+        protected global::FestivalOfTrees.Views.SearchItemUser SearchItemUser;
         
         /// <summary>
-        /// Footer control.
+        /// FooterCtrl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FestivalOfTrees.PageComponent.Footer Footer;
+        protected global::FestivalOfTrees.PageComponent.Footer FooterCtrl;
     }
 }
