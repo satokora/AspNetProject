@@ -11,9 +11,9 @@ namespace FestivalOfTrees.Dao
     {
         int updateUser(User u);
 
-        void createUser(User user);
+        bool createUser(User user);
 
-        void createCredentials(Credentials creds);
+        bool createCredentials(Credentials creds);
 
         User getUserByLastName(string lastName);
 

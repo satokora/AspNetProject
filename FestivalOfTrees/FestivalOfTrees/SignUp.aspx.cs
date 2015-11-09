@@ -54,7 +54,21 @@ namespace FestivalOfTrees
             string MPHONE = TextBox1.Text;
             bool TEXT = checkToText.Checked;
 
-            toAdd = new User("id", EMAIL, FNAME, LNAME, ADDRESS, CITY, STATE, ZIP, ADMIN, COMMITTEE, DONOR, MPHONE, TEXT);
+            toAdd = new User()
+            {
+                Email = EMAIL,
+                FirstName = FNAME,
+                LastName = LNAME,
+                Address = ADDRESS,
+                City = CITY,
+                State = STATE,
+                Zip = ZIP,
+                Admin = ADMIN,
+                Committee = COMMITTEE,
+                Donor = DONOR,
+                Phone = MPHONE,
+                Text = TEXT
+            };
 
             if (signUp.addUser(toAdd))
             {
@@ -67,7 +81,12 @@ namespace FestivalOfTrees
             }
 
             //This adds usercredentials right away ... needs to be modified if there is an approval action
-            signUp.addUserCredentials(email.Text, password1.Text);
+            Credentials creds = new Credentials()
+            {
+                Email = EMAIL,
+                Password = password1.Text.ToString()
+            };
+            signUp.addUserCredentials(creds);
         }
     }
 }

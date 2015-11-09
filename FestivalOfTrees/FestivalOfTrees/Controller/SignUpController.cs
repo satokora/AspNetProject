@@ -26,7 +26,7 @@ namespace FestivalOfTrees.Controller
             if (signUp.checkDB(user.Email))
             {
 
-                if (signUp.addNewUser(user))
+                if (signUp.createUser(user))
                 {
                     addSuccess = true;
                 }
@@ -36,10 +36,10 @@ namespace FestivalOfTrees.Controller
             }
             return addSuccess;
         }
-        public bool addUserCredentials(string email, string password)
+        public bool addUserCredentials(Credentials creds)
         {
             bool addSuccess = false;
-            if(signUp.addNewUserCredentials(email, password))
+            if(signUp.createCredentials(creds))
             {
                 addSuccess = true;
             }

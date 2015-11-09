@@ -20,27 +20,6 @@ namespace FestivalOfTrees.Model
         private bool donor;
         private string phone;
         private bool text;
-
-        public User() { }
-
-        public User(int userID, string email, string firstName, string lastName, 
-                    string address, string city, string state, int zip, bool admin, 
-                    bool committee, bool donor, string phone, bool text)
-        {
-            this.userID = userID;
-            this.email = email;
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.address = address;
-            this.city = city;
-            this.state = state;
-            this.zip = zip;
-            this.admin = admin;
-            this.committee = committee;
-            this.donor = donor;
-            this.phone = phone;
-            this.text = text;
-        }
         
         public override string ToString()
         {

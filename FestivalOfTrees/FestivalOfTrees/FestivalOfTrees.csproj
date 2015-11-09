@@ -218,6 +218,9 @@
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="SignUp.aspx" />
+    <Content Include="TestHome.aspx" />
+    <Content Include="TestSignIn.aspx" />
+    <Content Include="TestSignup.aspx" />
     <Content Include="Views\AdminDashBoard.ascx" />
     <Content Include="Views\EnterNewItem.ascx" />
     <Content Include="Views\ItemStatusView.ascx" />
@@ -238,6 +241,7 @@
     <Compile Include="Controller\SearchUserController.cs" />
     <Compile Include="Controller\SignUpController.cs" />
     <Compile Include="Controller\TextCallController.cs" />
+    <Compile Include="Controller\UserController.cs" />
     <Compile Include="Dao\DBHelper.cs" />
     <Compile Include="Dao\ItemDao.cs" />
     <Compile Include="Dao\ItemDaoImpl.cs" />
@@ -280,6 +284,27 @@
     </Compile>
     <Compile Include="SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestHome.aspx.cs">
+      <DependentUpon>TestHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestHome.aspx.designer.cs">
+      <DependentUpon>TestHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestSignIn.aspx.cs">
+      <DependentUpon>TestSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestSignIn.aspx.designer.cs">
+      <DependentUpon>TestSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestSignup.aspx.cs">
+      <DependentUpon>TestSignup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestSignup.aspx.designer.cs">
+      <DependentUpon>TestSignup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\AdminDashBoard.ascx.cs">
       <DependentUpon>AdminDashBoard.ascx</DependentUpon>

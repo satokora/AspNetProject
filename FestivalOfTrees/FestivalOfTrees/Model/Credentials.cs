@@ -12,22 +12,12 @@ namespace FestivalOfTrees.Model
         private string password;
         private string question;
         private string answer;
-    
 
-        public Credentials() { }
 
-        public Credentials(string email, string password, string question, string answer)
+        public override bool Equals(object obj)
         {
-            this.email = email;
-            this.password = password;
-            this.question = question;
-            this.answer = answer;
-        }
-
-        public Credentials(string email, string password)
-        {
-            this.email = email;
-            this.password = password;
+            Credentials c = (Credentials)obj;
+            return (c.Email == Email && c.password == Password);
         }
 
         public override string ToString()
