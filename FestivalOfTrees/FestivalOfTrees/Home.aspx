@@ -3,8 +3,10 @@
 <%@ Register Src="~/Views/EnterNewItem.ascx" TagPrefix="uc" TagName="EnterNewItem" %>
 <%@ Register Src="~/Views/ItemStatusView.ascx" TagPrefix="uc" TagName="ItemStatusView" %>
 <%@ Register Src="~/PageComponent/FooterCtrl.ascx" TagPrefix="uc" TagName="FooterCtrl" %>
-<%@ Register Src="~/PageComponent/HeaderCtrl.ascx" TagPrefix="uc" TagName="HeaderCtrl" %>
+
 <%@ Register Src="~/Views/SearchItemUser.ascx" TagPrefix="uc" TagName="SearchItemUser" %>
+<%@ Register Src="~/PageComponent/SideBarAdmin.ascx" TagPrefix="uc" TagName="SideBarAdmin" %>
+
 
 
 <!DOCTYPE html>
@@ -23,9 +25,11 @@
 <body class="home-bg">
     
     <form id="form1" runat="server" class="ui form">
+        
         <div id="wrap">
         <div id="main">
-        <uc:HeaderCtrl runat="server" ID="HeaderCtrl" />
+        <uc:SideBarAdmin runat="server" ID="SideBarAdmin" />
+        <div class="pusher">
         <div class="ui container" id="main-content">
             <asp:MultiView ID="MultiView1" runat="server">
                 <asp:View ID="View1" runat="server">
@@ -45,10 +49,13 @@
             <div class="clearfooter"></div>
         </div>
         </div>
-        <uc:FooterCtrl runat="server" ID="FooterCtrl" />
+          </div>  
+      
+            
     </form>
     <script src="assets/semantic.min.js"></script>
     <script>
+        
         $('.special.cards .image').dimmer({
             on: 'hover'
         });

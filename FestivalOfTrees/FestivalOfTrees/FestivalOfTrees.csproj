@@ -42,6 +42,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=15.1.3.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Users\it3680117\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization" />
@@ -215,14 +219,15 @@
     <Content Include="assets\themes\default\assets\fonts\icons.svg" />
     <Content Include="assets\themes\default\assets\images\flags.png" />
     <Content Include="assets\themes\github\assets\fonts\octicons.svg" />
+    <Content Include="Auction.aspx" />
     <Content Include="DBTestPage.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="PageComponent\FooterCtrl.ascx" />
-    <Content Include="PageComponent\HeaderCtrl.ascx" />
+    <Content Include="PageComponent\SideBarAdmin.ascx" />
+    <Content Include="Profile.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="SingleView.aspx" />
-    <Content Include="Views\AdminDashBoard.ascx" />
     <Content Include="Views\EnterNewItem.ascx" />
     <Content Include="Views\ItemStatusView.ascx" />
     <Content Include="Views\SearchItemUser.ascx" />
@@ -231,6 +236,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auction.aspx.cs">
+      <DependentUpon>Auction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auction.aspx.designer.cs">
+      <DependentUpon>Auction.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controller\EmailToBidderController.cs" />
     <Compile Include="Controller\EnterEditItemController.cs" />
     <Compile Include="Controller\ExportToCsvController.cs" />
@@ -251,6 +263,13 @@
     <Compile Include="Dao\RequestDaoImpl.cs" />
     <Compile Include="Dao\UserDao.cs" />
     <Compile Include="Dao\UserDaoImpl.cs" />
+    <Compile Include="Dashboard.Master.cs">
+      <DependentUpon>Dashboard.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Master.designer.cs">
+      <DependentUpon>Dashboard.Master</DependentUpon>
+    </Compile>
     <Compile Include="DBTestPage.aspx.cs">
       <DependentUpon>DBTestPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -272,6 +291,13 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Menu.Master.cs">
+      <DependentUpon>Menu.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.Master.designer.cs">
+      <DependentUpon>Menu.Master</DependentUpon>
+    </Compile>
     <Compile Include="Model\Auction.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Credentials.cs" />
@@ -286,12 +312,19 @@
     <Compile Include="PageComponent\FooterCtrl.ascx.designer.cs">
       <DependentUpon>FooterCtrl.ascx</DependentUpon>
     </Compile>
-    <Compile Include="PageComponent\HeaderCtrl.ascx.cs">
-      <DependentUpon>HeaderCtrl.ascx</DependentUpon>
+    <Compile Include="PageComponent\SideBarAdmin.ascx.cs">
+      <DependentUpon>SideBarAdmin.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PageComponent\HeaderCtrl.ascx.designer.cs">
-      <DependentUpon>HeaderCtrl.ascx</DependentUpon>
+    <Compile Include="PageComponent\SideBarAdmin.ascx.designer.cs">
+      <DependentUpon>SideBarAdmin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignUp.aspx.cs">
@@ -307,13 +340,6 @@
     </Compile>
     <Compile Include="SingleView.aspx.designer.cs">
       <DependentUpon>SingleView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AdminDashBoard.ascx.cs">
-      <DependentUpon>AdminDashBoard.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\AdminDashBoard.ascx.designer.cs">
-      <DependentUpon>AdminDashBoard.ascx</DependentUpon>
     </Compile>
     <Compile Include="Views\EnterNewItem.ascx.cs">
       <DependentUpon>EnterNewItem.ascx</DependentUpon>
@@ -362,6 +388,8 @@
     <Content Include="assets\themes\github\assets\fonts\octicons-local.ttf" />
     <Content Include="assets\themes\github\assets\fonts\octicons.ttf" />
     <Content Include="assets\themes\github\assets\fonts\octicons.woff" />
+    <Content Include="Menu.Master" />
+    <Content Include="Dashboard.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -75,6 +75,10 @@ namespace FestivalOfTrees.Controller
 
                     rows.Add(newRow);
                 }
+            else
+            {
+                auctionUser = new User();
+            }
             
 
             

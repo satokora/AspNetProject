@@ -7,18 +7,17 @@ using System.Web.UI.WebControls;
 
 namespace FestivalOfTrees
 {
-    public partial class EnterNewItem : System.Web.UI.UserControl
+    public partial class Profile : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        [System.Web.Services.WebMethod]
-        [System.Web.Script.Services.ScriptMethod]
-        public string[] GetCompletionList(string prefixText, int count)
+        protected void BtnGoAuction_Click(object sender, EventArgs e)
         {
-            return null;
+            Response.Redirect("Auction.aspx");
+            // Implement logic to select an auction and retrieve corresponding dataset
         }
     }
 }

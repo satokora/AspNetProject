@@ -7,45 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FestivalOfTrees.PageComponent {
+namespace FestivalOfTrees {
     
     
-    public partial class Header {
+    public partial class Profile {
         
         /// <summary>
-        /// Menu1 control.
+        /// LblUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Menu1;
+        protected global::System.Web.UI.WebControls.Label LblUserName;
         
         /// <summary>
-        /// Menu2 control.
+        /// AuctionList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Menu2;
+        protected global::System.Web.UI.WebControls.DropDownList AuctionList;
         
         /// <summary>
-        /// Menu3 control.
+        /// BtnGoAuction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Menu3;
+        protected global::System.Web.UI.WebControls.LinkButton BtnGoAuction;
         
         /// <summary>
-        /// AdminDash control.
+        /// UserRequestGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton AdminDash;
+        protected global::System.Web.UI.WebControls.GridView UserRequestGrid;
     }
 }

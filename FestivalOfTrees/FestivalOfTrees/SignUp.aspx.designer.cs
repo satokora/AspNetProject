@@ -10,16 +10,7 @@
 namespace FestivalOfTrees {
     
     
-    public partial class SignUp {
-        
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+    public partial class SignUp1 {
         
         /// <summary>
         /// firstName control.
@@ -40,22 +31,22 @@ namespace FestivalOfTrees {
         protected global::System.Web.UI.WebControls.TextBox lastName;
         
         /// <summary>
-        /// address1 control.
+        /// address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox address1;
+        protected global::System.Web.UI.WebControls.TextBox address;
         
         /// <summary>
-        /// address2 control.
+        /// city control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox address2;
+        protected global::System.Web.UI.WebControls.TextBox city;
         
         /// <summary>
         /// DropDownList1 control.
@@ -76,22 +67,22 @@ namespace FestivalOfTrees {
         protected global::System.Web.UI.WebControls.TextBox zipCode;
         
         /// <summary>
-        /// phone control.
+        /// Phone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox phone;
+        protected global::System.Web.UI.WebControls.TextBox Phone;
         
         /// <summary>
-        /// TextBox1 control.
+        /// MobilePhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox MobilePhone;
         
         /// <summary>
         /// checkToText control.

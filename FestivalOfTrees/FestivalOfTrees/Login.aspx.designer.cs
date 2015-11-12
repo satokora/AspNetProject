@@ -10,16 +10,34 @@
 namespace FestivalOfTrees {
     
     
-    public partial class Login {
+    public partial class Login1 {
         
         /// <summary>
-        /// form1 control.
+        /// MessagePanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Panel MessagePanel;
+        
+        /// <summary>
+        /// LblMessageTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblMessageTitle;
+        
+        /// <summary>
+        /// LblDetailMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblDetailMessage;
         
         /// <summary>
         /// userEmailTxt control.

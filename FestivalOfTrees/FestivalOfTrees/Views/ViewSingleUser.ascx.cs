@@ -27,12 +27,16 @@ namespace FestivalOfTrees.Views
                     LblCity.Text =  singleUser.City;
                     LblState.Text = singleUser.State;
                     LblHomePhone.Text = singleUser.Phone;
-                    LblMobilePhone.Text = singleUser.Phone;
+                    LblMobilePhone.Text = formatPhoneNum(singleUser.Phone);
                     lblZip.Text = singleUser.Zip.ToString();
                     LblEmail.Text = singleUser.Email;
                 }
                 
             }
+        }
+        private string formatPhoneNum(string phoneNum)
+        {
+            return "(" + phoneNum.Substring(0, 3) + ")" + phoneNum.Substring(3, 3) + "-" + phoneNum.Substring(6);
         }
     }
 }

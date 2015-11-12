@@ -2,6 +2,10 @@
     Cross-page styles
 */
 
+.pusher{
+    margin-left: 210px;
+}
+
 .ui.header>img{
     width: 300px;
 }

@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Menu.master.cs" Inherits="FestivalOfTrees.Menu" %>
+
+<%@ Register Src="~/PageComponent/SideBarAdmin.ascx" TagPrefix="uc1" TagName="SideBarAdmin" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    
+    <title>Welcome Home</title>
+    <link href="assets/semantic.min.css" rel="stylesheet" />
+    <link href="assets/custom_style.css" rel="stylesheet" />
+    <script src="assets/jquery-1.11.3.min.js"></script>
+    <script src="assets/semantic.min.js"></script>
+    <link href="assets/stickyfooter.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="home-bg">
+    <form id="form1" runat="server" class="ui form">
+        <div id="wrap">
+            <div id="main">
+                <asp:MultiView ID="MenuMultiView" runat="server">
+                    <asp:View ID="MenuBarForAdmin" runat="server">
+                        <uc1:SideBarAdmin runat="server" ID="SideBarAdmin" />
+                    </asp:View>
+                    <asp:View ID="MenuBarForOther" runat="server"></asp:View>
+                </asp:MultiView>
+                <div class="pusher">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="assets/semantic.min.js"></script>
+    <script>
+        
+        $('.special.cards .image').dimmer({
+            on: 'hover'
+        });
+    </script>
+</body>
+</html>
