@@ -18,31 +18,24 @@
                             <label>Value</label>
                             <div class="ui labeled input">
                               <div class="ui label">$</div>
-                                <asp:TextBox ID="TextBox1" runat="server" placeholder="Amount"></asp:TextBox>
+                                <asp:TextBox ID="TxtValPrice" runat="server" placeholder="Amount"></asp:TextBox>
                             </div>
                         </div>
                         <div class="field">
-                            <%--<label>Angel Price</label>
+                            <label>Minimum Bid</label>
                             <div class="ui labeled input">
                               <div class="ui label">$</div>
-                                <asp:TextBox ID="TextBox2" runat="server" placeholder="Amount"></asp:TextBox>
-                            </div>--%>
-                            <div class="ui tiny horizontal statistic">
-                              <div class="value">
-                                  $<asp:Label ID="LblMinBid" runat="server">0</asp:Label>
-                              </div>
-                              <div class="label">
-                                Minimum Bid
-                              </div>
+                                <asp:TextBox ID="TxtMinBid" runat="server" placeholder="Amount"></asp:TextBox>
                             </div>
-                            <div class="ui tiny horizontal statistic">
-                              <div class="value">
-                                $<asp:Label ID="LblAngelPrice" runat="server">0</asp:Label>
-                              </div>
-                              <div class="label">
-                                Angel Price
-                              </div>
+                           
+                        </div>
+                        <div class="field">
+                            <label>Angel Price</label>
+                            <div class="ui labeled input">
+                              <div class="ui label">$</div>
+                                <asp:TextBox ID="TxtAngPrice" runat="server" placeholder="Amount"></asp:TextBox>
                             </div>
+                           
                         </div>
                     </div>
                     <div class="six wide column">
@@ -50,8 +43,7 @@
                             <img src="../assets/image/noimage.png" alt="No Image" class="upload-image" />
                         </div>
                         <div>
-                            <input type="file" id="File1">
-                            
+                            <input type="file" id="File1">                            
                         </div>
                    </div>
                 </div>

@@ -2,7 +2,15 @@
 
 <%@ Register Src="~/Views/EnterNewItem.ascx" TagPrefix="uc" TagName="EnterNewItem" %>
 <%@ Register Src="~/Views/ItemStatusView.ascx" TagPrefix="uc" TagName="ItemStatusView" %>
-<%@ Register Src="~/Views/SearchItemUser.ascx" TagPrefix="uc" TagName="SearchItemUser" %>
+
+<%@ Register Src="~/Views/ViewByCategory.ascx" TagPrefix="uc" TagName="ViewByCategory" %>
+<%@ Register Src="~/Views/SearchItems.ascx" TagPrefix="uc" TagName="SearchItems" %>
+<%@ Register Src="~/Views/SearchUser.ascx" TagPrefix="uc" TagName="SearchUser" %>
+<%@ Register Src="~/Views/EnterCategory.ascx" TagPrefix="uc" TagName="EnterCategory" %>
+
+
+
+
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -14,19 +22,19 @@
                 <uc:ItemStatusView runat="server" id="ItemStatusView" />
             </asp:View>
             <asp:View ID="View2" runat="server">
-                <uc:EnterNewItem runat="server" id="EnterNewItem" />
+                <uc:ViewByCategory runat="server" id="ViewByCategory" />               
             </asp:View>
             <asp:View ID="View3" runat="server">
-                <%--<uc:SearchItemUser runat="server" id="SearchItemUser" />--%>
+                <uc:SearchItems runat="server" id="SearchItems" />
             </asp:View>
             <asp:View ID="View4" runat="server">
-                <%--<uc:SearchItemUser runat="server" id="SearchItemUser" />--%>
+                <uc:SearchUser runat="server" ID="SearchUser" />
             </asp:View>
-            <asp:View ID="View5" runat="server">
-                <uc:SearchItemUser runat="server" id="SearchItemUser" />
+            <asp:View ID="View5" runat="server">              
+                <uc:EnterNewItem runat="server" id="EnterNewItem" />
             </asp:View>
             <asp:View ID="View6" runat="server">
-                <%--<uc:SearchItemUser runat="server" id="SearchItemUser" />--%>
+                <uc:EnterCategory runat="server" id="EnterCategory" />
             </asp:View>
             <asp:View ID="View7" runat="server">
                 <%--<uc:SearchItemUser runat="server" id="SearchItemUser" />--%>

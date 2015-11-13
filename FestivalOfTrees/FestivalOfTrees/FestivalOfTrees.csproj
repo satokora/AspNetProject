@@ -225,12 +225,16 @@
     <Content Include="Login.aspx" />
     <Content Include="PageComponent\FooterCtrl.ascx" />
     <Content Include="PageComponent\SideBarAdmin.ascx" />
+    <Content Include="PageComponent\SideBarDesigner.ascx" />
     <Content Include="Profile.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="SingleView.aspx" />
+    <Content Include="Views\EnterCategory.ascx" />
     <Content Include="Views\EnterNewItem.ascx" />
     <Content Include="Views\ItemStatusView.ascx" />
-    <Content Include="Views\SearchItemUser.ascx" />
+    <Content Include="Views\SearchItems.ascx" />
+    <Content Include="Views\SearchUser.ascx" />
+    <Content Include="Views\ViewByCategory.ascx" />
     <Content Include="Views\ViewSingleItem.ascx" />
     <Content Include="Views\ViewSingleUser.ascx" />
     <Content Include="Web.config" />
@@ -243,9 +247,12 @@
     <Compile Include="Auction.aspx.designer.cs">
       <DependentUpon>Auction.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controller\AuctionCtrl.cs" />
+    <Compile Include="Controller\CategoryCtrl.cs" />
     <Compile Include="Controller\EmailToBidderController.cs" />
     <Compile Include="Controller\EnterEditItemController.cs" />
     <Compile Include="Controller\ExportToCsvController.cs" />
+    <Compile Include="Controller\ItemCtrl.cs" />
     <Compile Include="Controller\ItemStatusViewController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\PrintBidSheetController.cs" />
@@ -254,6 +261,7 @@
     <Compile Include="Controller\SearchUserController.cs" />
     <Compile Include="Controller\SignUpController.cs" />
     <Compile Include="Controller\TextCallController.cs" />
+    <Compile Include="Controller\UserCtrl.cs" />
     <Compile Include="Dao\CategoryDao.cs" />
     <Compile Include="Dao\CategoryDaoImpl.cs" />
     <Compile Include="Dao\DBHelper.cs" />
@@ -319,6 +327,13 @@
     <Compile Include="PageComponent\SideBarAdmin.ascx.designer.cs">
       <DependentUpon>SideBarAdmin.ascx</DependentUpon>
     </Compile>
+    <Compile Include="PageComponent\SideBarDesigner.ascx.cs">
+      <DependentUpon>SideBarDesigner.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageComponent\SideBarDesigner.ascx.designer.cs">
+      <DependentUpon>SideBarDesigner.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -341,6 +356,13 @@
     <Compile Include="SingleView.aspx.designer.cs">
       <DependentUpon>SingleView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\EnterCategory.ascx.cs">
+      <DependentUpon>EnterCategory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EnterCategory.ascx.designer.cs">
+      <DependentUpon>EnterCategory.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Views\EnterNewItem.ascx.cs">
       <DependentUpon>EnterNewItem.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -355,12 +377,26 @@
     <Compile Include="Views\ItemStatusView.ascx.designer.cs">
       <DependentUpon>ItemStatusView.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Views\SearchItemUser.ascx.cs">
-      <DependentUpon>SearchItemUser.ascx</DependentUpon>
+    <Compile Include="Views\SearchItems.ascx.cs">
+      <DependentUpon>SearchItems.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\SearchItemUser.ascx.designer.cs">
-      <DependentUpon>SearchItemUser.ascx</DependentUpon>
+    <Compile Include="Views\SearchItems.ascx.designer.cs">
+      <DependentUpon>SearchItems.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchUser.ascx.cs">
+      <DependentUpon>SearchUser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SearchUser.ascx.designer.cs">
+      <DependentUpon>SearchUser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewByCategory.ascx.cs">
+      <DependentUpon>ViewByCategory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ViewByCategory.ascx.designer.cs">
+      <DependentUpon>ViewByCategory.ascx</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewSingleItem.ascx.cs">
       <DependentUpon>ViewSingleItem.ascx</DependentUpon>

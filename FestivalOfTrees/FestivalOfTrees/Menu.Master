@@ -1,7 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Menu.master.cs" Inherits="FestivalOfTrees.Menu" %>
 
 <%@ Register Src="~/PageComponent/SideBarAdmin.ascx" TagPrefix="uc1" TagName="SideBarAdmin" %>
-
+<%@ Register Src="~/PageComponent/SideBarDesigner.ascx" TagPrefix="uc1" TagName="SideBarDesigner" %>
 
 <!DOCTYPE html>
 
@@ -25,7 +25,9 @@
                     <asp:View ID="MenuBarForAdmin" runat="server">
                         <uc1:SideBarAdmin runat="server" ID="SideBarAdmin" />
                     </asp:View>
-                    <asp:View ID="MenuBarForOther" runat="server"></asp:View>
+                    <asp:View ID="MenuBarForOther" runat="server">
+                        <uc1:SideBarDesigner runat="server" id="SideBarDesigner" />
+                    </asp:View>
                 </asp:MultiView>
                 <div class="pusher">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

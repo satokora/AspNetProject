@@ -7,38 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FestivalOfTrees.Views {
+namespace FestivalOfTrees {
     
     
-    public partial class SearchItemUser
-    {
+    public partial class Auction {
         
         /// <summary>
-        /// ItemBtn control.
+        /// MainContentMultiView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ItemBtn;
-        
-        /// <summary>
-        /// Buyers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Buyers;
-        
-        /// <summary>
-        /// SearchView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView SearchView;
+        protected global::System.Web.UI.WebControls.MultiView MainContentMultiView;
         
         /// <summary>
         /// View1 control.
@@ -50,31 +31,13 @@ namespace FestivalOfTrees.Views {
         protected global::System.Web.UI.WebControls.View View1;
         
         /// <summary>
-        /// LastNameBox control.
+        /// ItemStatusView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox LastNameBox;
-        
-        /// <summary>
-        /// PhoneNumBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PhoneNumBox;
-        
-        /// <summary>
-        /// SearchBuyer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SearchBuyer;
+        protected global::FestivalOfTrees.Views.ItemStatusView ItemStatusView;
         
         /// <summary>
         /// View2 control.
@@ -86,58 +49,13 @@ namespace FestivalOfTrees.Views {
         protected global::System.Web.UI.WebControls.View View2;
         
         /// <summary>
-        /// ItemIDBox control.
+        /// ViewByCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ItemIDBox;
-        
-        /// <summary>
-        /// CatList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CatList;
-        
-        /// <summary>
-        /// SearchItem control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SearchItem;
-        
-        /// <summary>
-        /// TableViewBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton TableViewBtn;
-        
-        /// <summary>
-        /// CardViewIcon control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton CardViewIcon;
-        
-        /// <summary>
-        /// SearchResultView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView SearchResultView;
+        protected global::FestivalOfTrees.Views.ViewByCategory ViewByCategory;
         
         /// <summary>
         /// View3 control.
@@ -149,13 +67,13 @@ namespace FestivalOfTrees.Views {
         protected global::System.Web.UI.WebControls.View View3;
         
         /// <summary>
-        /// Table1 control.
+        /// SearchItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
+        protected global::FestivalOfTrees.Views.SearchItems SearchItems;
         
         /// <summary>
         /// View4 control.
@@ -165,5 +83,59 @@ namespace FestivalOfTrees.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View View4;
+        
+        /// <summary>
+        /// SearchUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::FestivalOfTrees.Views.SearchItemUser SearchUser;
+        
+        /// <summary>
+        /// View5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View View5;
+        
+        /// <summary>
+        /// EnterNewItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::FestivalOfTrees.EnterNewItem EnterNewItem;
+        
+        /// <summary>
+        /// View6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View View6;
+        
+        /// <summary>
+        /// EnterCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::FestivalOfTrees.Views.EnterCategory EnterCategory;
+        
+        /// <summary>
+        /// View7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View View7;
     }
 }
