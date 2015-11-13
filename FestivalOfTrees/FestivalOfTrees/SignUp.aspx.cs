@@ -1,18 +1,19 @@
-﻿using FestivalOfTrees.Controller;
-using FestivalOfTrees.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using FestivalOfTrees.Controller;
+using FestivalOfTrees.Model;
 
 namespace FestivalOfTrees
 {
-    public partial class SignUp : System.Web.UI.Page
+    public partial class SignUp1 : System.Web.UI.Page
     {
-        private User toAdd;
-        private SignUpController signUp; 
+
+            private User toAdd;
+        private SignUpController signUp;
         protected void Page_Load(object sender, EventArgs e)
         {
             signUp = new SignUpController();
@@ -20,7 +21,7 @@ namespace FestivalOfTrees
 
         protected void SignUpBtn_Click(object sender, EventArgs e)
         {
-            
+
             string role = Request.QueryString["role"];
 
             bool ADMIN = false;
@@ -30,8 +31,8 @@ namespace FestivalOfTrees
             string EMAIL = email.Text;
             string FNAME = firstName.Text;
             string LNAME = lastName.Text;
-            string ADDRESS = address1.Text;
-            string CITY = address2.Text;
+            // string ADDRESS = address1.Text;
+            // string CITY = address2.Text;
             string STATE = DropDownList1.SelectedValue;
             int ZIP = Convert.ToInt32(zipCode.Text);
 
@@ -50,15 +51,17 @@ namespace FestivalOfTrees
                 DONOR = true;
             }
 
-            string HPHONE = phone.Text;
-            string MPHONE = TextBox1.Text;
+            // string HPHONE = phone.Text;
+            // string MPHONE = TextBox1.Text;
             bool TEXT = checkToText.Checked;
 
-            toAdd = new User("id", EMAIL, FNAME, LNAME, ADDRESS, CITY, STATE, ZIP, ADMIN, COMMITTEE, DONOR, MPHONE, TEXT);
+            // ID is produced in database
+            // toAdd = new User(-1, EMAIL, FNAME, LNAME, ADDRESS, CITY, STATE, ZIP, ADMIN, COMMITTEE, DONOR, MPHONE, TEXT);
 
             if (signUp.addUser(toAdd))
             {
                 //Do we wnat to add a message here letting user know request was submitted successfully?
+                Response.Redirect("Login.aspx?signup=1");
             }
             else
             {
@@ -70,4 +73,5 @@ namespace FestivalOfTrees
             signUp.addUserCredentials(email.Text, password1.Text);
         }
     }
+
 }

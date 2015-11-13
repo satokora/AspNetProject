@@ -1,54 +1,31 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SearchItemUser.ascx.cs" Inherits="FestivalOfTrees.Views.SearchItemUser" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ViewByCategory.ascx.cs" Inherits="FestivalOfTrees.Views.ViewByCategory" %>
 <div class="ui conatiner">
     <div class="ui stacked segment" style="min-height: 250px">
-        <h3 style="text-align:center">Search for Items/Buyers</h3>
-        <div class="ui buttons">
-            <asp:Button ID="ItemBtn" runat="server" Text="Items" CssClass="ui red button" OnClick="ItemBtn_Click" />
-            <div class="or"></div>
-            <asp:Button ID="Buyers" runat="server" Text="Buyers" CssClass="ui smoky-brown button" OnClick="Buyers_Click"  />
-        </div>
+        <h3 style="text-align:center">View Items By Category</h3>
             
-         <asp:MultiView ID="SearchView" runat="server">
-            <asp:View ID="View1" runat="server">
-                <div class="two fields">
-                    <div class="field">
-                        <label class="account">Buyer's last name</label>
-                        <asp:TextBox ID="LastNameBox" runat="server"></asp:TextBox>
-                    </div>
-                    <div class="field">
-                        <label class="account">Buyer's phone #</label>
-                        <asp:TextBox ID="PhoneNumBox" runat="server"></asp:TextBox>
-                    </div>
-                </div>
-                <asp:Button ID="SearchBuyer" runat="server" Text="Search for buyers" CssClass="ui secondary button" OnClick="SearchBuyer_Click" />
-            </asp:View>
-            <asp:View ID="View2" runat="server">
-                <div class="two fields">
-                    <div class="field">
-                        <label class="account">Item ID</label>
-                        <asp:TextBox ID="ItemIDBox" runat="server"></asp:TextBox>
-                    </div>
+         
+                <div class="two fields">                 
                     <div class="field">
                         <label class="account">Category</label>
                         <asp:DropDownList ID="CatList" runat="server" CssClass="ui dropdown">
                             <asp:ListItem Value="" Text="Select Category" Selected="True"></asp:ListItem>
                         </asp:DropDownList>
                     </div>
+                    <div class="field">
+                    </div>
                 </div>
-                <asp:Button ID="SearchItem" runat="server" Text="Search for Items" CssClass="ui secondary button" OnClick="SearchItem_Click" />
-            </asp:View>
-           
-        </asp:MultiView>
+                <asp:Button ID="BtnGetItemsByCategory" runat="server" Text="Search for Items" CssClass="ui secondary button"/>
+
         <br />
-        <div class="ui icon right floated buttons">
+        <%--<div class="ui icon right floated buttons">
             <asp:LinkButton ID="TableViewBtn" runat="server" CssClass="ui button" OnClick="TableViewBtn_Click"><i class='table icon'></i></asp:LinkButton>
             <asp:LinkButton ID="CardViewIcon" runat="server" CssClass="ui button" OnClick="CardViewBtn_Click"><i class='block layout icon'></i></asp:LinkButton>
-        </div>
-        <asp:MultiView ID="SearchResultView" runat="server">
-            <asp:View ID="View3" runat="server">
-                <asp:Table ID="Table1" runat="server" CssClass="ui red table center aligned">
-                </asp:Table>
-            </asp:View>
+        </div>--%>
+        <%--<asp:MultiView ID="SearchResultView" runat="server">
+            <asp:View ID="View3" runat="server">--%>
+
+            <asp:GridView ID="GridViewItemsByCategory" runat="server" CssClass="ui red table center aligned"></asp:GridView>
+            <%--</asp:View>
             <asp:View ID="View4" runat="server">
                 <div class="ui special cards">
                   <div class="card">
@@ -153,7 +130,6 @@
                   </div>
                 </div>
             </asp:View>
-        </asp:MultiView>
+        </asp:MultiView>--%>
     </div>
 </div>
-

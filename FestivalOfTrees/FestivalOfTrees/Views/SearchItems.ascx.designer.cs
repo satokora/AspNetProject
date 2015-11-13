@@ -7,63 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FestivalOfTrees {
+namespace FestivalOfTrees.Views {
     
     
-    public partial class Login1 {
+    public partial class SearchItems {
         
         /// <summary>
-        /// MessagePanel control.
+        /// ItemIDBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel MessagePanel;
+        protected global::System.Web.UI.WebControls.TextBox ItemIDBox;
         
         /// <summary>
-        /// LblMessageTitle control.
+        /// BtnGetItemsByItemId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMessageTitle;
+        protected global::System.Web.UI.WebControls.Button BtnGetItemsByItemId;
         
         /// <summary>
-        /// LblDetailMessage control.
+        /// GridViewItemsByItemId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblDetailMessage;
+        protected global::System.Web.UI.WebControls.GridView GridViewItemsByItemId;
         
         /// <summary>
-        /// userEmailTxt control.
+        /// BtnPrintInvoices control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox userEmailTxt;
-        
-        /// <summary>
-        /// password control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox password;
-        
-        /// <summary>
-        /// LoginBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LoginBtn;
+        protected global::System.Web.UI.WebControls.LinkButton BtnPrintInvoices;
     }
 }

@@ -2,6 +2,10 @@
     Cross-page styles
 */
 
+.pusher{
+    margin-left: 210px;
+}
+
 .ui.header>img{
     width: 300px;
 }
@@ -11,7 +15,7 @@
 }
 
 #main-content{
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 h3{

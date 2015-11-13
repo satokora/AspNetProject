@@ -7,54 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FestivalOfTrees {
+namespace FestivalOfTrees.Views {
     
     
-    public partial class SingleView1 {
+    public partial class ViewByCategory {
         
         /// <summary>
-        /// MultiView1 control.
+        /// CatList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MultiView1;
+        protected global::System.Web.UI.WebControls.DropDownList CatList;
         
         /// <summary>
-        /// View1 control.
+        /// BtnGetItemsByCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View View1;
+        protected global::System.Web.UI.WebControls.Button BtnGetItemsByCategory;
         
         /// <summary>
-        /// ViewSingleItem control.
+        /// GridViewItemsByCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FestivalOfTrees.Views.ViewSingleItem ViewSingleItem;
-        
-        /// <summary>
-        /// View2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View View2;
-        
-        /// <summary>
-        /// ViewSingleUser control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::FestivalOfTrees.Views.ViewSingleUser ViewSingleUser;
+        protected global::System.Web.UI.WebControls.GridView GridViewItemsByCategory;
     }
 }

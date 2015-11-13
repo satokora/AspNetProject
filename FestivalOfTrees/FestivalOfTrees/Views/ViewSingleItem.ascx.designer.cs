@@ -31,6 +31,15 @@ namespace FestivalOfTrees.Views {
         protected global::System.Web.UI.WebControls.Label ItemName;
         
         /// <summary>
+        /// LblItemStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblItemStatus;
+        
+        /// <summary>
         /// lblCurrentPrice control.
         /// </summary>
         /// <remarks>
@@ -112,13 +121,13 @@ namespace FestivalOfTrees.Views {
         protected global::System.Web.UI.WebControls.HyperLink BuyerEmail;
         
         /// <summary>
-        /// LinkButton1 control.
+        /// BtnAddEditBuyer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        protected global::System.Web.UI.WebControls.LinkButton BtnAddEditBuyer;
         
         /// <summary>
         /// BtnPrintBid control.

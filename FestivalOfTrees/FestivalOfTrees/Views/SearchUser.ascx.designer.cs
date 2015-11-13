@@ -7,45 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FestivalOfTrees.PageComponent {
+namespace FestivalOfTrees.Views {
     
     
-    public partial class Header {
+    public partial class SearchItemUser {
         
         /// <summary>
-        /// Menu1 control.
+        /// LastNameBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Menu1;
+        protected global::System.Web.UI.WebControls.TextBox LastNameBox;
         
         /// <summary>
-        /// Menu2 control.
+        /// PhoneNumBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Menu2;
+        protected global::System.Web.UI.WebControls.TextBox PhoneNumBox;
         
         /// <summary>
-        /// Menu3 control.
+        /// SearchBuyer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Menu3;
+        protected global::System.Web.UI.WebControls.Button SearchBuyer;
         
         /// <summary>
-        /// AdminDash control.
+        /// GridViewUsers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton AdminDash;
+        protected global::System.Web.UI.WebControls.GridView GridViewUsers;
+        
+        /// <summary>
+        /// BtnPrintInvoices control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton BtnPrintInvoices;
     }
 }

@@ -112,6 +112,15 @@ namespace FestivalOfTrees.Views {
         protected global::System.Web.UI.WebControls.Label LblEmail;
         
         /// <summary>
+        /// TableInvoice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table TableInvoice;
+        
+        /// <summary>
         /// BtnUpdateStatus control.
         /// </summary>
         /// <remarks>

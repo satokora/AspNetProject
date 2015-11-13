@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.master.cs" Inherits="FestivalOfTrees.Dashboard" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Welcome to Festival Of Trees</title>
+    <link href="assets/semantic.min.css" rel="stylesheet" />
+    <link href="assets/custom_style.css" rel="stylesheet" />
+    <script src="assets/jquery-1.11.3.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" class="ui form">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <script src="assets/semantic.min.js"></script>
+    <script>
+  $(document)
+    .ready(function() {
+      $('.ui.form')
+        .form({
+          fields: {
+            email: {
+                identifier: 'ContentPlaceHolder1_userEmailTxt',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : 'Please enter your e-mail'
+                },
+                {
+                    type: 'email',
+                  prompt : 'Please enter a valid e-mail'
+                }
+              ]
+            },
+            password: {
+                identifier: 'ContentPlaceHolder1_password',
+              rules: [
+                {
+                  type   : 'empty',
+                  prompt : 'Please enter your password'
+                },
+                {
+                  type   : 'length[6]',
+                  prompt : 'Your password must be at least 6 characters'
+                }
+              ]
+            }
+          }
+        })
+        ;
+      $("#sign-up a").click(function () {
+          $('.ui.modal')
+          .modal('show')
+          ;
+      });
+        $('.vertical.fluid.pointing.menu .item')
+        .tab()
+        ;
+    })
+  ;
+    </script>
+</body>
+</html>

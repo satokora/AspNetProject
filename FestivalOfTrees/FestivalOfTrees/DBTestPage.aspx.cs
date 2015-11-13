@@ -26,20 +26,20 @@ namespace FestivalOfTrees
                 //list.ForEach(printItem );
                 //Response.Write(item.ToString());
 
-                Item i = new Item()
-                {
-                    CategoryID = "CP",
-                    UserID = 100,
-                    ItemName = "TestItem",
-                    ItemValue = 100,
-                    AngelPrice = 75,
-                    MinBid = 50,
-                    Paid = false
-                };
+                //Item i = new Item()
+                //{
+                //    CategoryID = "CP",
+                //    UserID = 100,
+                //    ItemName = "TestItem",
+                //    ItemValue = 100,
+                //    AngelPrice = 75,
+                //    MinBid = 50,
+                //    Paid = false
+                //};
 
 
-                int newID = dao.createItem(i);
-                Response.Write(i.ItemID);
+                //int newID = dao.createItem(i);
+                //Response.Write(i.ItemID);
 
             }
         }

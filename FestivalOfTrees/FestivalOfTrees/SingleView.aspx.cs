@@ -5,13 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace FestivalOfTrees
 {
-    public partial class SingleView : System.Web.UI.Page
+    public partial class SingleView1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["item"] != null)
+            if (Request.QueryString["itemId"] != null)
             {
                 MultiView1.ActiveViewIndex = 0;
             }
@@ -20,7 +21,5 @@ namespace FestivalOfTrees
                 MultiView1.ActiveViewIndex = 1;
             }
         }
-
-        
     }
 }

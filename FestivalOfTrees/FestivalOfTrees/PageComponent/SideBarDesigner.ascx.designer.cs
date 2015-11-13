@@ -7,72 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FestivalOfTrees.Views {
+namespace FestivalOfTrees.PageComponent {
     
     
-    public partial class ItemStatusView {
+    public partial class SideBarDesigner {
         
         /// <summary>
-        /// StatusList control.
+        /// BtnViewItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList StatusList;
+        protected global::System.Web.UI.WebControls.LinkButton BtnViewItems;
         
         /// <summary>
-        /// BtnExportCSV control.
+        /// BtnEnterItem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BtnExportCSV;
+        protected global::System.Web.UI.WebControls.LinkButton BtnEnterItem;
         
         /// <summary>
-        /// ItemStatusTable control.
+        /// BtnViewByCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table ItemStatusTable;
+        protected global::System.Web.UI.WebControls.LinkButton BtnViewByCategory;
         
         /// <summary>
-        /// SelectAll control.
+        /// BtnEnterCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox SelectAll;
+        protected global::System.Web.UI.WebControls.LinkButton BtnEnterCategory;
         
         /// <summary>
-        /// CheckBox1 control.
+        /// BtnSearchItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        protected global::System.Web.UI.WebControls.LinkButton BtnSearchItems;
         
         /// <summary>
-        /// CheckBox2 control.
+        /// BtnSearchUsers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
+        protected global::System.Web.UI.WebControls.LinkButton BtnSearchUsers;
         
         /// <summary>
-        /// CheckBox3 control.
+        /// BtnCloseAuction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox3;
+        protected global::System.Web.UI.WebControls.LinkButton BtnCloseAuction;
+        
+        /// <summary>
+        /// BtnLogOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton BtnLogOut;
     }
 }

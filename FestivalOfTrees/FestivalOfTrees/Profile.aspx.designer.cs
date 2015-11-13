@@ -10,60 +10,42 @@
 namespace FestivalOfTrees {
     
     
-    public partial class Login1 {
+    public partial class Profile {
         
         /// <summary>
-        /// MessagePanel control.
+        /// LblUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel MessagePanel;
+        protected global::System.Web.UI.WebControls.Label LblUserName;
         
         /// <summary>
-        /// LblMessageTitle control.
+        /// AuctionList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMessageTitle;
+        protected global::System.Web.UI.WebControls.DropDownList AuctionList;
         
         /// <summary>
-        /// LblDetailMessage control.
+        /// BtnGoAuction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblDetailMessage;
+        protected global::System.Web.UI.WebControls.LinkButton BtnGoAuction;
         
         /// <summary>
-        /// userEmailTxt control.
+        /// UserRequestGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox userEmailTxt;
-        
-        /// <summary>
-        /// password control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox password;
-        
-        /// <summary>
-        /// LoginBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LoginBtn;
+        protected global::System.Web.UI.WebControls.GridView UserRequestGrid;
     }
 }

@@ -10,69 +10,96 @@
 namespace FestivalOfTrees.Views {
     
     
-    public partial class ItemStatusView {
+    public partial class EnterCategory {
         
         /// <summary>
-        /// StatusList control.
+        /// LblTitleItemPage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList StatusList;
+        protected global::System.Web.UI.WebControls.Label LblTitleItemPage;
         
         /// <summary>
-        /// BtnExportCSV control.
+        /// AllCatGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BtnExportCSV;
+        protected global::System.Web.UI.WebControls.GridView AllCatGridView;
         
         /// <summary>
-        /// ItemStatusTable control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table ItemStatusTable;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// SelectAll control.
+        /// TxtNewCatId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox SelectAll;
+        protected global::System.Web.UI.WebControls.TextBox TxtNewCatId;
         
         /// <summary>
-        /// CheckBox1 control.
+        /// TxtNewCatName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        protected global::System.Web.UI.WebControls.TextBox TxtNewCatName;
         
         /// <summary>
-        /// CheckBox2 control.
+        /// ChkSponsored control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
+        protected global::System.Web.UI.WebControls.CheckBox ChkSponsored;
         
         /// <summary>
-        /// CheckBox3 control.
+        /// TxtSponsorName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox3;
+        protected global::System.Web.UI.WebControls.TextBox TxtSponsorName;
+        
+        /// <summary>
+        /// ChkSubCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox ChkSubCategory;
+        
+        /// <summary>
+        /// ParentCatList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ParentCatList;
+        
+        /// <summary>
+        /// BtnAddCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnAddCategory;
     }
 }
