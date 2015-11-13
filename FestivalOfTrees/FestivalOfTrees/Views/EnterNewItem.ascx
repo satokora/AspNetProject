@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="EnterNewItem.ascx.cs" Inherits="FestivalOfTrees.EnterNewItem" %>
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%--<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>--%>
 
 <div class="ui middle aligned center aligned grid">
     <div class="column"  style="max-width:800px;">
@@ -53,7 +53,7 @@
                         <label>Donor/Designer</label>
                         <div class="ui action input">
                             <asp:TextBox ID="DonorName" runat="server" placeholder="Search..." ></asp:TextBox>
-                            <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender1" runat="server" TargetControlID="DonorName" ServiceMethod="GetCompletionList"></ajaxToolkit:AutoCompleteExtender>
+                            <%--<ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender1" runat="server" TargetControlID="DonorName" ServiceMethod="GetCompletionList"></ajaxToolkit:AutoCompleteExtender>--%>
                             <asp:Button ID="SearchDonor" runat="server" Text="Search" CssClass="ui red button" />
                         </div>
                     </div>

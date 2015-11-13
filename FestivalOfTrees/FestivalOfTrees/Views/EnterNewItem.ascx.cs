@@ -16,11 +16,11 @@ namespace FestivalOfTrees
             
         }
 
-        [System.Web.Services.WebMethod]
-        [System.Web.Script.Services.ScriptMethod]
-        public string[] GetCompletionList(string prefixText, int count)
-        {
-            return null;
-        }
+        //[System.Web.Services.WebMethod]
+        //[System.Web.Script.Services.ScriptMethod]
+        //public string[] GetCompletionList(string prefixText, int count)
+        //{
+        //    return null;
+        //}
     }
 }
