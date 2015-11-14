@@ -26,29 +26,19 @@ namespace FestivalOfTrees.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //NewgvColumnField ngcf = new NewgvColumnField();
-            //DataControlField dcf = ngcf.InsertNewColumn();
-            //dcf.HeaderText = "THIS IS THE NEW COLUMN";
-            //dcf.Visible = true;
-            //dcf.ShowHeader = true;
-
-            //GridViewItemsByItemId.Columns.Insert(0, dcf);
-            //ItemsWithCatNameTableAdapters.CategoryItemsTableAdapter itemTableAdaptor = new ItemsWithCatNameTableAdapters.CategoryItemsTableAdapter();
-            //GridViewItemsByItemId.DataSource = itemTableAdaptor.GetData();
             
-            //GridViewItemsByItemId.DataBind();
-            //BoundField test = new BoundField();
-            //test.DataField = "New DATAfield Name";
-            //test.HeaderText = "New Header";
-            //GridViewItemsByItemId.Columns.Add(test);
         }
 
         protected void BtnGetItemsByItemId_Click(object sender, EventArgs e)
         {
-            //ItemsTableAdapters.CategoryItemsTableAdapter itemTableAdaptor = new ItemsTableAdapters.CategoryItemsTableAdapter();
-            //GridViewItemsByItemId.DataSource = itemTableAdaptor.GetDataByKey("%" + ItemIDBox.Text + "%");
-            //GridViewItemsByItemId.DataBind();
+            
         }
 
+        protected void GridViewItemsByItemId_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            GridViewRow row = GridViewItemsByItemId.SelectedRow;
+            Response.Redirect("SingleView.aspx?itemId=" + row.Cells[3].Text);
+        }
     }
 }

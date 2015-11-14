@@ -18,7 +18,7 @@
         <br />
         
 
-            <asp:GridView ID="GridViewItemsByItemId" runat="server" CssClass="ui red table center aligned" AutoGenerateColumns="False" DataKeyNames="ITEMID" DataSourceID="SqlDataSource1" style="margin-right: 32px">
+            <asp:GridView ID="GridViewItemsByItemId" runat="server" CssClass="ui red table center aligned" AutoGenerateColumns="False" DataKeyNames="ITEMID" DataSourceID="SqlDataSource1" style="margin-right: 32px" AllowSorting="True" OnSelectedIndexChanged="GridViewItemsByItemId_SelectedIndexChanged">
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" />
                     <asp:TemplateField>
@@ -45,6 +45,7 @@
                    <asp:ControlParameter ControlID="ItemIDBox" Name="KEY" PropertyName="Text" />
                </SelectParameters>
         </asp:SqlDataSource>
+           <br />
            <asp:LinkButton ID="BtnPrintInvoices" runat="server" CssClass="ui red button"><i class="print icon"></i>Print Bid Sheets</asp:LinkButton>
     </div>
 </div>

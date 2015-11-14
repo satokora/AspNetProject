@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FestivalOfTrees.Controller;
+using FestivalOfTrees.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,7 +16,9 @@ namespace FestivalOfTrees
         {
             if (Request.QueryString["itemId"] != null)
             {
+                
                 MultiView1.ActiveViewIndex = 0;
+
             }
             else if (Request.QueryString["userId"] != null)
             {

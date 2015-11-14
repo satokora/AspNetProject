@@ -257,7 +257,7 @@
     <Compile Include="Controller\EmailToBidderController.cs" />
     <Compile Include="Controller\EnterEditItemController.cs" />
     <Compile Include="Controller\ExportToCsvController.cs" />
-    <Compile Include="Controller\ItemCtrl.cs" />
+    <Compile Include="Controller\ItemController.cs" />
     <Compile Include="Controller\ItemStatusViewController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\PrintBidSheetController.cs" />

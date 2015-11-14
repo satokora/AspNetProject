@@ -12,15 +12,11 @@
             <asp:View ID="View1" runat="server">--%>
                 <div class="two fields">
                     <div class="field">
-                        <label class="account">Buyer's last name</label>
+                        <label class="account">Last Name or Phone Number:</label>
                         <asp:TextBox ID="LastNameBox" runat="server"></asp:TextBox>
                     </div>
-                    <div class="field">
-                        <label class="account">Buyer's phone #</label>
-                        <asp:TextBox ID="PhoneNumBox" runat="server"></asp:TextBox>
-                    </div>
                 </div>
-                <asp:Button ID="SearchBuyer" runat="server" Text="Search for buyers" CssClass="ui secondary button" OnClick="SearchBuyer_Click" />
+                <asp:Button ID="SearchBuyer" runat="server" Text="Search" CssClass="ui secondary button" OnClick="SearchBuyer_Click" />
             <%--</asp:View>
             <asp:View ID="View2" runat="server">
                 <div class="two fields">
@@ -40,7 +36,29 @@
            
         </asp:MultiView>--%>
         <br />
-        <asp:GridView ID="GridViewUsers" runat="server"></asp:GridView>
+        <asp:GridView ID="GridViewUsers" runat="server" AutoGenerateColumns="False" DataKeyNames="EMAIL" DataSourceID="Users">
+            <Columns>
+                <asp:TemplateField HeaderText="Print Invoice">
+                    <ItemTemplate>
+                        <asp:CheckBox ID="CheckBox1" runat="server" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:BoundField DataField="USERID" HeaderText="Bid Number" InsertVisible="False" ReadOnly="True" SortExpression="USERID" />
+                <asp:BoundField DataField="EMAIL" HeaderText="Email" ReadOnly="True" SortExpression="EMAIL" />
+                <asp:BoundField DataField="FIRSTNAME" HeaderText="First Name" SortExpression="FIRSTNAME" />
+                <asp:BoundField DataField="LASTNAME" HeaderText="Last Name" SortExpression="LASTNAME" />
+                <asp:BoundField DataField="PHONE" HeaderText="Phone" SortExpression="PHONE" />
+                <asp:BoundField DataField="CITY" HeaderText="City" SortExpression="CITY" />
+                <asp:BoundField DataField="USERSTATE" HeaderText="State" SortExpression="USERSTATE" />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="Users" runat="server" ConnectionString="<%$ ConnectionStrings:it368_Auction_ProjectConnectionString %>" SelectCommand="SELECT [USERID], [EMAIL], [FIRSTNAME], [LASTNAME], [PHONE], [CITY], [USERSTATE] FROM [USERINFO] WHERE (([LASTNAME] LIKE '%' + @LASTNAME + '%') OR ([PHONE] LIKE '%' + @PHONE + '%'))">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="LastNameBox" Name="LASTNAME" PropertyName="Text" Type="String" />
+                <asp:ControlParameter ControlID="LastNameBox" Name="PHONE" PropertyName="Text" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <br />
         <asp:LinkButton ID="BtnPrintInvoices" runat="server" CssClass="ui red button"><i class="print icon"></i>Print Invoices</asp:LinkButton>
     </div>
 </div>
