@@ -5,8 +5,8 @@
         <img class="logo" src="assets/image/Logo_FestTree.png" />
     </div>
     <asp:LinkButton ID="BtnViewItems" runat="server" CssClass="item" OnClick="BtnViewItems_Click">View Items by status</asp:LinkButton>
-    <asp:LinkButton ID="BtnViewByCategory" runat="server" CssClass="item" OnClick="BtnViewByCategory_Click">View Items by Category</asp:LinkButton>
-    <asp:LinkButton ID="BtnSearchItems" runat="server" CssClass="item" OnClick="BtnSearchItems_Click">Search Items By ID</asp:LinkButton>
+    <asp:LinkButton ID="BtnViewByCategory" runat="server" CssClass="item" OnClick="BtnViewByCategory_Click">View Categories</asp:LinkButton>
+    <asp:LinkButton ID="BtnSearchItems" runat="server" CssClass="item" OnClick="BtnSearchItems_Click">Search Items</asp:LinkButton>
     <asp:LinkButton ID="BtnSearchUsers" runat="server" CssClass="item" OnClick="BtnSearchUsers_Click">Search Users</asp:LinkButton>
     <asp:LinkButton ID="BtnEnterItem" runat="server" CssClass="item" OnClick="BtnEnterItem_Click">Enter Item</asp:LinkButton>
     <asp:LinkButton ID="BtnEnterCategory" runat="server" CssClass="item" OnClick="BtnEnterCategory_Click">Enter New Category</asp:LinkButton>

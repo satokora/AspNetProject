@@ -247,6 +247,11 @@
     <Compile Include="Auction.aspx.designer.cs">
       <DependentUpon>Auction.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Categories.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Categories.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Controller\AuctionCtrl.cs" />
     <Compile Include="Controller\CategoryCtrl.cs" />
     <Compile Include="Controller\EmailToBidderController.cs" />
@@ -257,6 +262,7 @@
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\PrintBidSheetController.cs" />
     <Compile Include="Controller\PrintInvoiceController.cs" />
+    <Compile Include="Controller\SearchController.cs" />
     <Compile Include="Controller\SearchItemController.cs" />
     <Compile Include="Controller\SearchUserController.cs" />
     <Compile Include="Controller\SignUpController.cs" />
@@ -291,6 +297,16 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Items.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Items.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ItemsWithCatName.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemsWithCatName.xsd</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -379,7 +395,6 @@
     </Compile>
     <Compile Include="Views\SearchItems.ascx.cs">
       <DependentUpon>SearchItems.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\SearchItems.ascx.designer.cs">
       <DependentUpon>SearchItems.ascx</DependentUpon>
@@ -426,6 +441,39 @@
     <Content Include="assets\themes\github\assets\fonts\octicons.woff" />
     <Content Include="Menu.Master" />
     <Content Include="Dashboard.Master" />
+    <Content Include="ItemsWithCatName.xsc">
+      <DependentUpon>ItemsWithCatName.xsd</DependentUpon>
+    </Content>
+    <Content Include="Categories.xsc">
+      <DependentUpon>Categories.xsd</DependentUpon>
+    </Content>
+    <None Include="Categories.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Categories.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Categories.xss">
+      <DependentUpon>Categories.xsd</DependentUpon>
+    </Content>
+    <Content Include="Items.xsc">
+      <DependentUpon>Items.xsd</DependentUpon>
+    </Content>
+    <None Include="Items.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Items.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Items.xss">
+      <DependentUpon>Items.xsd</DependentUpon>
+    </Content>
+    <None Include="ItemsWithCatName.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ItemsWithCatName.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="ItemsWithCatName.xss">
+      <DependentUpon>ItemsWithCatName.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
