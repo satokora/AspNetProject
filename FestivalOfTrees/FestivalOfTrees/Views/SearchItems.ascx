@@ -46,6 +46,6 @@
                </SelectParameters>
         </asp:SqlDataSource>
            <br />
-           <asp:LinkButton ID="BtnPrintInvoices" runat="server" CssClass="ui red button"><i class="print icon"></i>Print Bid Sheets</asp:LinkButton>
+           <asp:LinkButton ID="BtnPrintInvoices" runat="server" CssClass="ui red button" OnClick="BtnPrintInvoices_Click"><i class="print icon"></i>Print Bid Sheets</asp:LinkButton>
     </div>
 </div>

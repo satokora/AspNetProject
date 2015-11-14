@@ -46,6 +46,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\Users\it3680117\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.7.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>assets\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization" />
@@ -220,6 +224,7 @@
     <Content Include="assets\themes\default\assets\images\flags.png" />
     <Content Include="assets\themes\github\assets\fonts\octicons.svg" />
     <Content Include="Auction.aspx" />
+    <Content Include="BidSheets.aspx" />
     <Content Include="DBTestPage.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
@@ -247,12 +252,20 @@
     <Compile Include="Auction.aspx.designer.cs">
       <DependentUpon>Auction.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BidSheets.aspx.cs">
+      <DependentUpon>BidSheets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BidSheets.aspx.designer.cs">
+      <DependentUpon>BidSheets.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Categories.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Categories.xsd</DependentUpon>
     </Compile>
     <Compile Include="Controller\AuctionCtrl.cs" />
+    <Compile Include="Controller\BidSheetPrinter.cs" />
     <Compile Include="Controller\CategoryCtrl.cs" />
     <Compile Include="Controller\EmailToBidderController.cs" />
     <Compile Include="Controller\EnterEditItemController.cs" />
@@ -474,6 +487,7 @@
     <Content Include="ItemsWithCatName.xss">
       <DependentUpon>ItemsWithCatName.xsd</DependentUpon>
     </Content>
+    <Content Include="PDF\BidSheet.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
