@@ -10,10 +10,10 @@ namespace FestivalOfTrees
 {
     public partial class Login1 : System.Web.UI.Page
     {
-        private LoginController loginCtrl;
+        private UserCtrl loginCtrl;
         protected void Page_Load(object sender, EventArgs e)
         {
-            loginCtrl = new LoginController();
+            loginCtrl = new UserCtrl();
             if (Request.QueryString["signup"] != null)
             {
                 MessagePanel.Visible = true;

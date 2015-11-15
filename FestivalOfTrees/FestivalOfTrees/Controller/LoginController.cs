@@ -7,30 +7,31 @@ using System.Web;
 
 
 /*
+    ******MOVED THIS TO USERCTRL*******
     For Use Case 1: Sign-in User
     This method is completed and passed alpha testing
 */
-namespace FestivalOfTrees.Controller
-{
+//namespace FestivalOfTrees.Controller
+//{
     
-    public class LoginController
-    {
-        private UserDaoImpl user;
+//    public class LoginController
+//    {
+//        private UserDaoImpl user;
 
-        public LoginController()
-        {
-            user = new UserDaoImpl();
-        }
-        public bool authenticate(string userEmail, string pass)
-        {
-            //Credentials creds = user.getCredentialsByEmail(userEmail);
-            //if (creds.Password.Equals(pass))
-            //{
-            //    return true;
-            //}
-            //else
-            //    return false;
-            return true;
-        }
-    }
-}
+//        public LoginController()
+//        {
+//            user = new UserDaoImpl();
+//        }
+//        public bool authenticate(string userEmail, string pass)
+//        {
+//            //Credentials creds = user.getCredentialsByEmail(userEmail);
+//            //if (creds.Password.Equals(pass))
+//            //{
+//            //    return true;
+//            //}
+//            //else
+//            //    return false;
+//            return true;
+//        }
+//    }
+//}
