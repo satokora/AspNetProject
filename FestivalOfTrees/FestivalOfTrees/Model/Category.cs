@@ -13,6 +13,10 @@ namespace FestivalOfTrees.Model
         private bool sponsored;
         private string sponsorName;
         private string parentID;
+        private double minBidRate;
+        private double angelRate;
+
+        public Category() { }
 
         public Category(string categoryID, int auctionID, string categoryName, bool sponsored, string sponsorName, string parentID)
         {
@@ -109,6 +113,32 @@ namespace FestivalOfTrees.Model
             set
             {
                 parentID = value;
+            }
+        }
+
+        public double MinBidRate
+        {
+            get
+            {
+                return minBidRate;
+            }
+
+            set
+            {
+                minBidRate = value;
+            }
+        }
+
+        public double AngelRate
+        {
+            get
+            {
+                return angelRate;
+            }
+
+            set
+            {
+                angelRate = value;
             }
         }
     }

@@ -10,33 +10,52 @@
             <div class="ui stackable grid"> 
                 <div class="two column row">
                     <div class="ten wide column">
-                        <div class="field">
-                            <label>Category</label>
-                            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="ui fluid dropdown"></asp:DropDownList>
-                        </div>
-                        <div class="field">
-                            <label>Value</label>
-                            <div class="ui labeled input">
-                              <div class="ui label">$</div>
-                                <asp:TextBox ID="TxtValPrice" runat="server" placeholder="Amount"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label>Minimum Bid</label>
-                            <div class="ui labeled input">
-                              <div class="ui label">$</div>
-                                <asp:TextBox ID="TxtMinBid" runat="server" placeholder="Amount"></asp:TextBox>
-                            </div>
+                        <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                <ContentTemplate>
+                                    <div class="field">
+                                        <label>Category</label>
+                                        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="ui fluid dropdown" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="CATEGORYNAME" DataValueField="CATEGORYID" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:it368_Auction_ProjectConnectionString %>" SelectCommand="SELECT * FROM [CATEGORY] WHERE ([AUCTIONID] = @AUCTIONID)">
+                                            <SelectParameters>
+                                                <asp:SessionParameter Name="AUCTIONID" SessionField="Auction" Type="Int32" />
+                                            </SelectParameters>
+                                        </asp:SqlDataSource>
+                                    </div>
+                                </ContentTemplate>
+                                <Triggers> 
+                                    <asp:AsyncPostBackTrigger ControlID="DropDownList1" EventName="SelectedIndexChanged" /> 
+                                </Triggers>
+                            </asp:UpdatePanel>
+                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                            <ContentTemplate>
+                                <div class="field">
+                                    <label>Value</label>
+                                    <div class="ui labeled input">
+                                        <div class="ui label">$</div>
+                                        <asp:TextBox ID="TxtValPrice" runat="server" placeholder="Amount" OnKeyUp="TxtValPrice_TextChanged"  OnTextChanged="TxtValPrice_TextChanged" AutoPostBack="True"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label>Minimum Bid</label>
+                                    <div class="ui labeled input">
+                                        <div class="ui label">$</div>
+                                        <asp:TextBox ID="TxtMinBid" runat="server" placeholder="Amount"></asp:TextBox>
+                                    </div>
                            
-                        </div>
-                        <div class="field">
-                            <label>Angel Price</label>
-                            <div class="ui labeled input">
-                              <div class="ui label">$</div>
-                                <asp:TextBox ID="TxtAngPrice" runat="server" placeholder="Amount"></asp:TextBox>
-                            </div>
-                           
-                        </div>
+                                </div>
+                                <div class="field">
+                                    <label>Angel Price</label>
+                                    <div class="ui labeled input">
+                                        <div class="ui label">$</div>
+                                        <asp:TextBox ID="TxtAngPrice" runat="server" placeholder="Amount"></asp:TextBox>
+                                    </div>
+                                </div>
+                            </ContentTemplate>
+                            <Triggers> 
+                                    <asp:AsyncPostBackTrigger ControlID="TxtValPrice" EventName="TextChanged" /> 
+                                </Triggers>
+                        </asp:UpdatePanel>
                     </div>
                     <div class="six wide column">
                         <div>
@@ -47,7 +66,7 @@
                         </div>
                    </div>
                 </div>
-         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+         
                 <div class="sixteen wide column">
                     <div class="field">
                         <label>Donor/Designer</label>

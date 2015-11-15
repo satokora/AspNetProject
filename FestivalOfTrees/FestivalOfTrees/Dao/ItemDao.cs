@@ -16,5 +16,7 @@ namespace FestivalOfTrees.Dao
 
         int updateItem(Item item);
 
+        void createUserItem(string email, int itemID);
+
     }
 }
