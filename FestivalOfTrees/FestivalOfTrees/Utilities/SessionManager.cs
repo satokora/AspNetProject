@@ -1,109 +1,92 @@
 ﻿using FestivalOfTrees.Model;
+using FestivalOfTrees.Utilities;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.SessionState;
 
 namespace FestivalOfTrees
 {
-    internal class SessionManager
+    public class SessionManager : ISessionManager
     {
-        private readonly HttpSessionState _session;
-        private readonly SessionEnum? _sessionKey;
-
-        private string SessionName
+        //Hashtable to store list of sessions allocated
+        Hashtable hsSession = new Hashtable();
+        static SessionManager objSM;  //static singleton object
+        //Timer to manage session timeouts
+        private static Timer tmrSessionTimeout;
+        //Private Constructor - to prevent creating instances explicitly
+        private SessionManager() { }
+        //Create a new object of session manager
+        public static SessionManager getInstance()
         {
-            get
+            if (objSM == null)
             {
-                if (_sessionKey == null)
+                objSM = new SessionManager();
+                //create a new objectof the timer class and associte //a timer call back delegate. The remove session
+                //method will be invoked by the timer object for //every 1000 milliseconds (change it as u like).
+                tmrSessionTimeout = new Timer(new TimerCallback(objSM.removesession), null, 0, 100);
+                return objSM;
+            }
+            return objSM;
+        }
+        //This method will be invoked by the timer call back for every 1000 milliseconds.
+        private void removesession(object state)
+        {
+            IDictionaryEnumerator objSesEnum = hsSession.GetEnumerator();
+            //A temporary session object.
+            ISession tmpSesObj;
+            ArrayList arrExpiredKeys = new ArrayList();
+            //for each session, check the last used datetime.
+            while (objSesEnum.MoveNext())
+            {
+                //The session will be removed, if the user is idle for 2 hours. (change it as u like).
+                tmpSesObj = (ISession)objSesEnum.Value;
+                DateTime dt = DateTime.Parse(tmpSesObj.getAttribute("lastAccessedDatetime").ToString());
+                TimeSpan ts = dt.Subtract(DateTime.Now);
+                //If the difference between the last accessed //datetime and current date time is equal to 2 hours //then the session id will be added to the arraylist.
+                //(ie., left idle for 2 hours)
+                if (dt.Subtract(DateTime.Now).Hours >= 2)
                 {
-                    throw new NullReferenceException("No sessionKey provided at the constructor");
+                    arrExpiredKeys.Add(objSesEnum.Key);
                 }
-                return _sessionKey.ToString();
-            }
-        }
-
-        internal SessionManager()
-        {
-            _session = HttpContext.Current.Session;
-        }
-
-        internal SessionManager(SessionEnum sessionKey) : this()
-        {
-            _sessionKey = sessionKey;
-        }
-
-        #region Depends on SessionKey provided using constructor
-        internal bool DoesKeyExist()
-        {
-            if (!HasAnySessions())
-            {
-                return false;
-            }
-            bool exist = false;
-            for (int i = 0; i < _session.Count; i++)
-            {
-                exist = _session.Keys[i] == SessionName;
-                if (exist)
+                //remove the list of keys added to the array list.
+                int i = 0;
+                while (arrExpiredKeys.Count > i)
                 {
-                    break;
+                    //remove the session from the hashtable.
+                    hsSession.Remove(arrExpiredKeys[i]);
                 }
             }
-            return exist;
         }
-
-        internal bool IsNull()
+        public string createSessionId()
         {
-            return _session[SessionName] == null;
+            //Create a new guid which will act as the session id
+            string newSessionId = Guid.NewGuid().ToString();
+            //create a new session object and store the object in the //hashtable against the new session id (GUID).
+            Session objS = new Session();
+            hsSession.Add(newSessionId, objS);
+            //Set the session id into the session object.
+            objS.setAttribute("SessionId", newSessionId);
+            //return the session id, 
+            return newSessionId;
         }
-
-        internal void setNull()
+        public ISession getSession(string strSesId)
         {
-            _session[SessionName] = null;
+            ISession objS = (ISession)hsSession[strSesId];
+            //everytime when the session object is retried, update the //lastaccesseddate variable with the latest datetime
+            objS.setAttribute("lastAccessedDatetime", DateTime.Now);
+            return objS; //return the session object
         }
-
-        internal TSource Get<TSource>()
+        public ISession removeSession(string strSesId)
         {
-            return (TSource)_session[SessionName];
+            ISession objS = (ISession)hsSession[strSesId];
+            //remove the sessionid from the hash table.
+            hsSession.Remove(strSesId);
+            return objS; //return the removed session
         }
-
-        internal void Add<TSource>(TSource model)
-        {
-            _session.Add(SessionName, model);
-        }
-
-        internal void Replace<TSource>(TSource model)
-        {
-            _session[SessionName] = model;
-        }
-
-        internal void Remove()
-        {
-            _session.Remove(SessionName);
-        }
-
-        #endregion
-
-        internal string GetSessionId()
-        {
-            return _session.SessionID;
-        }
-
-        internal bool HasAnySessions()
-        {
-            return _session.Count > 0;
-        }
-
-        internal void RemoveAll()
-        {
-            _session.RemoveAll();
-        }
-
-        internal void AbandonSessions()
-        {
-            _session.Abandon();
-        }
-
     }
 }
+

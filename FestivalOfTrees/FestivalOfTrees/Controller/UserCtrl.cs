@@ -1,5 +1,6 @@
 ﻿using FestivalOfTrees.Dao;
 using FestivalOfTrees.Model;
+using FestivalOfTrees.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,13 +21,12 @@ namespace FestivalOfTrees.Controller
                 User u = user.getUserByEmail(c.Email);
                 valid = true;
 
-                //I think this is where we want to populate the session data
-                new SessionManager(SessionEnum.LogInName).Add(u.Email);
-                new SessionManager(SessionEnum.LogInTime).Add(DateTime.Now);
-
-                string sessionId = new SessionManager().GetSessionId();
-                bool hasSession = new SessionManager().HasAnySessions();
-
+                //Setting session data here
+                SessionManager sm = SessionManager.getInstance();
+                string sessionId = sm.createSessionId();
+                ISession objS = (ISession)sm.getSession(sessionId);
+                objS.setAttribute(sessionId, u);
+                
             }
             return valid;
         }
