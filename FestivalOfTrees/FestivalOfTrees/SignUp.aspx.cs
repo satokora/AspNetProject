@@ -21,7 +21,6 @@ namespace FestivalOfTrees
 
         protected void SignUpBtn_Click(object sender, EventArgs e)
         {
-
             string role = Request.QueryString["role"];
 
             bool ADMIN = false;
@@ -31,8 +30,8 @@ namespace FestivalOfTrees
             string EMAIL = email.Text;
             string FNAME = firstName.Text;
             string LNAME = lastName.Text;
-            // string ADDRESS = address1.Text;
-            // string CITY = address2.Text;
+            string ADDRESS = address.Text;
+            string CITY = city.Text;
             string STATE = DropDownList1.SelectedValue;
             int ZIP = Convert.ToInt32(zipCode.Text);
 
@@ -51,12 +50,12 @@ namespace FestivalOfTrees
                 DONOR = true;
             }
 
-            // string HPHONE = phone.Text;
-            // string MPHONE = TextBox1.Text;
+            string HPHONE = Phone.Text;
+            string MPHONE = MobilePhone.Text;
             bool TEXT = checkToText.Checked;
 
-            // ID is produced in database
-            // toAdd = new User(-1, EMAIL, FNAME, LNAME, ADDRESS, CITY, STATE, ZIP, ADMIN, COMMITTEE, DONOR, MPHONE, TEXT);
+            //ID is produced in database
+            toAdd = new User(-1, EMAIL, FNAME, LNAME, ADDRESS, CITY, STATE, ZIP, ADMIN, COMMITTEE, DONOR, MPHONE, TEXT);
 
             if (signUp.addUser(toAdd))
             {

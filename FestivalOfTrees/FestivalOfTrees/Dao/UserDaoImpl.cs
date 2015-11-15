@@ -148,7 +148,7 @@ namespace FestivalOfTrees.Dao
             SqlCommand command = new SqlCommand(query, conn);
             command.Parameters.Add(new SqlParameter("@EMAIL", email));
 
-            return user;
+            return getUser(command);
         }
 
         public List<User> getUserByLastName(string lastName)

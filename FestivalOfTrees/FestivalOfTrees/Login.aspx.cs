@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using FestivalOfTrees.Controller;
+using FestivalOfTrees.Model;
+using FestivalOfTrees.Dao;
 
 namespace FestivalOfTrees
 {
@@ -30,6 +32,36 @@ namespace FestivalOfTrees
             {
                 Response.Redirect("Profile.aspx");
             }
+        }
+
+        public bool signUp(User u, Credentials c)
+        {
+            bool valid = false;
+            UserDaoImpl userDao = new UserDaoImpl();
+            userDao.createUser(u);
+
+            if (true)
+            {
+                userDao.createCredentials(c);
+                if (true)
+                {
+                    Credentials creds = c;
+                    valid = true;
+                }
+            }
+            return valid;
+        }
+
+        public bool authenticate(string userEmail, string pass)
+        {
+            UserDaoImpl userDao = new UserDaoImpl();
+            Credentials creds = userDao.getCredentialsByEmail(userEmail);
+            if (creds.Password.Equals(pass))
+            {
+                return true;
+            }
+            else
+                return false;
         }
     }
 }
