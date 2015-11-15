@@ -20,10 +20,16 @@ namespace FestivalOfTrees
             // Implement logic to select an auction and retrieve corresponding dataset
         }
 
-        protected void AuctionGridView_SelectedIndexChanged(object sender, EventArgs e)
+        //protected void AuctionGridView_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    GridViewRow row = AuctionGridView.Rows[AuctionGridView.SelectedIndex];
+        //    Session["Auction"] = row.Cells[3].Text;
+        //    Response.Redirect("Auction.aspx");
+        //}
+
+        protected void SelectAuctionBtn_Click(object sender, ListViewCommandEventArgs e)
         {
-            GridViewRow row = AuctionGridView.Rows[AuctionGridView.SelectedIndex];
-            Session["Auction"] = row.Cells[3].Text;
+            Session["Auction"] = e.CommandArgument;
             Response.Redirect("Auction.aspx");
         }
     }

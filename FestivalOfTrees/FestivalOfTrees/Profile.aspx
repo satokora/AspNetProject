@@ -26,27 +26,48 @@
                     <div class="twelve wide stretched column">
                         <div class="ui tab segment active left aligned" data-tab="first">
                             <h1>Select Auction</h1>
-                            <asp:GridView ID="AuctionGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="AUCTIONID" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="AuctionGridView_SelectedIndexChanged">
+                            <%--<asp:GridView ID="AuctionGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="AUCTIONID" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="AuctionGridView_SelectedIndexChanged">
                                 <Columns>
                                     <asp:CommandField ShowSelectButton="True" />
                                     <asp:BoundField DataField="AUCTIONNAME" HeaderText="AUCTIONNAME" SortExpression="AUCTIONNAME" />
                                     <asp:BoundField DataField="AUCTIONDATE" HeaderText="AUCTIONDATE" SortExpression="AUCTIONDATE" />
                                     <asp:BoundField DataField="AUCTIONID" HeaderText="AUCTIONID" ReadOnly="True" SortExpression="AUCTIONID" />
                                 </Columns>
-                            </asp:GridView>
+                            </asp:GridView>--%>
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:it368_Auction_ProjectConnectionString %>" SelectCommand="SELECT [AUCTIONNAME], [AUCTIONDATE], [AUCTIONID] FROM [AUCTION]"></asp:SqlDataSource>
-                            <div class="two fields">
-                                <div class="field">
-                                    <asp:DropDownList ID="AuctionList" runat="server" CssClass="ui dropdown">
-                                        <asp:ListItem Value="">Select Auction</asp:ListItem>
-                                    </asp:DropDownList>
-                                </div>
-                                <div class="field">
-                                    <div class="ui right labeled button">
-                                        <asp:LinkButton ID="BtnGoAuction" runat="server" CssClass="ui red button" OnClick="BtnGoAuction_Click">Go to Auction Page<i class="pointing right icon"></i></asp:LinkButton>
+                            
+
+                            <asp:ListView ID="AuctionListView" runat="server" 
+                                DataSourceID="SqlDataSource1" ItemPlaceholderID="EventContainer" OnItemCommand="SelectAuctionBtn_Click">
+                                <LayoutTemplate>
+                                   
+                                    <div class="ui three column grid">
+                                        <div class="column" id="EventContainer" runat="server"></div>
                                     </div>
-                                </div>
-                            </div>
+                                    
+                                </LayoutTemplate>
+                                <ItemTemplate>
+                                    <div class="column">
+                                    <div class="ui fluid card">
+                                        <div class="content">
+                                            <div class="header">
+                                                <asp:Label ID="Label1" runat="server" Text='<%#Eval("AUCTIONNAME") %>'></asp:Label>
+                                            </div>
+                                            <div class="description">
+                                                Auction ID: <asp:Label ID="Label3" runat="server" Text='<%#Eval("AUCTIONID") %>'></asp:Label><br />
+                                                Date: <asp:Label ID="Label2" runat="server" Text='<%#Eval("AUCTIONDATE") %>'></asp:Label>
+                                            </div>
+                                        </div>
+                                        <asp:LinkButton ID="LinkButton1" CssClass="ui bottom attached right labeled icon red button" runat="server" CommandName="sel" CommandArgument='<%#Eval("AUCTIONID") %>' >
+                                            <i class="sign out icon"></i>
+                                            Select
+                                        </asp:LinkButton>
+                                       
+                                    </div>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:ListView>
+                           
                         </div>
                         <div class="ui tab segment left aligned" data-tab="second">
                             <h1>New User Request</h1>
