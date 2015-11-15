@@ -10,6 +10,13 @@ namespace FestivalOfTrees.Controller
 {
     public class UserCtrl
     {
+        public void createRequest(Request request)
+        {
+            UserDaoImpl uDao = new UserDaoImpl();
+            uDao.createRequest(request);
+        }
+
+
         public bool authenticate(string userEmail, string pass)
         {
             bool valid = false;
