@@ -27,6 +27,7 @@ namespace FestivalOfTrees
 
             if (ctrl.signIn(creds))
             {
+                Session["user"] = UserController.User;
                 Response.Redirect("TestHome.aspx");
             }
             else

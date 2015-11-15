@@ -215,6 +215,7 @@
     <Content Include="assets\themes\default\assets\images\flags.png" />
     <Content Include="assets\themes\github\assets\fonts\octicons.svg" />
     <Content Include="DBTestPage.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="SignUp.aspx" />
@@ -230,6 +231,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllItems.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllItems.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Controller\EmailToBidderController.cs" />
     <Compile Include="Controller\EnterEditItemController.cs" />
     <Compile Include="Controller\ExportToCsvController.cs" />
@@ -256,6 +262,9 @@
     <Compile Include="DBTestPage.aspx.designer.cs">
       <DependentUpon>DBTestPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -278,6 +287,11 @@
     <Compile Include="Model\Request.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchItem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchItem.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -360,6 +374,29 @@
     <Content Include="assets\themes\github\assets\fonts\octicons-local.ttf" />
     <Content Include="assets\themes\github\assets\fonts\octicons.ttf" />
     <Content Include="assets\themes\github\assets\fonts\octicons.woff" />
+    <Content Include="AllItems.xsc">
+      <DependentUpon>AllItems.xsd</DependentUpon>
+    </Content>
+    <None Include="AllItems.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AllItems.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="AllItems.xss">
+      <DependentUpon>AllItems.xsd</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\k.pubxml" />
+    <Content Include="SearchItem.xsc">
+      <DependentUpon>SearchItem.xsd</DependentUpon>
+    </Content>
+    <None Include="SearchItem.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SearchItem.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="SearchItem.xss">
+      <DependentUpon>SearchItem.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

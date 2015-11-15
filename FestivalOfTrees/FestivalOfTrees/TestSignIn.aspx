@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TestSignIn.aspx.cs" Inherits="FestivalOfTrees.TestSignup" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TestSignIn.aspx.cs" Inherits="FestivalOfTrees.TestSignup" EnableSessionState="True" %>
 
 <!DOCTYPE html>
 

@@ -1,4 +1,5 @@
 ﻿using FestivalOfTrees.Controller;
+using FestivalOfTrees.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,14 @@ namespace FestivalOfTrees
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["user"] != null)
+            {
             Response.Write("User: </br>");
-            Response.Write(UserController.User.ToString());
-            Response.Write("</br>Credentials: </br>");
-            Response.Write(UserController.Credentials.ToString());
+            Response.Write(((User)Session["user"]).ToString());
+            //Response.Write("</br>Credentials: </br>");
+            //Response.Write(UserController.Credentials.ToString())
+            }
+            ;
         }
     }
 }
