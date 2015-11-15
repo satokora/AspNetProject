@@ -27,5 +27,12 @@ namespace FestivalOfTrees.Views
                 }
             }
         }
+
+        protected void GridViewItemsByCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewRow row = GridViewItemsByCategory.Rows[GridViewItemsByCategory.SelectedIndex];
+            Session["Category"] = row.Cells[1].Text;
+            Response.Redirect("Auction.aspx?menu=7");
+        }
     }
 }

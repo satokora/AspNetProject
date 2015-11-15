@@ -130,12 +130,21 @@ namespace FestivalOfTrees {
         protected global::FestivalOfTrees.Views.EnterCategory EnterCategory;
         
         /// <summary>
-        /// View7 control.
+        /// View8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View View7;
+        protected global::System.Web.UI.WebControls.View View8;
+        
+        /// <summary>
+        /// ViewFromCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UserControl ViewFromCategory;
     }
 }

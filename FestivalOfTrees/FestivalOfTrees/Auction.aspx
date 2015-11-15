@@ -7,7 +7,7 @@
 <%@ Register Src="~/Views/SearchItems.ascx" TagPrefix="uc" TagName="SearchItems" %>
 <%@ Register Src="~/Views/SearchUser.ascx" TagPrefix="uc" TagName="SearchUser" %>
 <%@ Register Src="~/Views/EnterCategory.ascx" TagPrefix="uc" TagName="EnterCategory" %>
-
+<%@ Register Src="~/Views/ViewItemsFromCategory.ascx" TagPrefix="uc" TagName="Category" %>
 
 
 
@@ -36,8 +36,8 @@
             <asp:View ID="View6" runat="server">
                 <uc:EnterCategory runat="server" id="EnterCategory" />
             </asp:View>
-            <asp:View ID="View7" runat="server">
-                <%--<uc:SearchItemUser runat="server" id="SearchItemUser" />--%>
+            <asp:View ID="View8" runat="server">
+                <uc:Category runat="server" id="ViewFromCategory" />
             </asp:View>
         </asp:MultiView>
 

@@ -240,6 +240,7 @@
     <Content Include="Views\SearchItems.ascx" />
     <Content Include="Views\SearchUser.ascx" />
     <Content Include="Views\ViewByCategory.ascx" />
+    <Content Include="Views\ViewItemsFromCategory.ascx" />
     <Content Include="Views\ViewSingleItem.ascx" />
     <Content Include="Views\ViewSingleUser.ascx" />
     <Content Include="Web.config" />
@@ -427,6 +428,13 @@
     </Compile>
     <Compile Include="Views\ViewByCategory.ascx.designer.cs">
       <DependentUpon>ViewByCategory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewItemsFromCategory.ascx.cs">
+      <DependentUpon>ViewItemsFromCategory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ViewItemsFromCategory.ascx.designer.cs">
+      <DependentUpon>ViewItemsFromCategory.ascx</DependentUpon>
     </Compile>
     <Compile Include="Views\ViewSingleItem.ascx.cs">
       <DependentUpon>ViewSingleItem.ascx</DependentUpon>

@@ -10,34 +10,16 @@
 namespace FestivalOfTrees.Views {
     
     
-    public partial class ViewByCategory {
+    public partial class ViewItemsFromCategory {
         
         /// <summary>
-        /// CatList control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CatList;
-        
-        /// <summary>
-        /// BtnGetItemsByCategory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnGetItemsByCategory;
-        
-        /// <summary>
-        /// GridViewItemsByCategory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewItemsByCategory;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
         /// SqlDataSource1 control.

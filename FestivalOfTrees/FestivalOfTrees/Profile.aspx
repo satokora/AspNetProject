@@ -26,6 +26,15 @@
                     <div class="twelve wide stretched column">
                         <div class="ui tab segment active left aligned" data-tab="first">
                             <h1>Select Auction</h1>
+                            <asp:GridView ID="AuctionGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="AUCTIONID" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="AuctionGridView_SelectedIndexChanged">
+                                <Columns>
+                                    <asp:CommandField ShowSelectButton="True" />
+                                    <asp:BoundField DataField="AUCTIONNAME" HeaderText="AUCTIONNAME" SortExpression="AUCTIONNAME" />
+                                    <asp:BoundField DataField="AUCTIONDATE" HeaderText="AUCTIONDATE" SortExpression="AUCTIONDATE" />
+                                    <asp:BoundField DataField="AUCTIONID" HeaderText="AUCTIONID" ReadOnly="True" SortExpression="AUCTIONID" />
+                                </Columns>
+                            </asp:GridView>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:it368_Auction_ProjectConnectionString %>" SelectCommand="SELECT [AUCTIONNAME], [AUCTIONDATE], [AUCTIONID] FROM [AUCTION]"></asp:SqlDataSource>
                             <div class="two fields">
                                 <div class="field">
                                     <asp:DropDownList ID="AuctionList" runat="server" CssClass="ui dropdown">

@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ViewByCategory.ascx.cs" Inherits="FestivalOfTrees.Views.ViewByCategory" %>
 <div class="ui conatiner">
     <div class="ui stacked segment" style="min-height: 250px">
-        <h3 style="text-align:center">View Items By Category</h3>
+        <h3 style="text-align:center">View Categories</h3>
             
          
                 <div class="two fields">                 
@@ -24,7 +24,20 @@
         <%--<asp:MultiView ID="SearchResultView" runat="server">
             <asp:View ID="View3" runat="server">--%>
 
-            <asp:GridView ID="GridViewItemsByCategory" runat="server" CssClass="ui red table center aligned"></asp:GridView>
+            <asp:GridView ID="GridViewItemsByCategory" runat="server" CssClass="ui red table center aligned" AutoGenerateColumns="False" DataKeyNames="CATEGORYID" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridViewItemsByCategory_SelectedIndexChanged">
+                <Columns>
+                    <asp:CommandField ShowSelectButton="True" />
+                    <asp:BoundField DataField="CATEGORYID" HeaderText="CATEGORYID" ReadOnly="True" SortExpression="CATEGORYID" />
+                    <asp:BoundField DataField="AUCTIONID" HeaderText="AUCTIONID" SortExpression="AUCTIONID" />
+                    <asp:BoundField DataField="CATEGORYNAME" HeaderText="CATEGORYNAME" SortExpression="CATEGORYNAME" />
+                    <asp:BoundField DataField="SPONSORNAME" HeaderText="SPONSORNAME" SortExpression="SPONSORNAME" />
+                </Columns>
+        </asp:GridView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:it368_Auction_ProjectConnectionString %>" SelectCommand="SELECT [CATEGORYID], [AUCTIONID], [CATEGORYNAME], [SPONSORNAME] FROM [CATEGORY] WHERE ([AUCTIONID] = @AUCTIONID)">
+                <SelectParameters>
+                    <asp:SessionParameter Name="AUCTIONID" SessionField="Auction" Type="Int32" />
+                </SelectParameters>
+        </asp:SqlDataSource>
             <%--</asp:View>
             <asp:View ID="View4" runat="server">
                 <div class="ui special cards">
