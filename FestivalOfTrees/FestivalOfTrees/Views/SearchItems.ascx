@@ -20,13 +20,19 @@
 
             <asp:GridView ID="GridViewItemsByItemId" runat="server" CssClass="ui red table center aligned" AutoGenerateColumns="False" DataKeyNames="ITEMID" DataSourceID="SqlDataSource1" style="margin-right: 32px" AllowSorting="True" OnSelectedIndexChanged="GridViewItemsByItemId_SelectedIndexChanged">
                 <Columns>
-                    <asp:CommandField ShowSelectButton="True" />
+                    <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="ui button" SelectText="View" />
                     <asp:TemplateField>
                         <HeaderTemplate>
-                            Print
+                            <div class="ui fitted checkbox">
+                                <asp:CheckBox ID="ChkbSelectAll" runat="server"  OnCheckedChanged="ChkbSelectAll_CheckedChanged" />
+                                    <label></label>
+                            </div>
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:CheckBox ID="CheckBox2" runat="server" />
+                            <div class="ui fitted checkbox">
+                                <asp:CheckBox ID="Select" runat="server" />
+                                    <label></label>
+                            </div>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="CATEGORYNAME" HeaderText="Category" SortExpression="CATEGORYNAME" />

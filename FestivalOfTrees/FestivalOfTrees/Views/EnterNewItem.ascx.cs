@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using FestivalOfTrees.Model;
 
 
 namespace FestivalOfTrees
@@ -16,11 +17,6 @@ namespace FestivalOfTrees
             
         }
 
-        //[System.Web.Services.WebMethod]
-        //[System.Web.Script.Services.ScriptMethod]
-        //public string[] GetCompletionList(string prefixText, int count)
-        //{
-        //    return null;
-        //}
+      
     }
 }

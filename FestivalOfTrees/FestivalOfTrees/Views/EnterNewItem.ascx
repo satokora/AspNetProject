@@ -12,7 +12,7 @@
                     <div class="ten wide column">
                         <div class="field">
                             <label>Category</label>
-                            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="ui fluid dropdown"></asp:DropDownList>
+                            <asp:DropDownList ID="CatSelectList" runat="server" CssClass="ui fluid dropdown"></asp:DropDownList>
                         </div>
                         <div class="field">
                             <label>Value</label>
@@ -92,6 +92,6 @@
     <p></p>
     <p></p>
     <p></p>
-      <asp:Button ID="BtnConfirmItem" runat="server" Text="Button" />
+      <asp:Button ID="BtnConfirmItem" runat="server" Text="Button" OnClick="BtnConfirmItem_Click" />
   </div>
 </div>

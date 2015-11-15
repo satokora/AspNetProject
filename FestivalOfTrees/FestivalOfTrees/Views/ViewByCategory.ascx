@@ -26,7 +26,9 @@
 
             <asp:GridView ID="GridViewItemsByCategory" runat="server" CssClass="ui red table center aligned" AutoGenerateColumns="False" DataKeyNames="CATEGORYID" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridViewItemsByCategory_SelectedIndexChanged">
                 <Columns>
-                    <asp:CommandField ShowSelectButton="True" />
+                    <asp:CommandField SelectText="View" ShowSelectButton="True">
+                        <ControlStyle CssClass="ui button" />
+                    </asp:CommandField>
                     <asp:BoundField DataField="CATEGORYID" HeaderText="CATEGORYID" ReadOnly="True" SortExpression="CATEGORYID" />
                     <asp:BoundField DataField="AUCTIONID" HeaderText="AUCTIONID" SortExpression="AUCTIONID" />
                     <asp:BoundField DataField="CATEGORYNAME" HeaderText="CATEGORYNAME" SortExpression="CATEGORYNAME" />

@@ -61,5 +61,15 @@ namespace FestivalOfTrees.Views
             bspCtrl.PrintSheets(itemNumbersToPrint, savePath, templatePath, temporaryPath);
             Response.Redirect("BidSheets.aspx");
         }
+        protected void ChkbSelectAll_CheckedChanged(object sender, EventArgs e)
+        {
+            bool chkFlag = false;
+            if (((CheckBox)GridViewItemsByItemId.FindControl("ChkbSelectAll")).Checked) chkFlag = true;
+            foreach (GridViewRow dr in GridViewItemsByItemId.Rows)
+            {
+                CheckBox chk = (CheckBox)dr.Cells[1].FindControl("Select");
+                chk.Checked = chkFlag;
+            }
+        }
     }
 }
