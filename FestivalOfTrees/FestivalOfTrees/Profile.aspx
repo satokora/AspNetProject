@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="twelve wide stretched column">
-                        <div class="ui tab segment left aligned" data-tab="first">
+                        <div class="ui tab segment active left aligned" data-tab="first">
                             <h1>Select Auction</h1>
                             <%--<asp:GridView ID="AuctionGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="AUCTIONID" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="AuctionGridView_SelectedIndexChanged">
                                 <Columns>
@@ -69,7 +69,7 @@
                             </asp:ListView>
                            
                         </div>
-                        <div class="ui tab segment active left aligned" data-tab="second">
+                        <div class="ui tab segment left aligned" data-tab="second">
                             <h1>New User Request</h1>
                             <asp:GridView ID="UserRequestGrid" runat="server"  class="ui grey table" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource2">
                                 <Columns>
