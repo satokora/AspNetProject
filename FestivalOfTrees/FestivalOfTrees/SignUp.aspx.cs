@@ -39,16 +39,7 @@ namespace FestivalOfTrees
 
             if (role.Equals("a"))
             {
-                Request r = new Request()
-                {
-                    RequestEmail = EMAIL,
-                    Admin = true,
-                    Committee = true,
-                    Donor = true
-                };
-                UserCtrl uCtrl = new UserCtrl();
-                uCtrl.createRequest(r);
-
+                
                 ADMIN = true;
                 COMMITTEE = false;
             }
@@ -68,9 +59,21 @@ namespace FestivalOfTrees
 
             //ID is produced in database
             toAdd = new User(-1, EMAIL, FNAME, LNAME, ADDRESS, CITY, STATE, ZIP, ADMIN, COMMITTEE, DONOR, MPHONE, TEXT);
-
             if (signUp.addUser(toAdd))
             {
+                signUp.addUserCredentials(email.Text, password1.Text);
+                if (role.Equals("a"))
+                {
+                    Request r = new Request()
+                    {
+                        RequestEmail = EMAIL,
+                        Admin = true,
+                        Committee = false,
+                        Donor = false
+                    };
+                    UserCtrl uCtrl = new UserCtrl();
+                    uCtrl.createRequest(r);
+                }
                 //Do we wnat to add a message here letting user know request was submitted successfully?
                 Response.Redirect("Login.aspx?signup=1");
             }

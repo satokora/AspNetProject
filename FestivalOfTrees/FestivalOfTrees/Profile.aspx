@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="twelve wide stretched column">
-                        <div class="ui tab segment active left aligned" data-tab="first">
+                        <div class="ui tab segment left aligned" data-tab="first">
                             <h1>Select Auction</h1>
                             <%--<asp:GridView ID="AuctionGridView" runat="server" AutoGenerateColumns="False" DataKeyNames="AUCTIONID" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="AuctionGridView_SelectedIndexChanged">
                                 <Columns>
@@ -69,11 +69,29 @@
                             </asp:ListView>
                            
                         </div>
-                        <div class="ui tab segment left aligned" data-tab="second">
+                        <div class="ui tab segment active left aligned" data-tab="second">
                             <h1>New User Request</h1>
-                            <asp:GridView ID="UserRequestGrid" runat="server"  class="ui grey table"></asp:GridView>
+                            <asp:GridView ID="UserRequestGrid" runat="server"  class="ui grey table" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource2">
+                                <Columns>
+                                    <asp:TemplateField HeaderText="Approve">
+                                        <ItemTemplate>
+                                            <asp:CheckBox ID="CheckBox1" runat="server" />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:BoundField DataField="EMAIL" HeaderText="EMAIL" SortExpression="EMAIL" />
+                                    <asp:CheckBoxField DataField="ADMINREQ" HeaderText="ADMINREQ" SortExpression="ADMINREQ" />
+                                    <asp:CheckBoxField DataField="COMMITTEE" HeaderText="COMMITTEE" SortExpression="COMMITTEE" />
+                                    <asp:CheckBoxField DataField="DONOR" HeaderText="DONOR" SortExpression="DONOR" />
+                                    <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
+                                </Columns>
+                            </asp:GridView>
+                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:it368_Auction_ProjectConnectionString %>" SelectCommand="SELECT [EMAIL], [ADMINREQ], [COMMITTEE], [DONOR], [Id] FROM [REQUEST] WHERE ([APPROVED] = @APPROVED)">
+                                <SelectParameters>
+                                    <asp:Parameter DefaultValue="False" Name="APPROVED" Type="Boolean" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
                             <br />
-                            <asp:LinkButton ID="BtnAccept" runat="server" CssClass="ui teal button"><i class="thumbs up icon"></i>Accept selected requests</asp:LinkButton>
+                            <asp:LinkButton ID="BtnAccept" runat="server" CssClass="ui teal button" OnClick="BtnAccept_Click"><i class="thumbs up icon"></i>Accept selected requests</asp:LinkButton>
                         </div>
                     </div>
                 </div>

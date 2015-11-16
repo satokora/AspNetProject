@@ -14,33 +14,26 @@ namespace FestivalOfTrees.Controller
 {
     public class SignUpController
     {
-        private UserDaoImpl signUp;
+        private UserDaoImpl userDao;
 
         public SignUpController()
         {
-            signUp = new UserDaoImpl();
+            userDao = new UserDaoImpl();
         }
         public bool addUser(User user)
         {
             bool addSuccess = false;
 
-            if (signUp.checkDB(user.Email))
-            {
-
-                if (signUp.addNewUser(user))
-                {
-                    addSuccess = true;
-                }
-                else
-                    addSuccess = false;
-                return addSuccess;
-            }
+            addSuccess = userDao.checkDB(user.Email);
+            if(addSuccess)
+                addSuccess = userDao.addNewUser(user);
+                
             return addSuccess;
         }
         public bool addUserCredentials(string email, string password)
         {
             bool addSuccess = false;
-            if(signUp.addNewUserCredentials(email, password))
+            if(userDao.addNewUserCredentials(email, password))
             {
                 addSuccess = true;
                 UserCtrl newUser = new UserCtrl();

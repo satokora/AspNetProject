@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FestivalOfTrees.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -31,6 +32,23 @@ namespace FestivalOfTrees
         {
             Session["Auction"] = e.CommandArgument;
             Response.Redirect("Auction.aspx");
+        }
+
+        protected void BtnAccept_Click(object sender, EventArgs e)
+        {
+            //temp
+            UserCtrl userCtrl = new UserCtrl();
+            List<int> idList = new List<int>();
+            foreach (GridViewRow row in UserRequestGrid.Rows)
+            {
+                CheckBox cb = (CheckBox)row.FindControl("CheckBox1");
+                if (cb != null && cb.Checked)
+                {
+                    idList.Add(Convert.ToInt32(row.Cells[5].Text));
+                }
+            }
+
+            userCtrl.approveRequest(idList);
         }
     }
 }

@@ -43,5 +43,22 @@ namespace FestivalOfTrees.Controller
             UserDaoImpl user = new UserDaoImpl();
             return user.getUserByNum(userId);
         }
+
+        public void approveRequest(List<int> requestIDList)
+        {
+            UserDaoImpl userDao = new UserDaoImpl();
+            List<Request> requestList = new List<Request>();
+            foreach(int id in requestIDList)
+            {
+                requestList.Add(userDao.getRequestByID(id));
+            }
+
+            foreach(Request r in requestList)
+            {
+                userDao.approveRequest(r);
+            }
+
+            
+        }
     }
 }

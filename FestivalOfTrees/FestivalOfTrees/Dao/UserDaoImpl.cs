@@ -10,9 +10,85 @@ namespace FestivalOfTrees.Dao
 {
     public class UserDaoImpl : UserDao
     {
-        public void createRequest(Request request)
+
+        public Request getRequestByID(int id)
+        {
+            Request req = new Request();
+            SqlConnection conn = DBHelper.loadDB();
+
+            string query = "SELECT * FROM REQUEST WHERE ID = @ID";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.Add(new SqlParameter("@ID", id));
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                reader.Read();
+                req.RequestID = id;
+                req.RequestEmail = Convert.ToString(reader["email"]);
+                req.Admin = Convert.ToBoolean(reader["ADMINREQ"]);
+                req.Committee = Convert.ToBoolean(reader["COMMITTEE"]);
+                req.Donor = Convert.ToBoolean(reader["DONOR"]);
+            }
+            return req;
+        }
+
+
+
+
+        public void approveRequest(Request r)
         {
             int admin = 0, committee = 0, donor = 0;
+
+            if (r.Admin)
+                admin = 1;
+            if (r.Committee)
+                committee = 1;
+            if (r.Donor)
+                donor = 1;
+
+            SqlConnection conn = DBHelper.loadDB();
+            String query = "UPDATE USERINFO SET "
+                + "ADMIN = @ADMIN, "
+                + "COMMITTEE = @COMM, "
+                + "DONOR = @DONOR "
+                + "WHERE EMAIL = @EMAIL";
+
+            SqlCommand command = new SqlCommand(query, conn);
+            
+            command.Parameters.Add(new SqlParameter("@ADMIN", admin));
+            command.Parameters.Add(new SqlParameter("@COMM", committee));
+            command.Parameters.Add(new SqlParameter("@DONOR", donor));
+            command.Parameters.Add(new SqlParameter("@EMAIL", r.RequestEmail));
+            command.ExecuteNonQuery();
+
+            updateRequest(r);
+
+
+
+
+        }
+
+        public void updateRequest(Request r)
+        {
+            int approved = 1;
+            SqlConnection conn = DBHelper.loadDB();
+            String query = "UPDATE REQUEST SET "
+                + "APPROVED = @Approved "
+                + "WHERE ID = @ID";
+
+
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.Add(new SqlParameter("@Approved", approved));
+            command.Parameters.Add(new SqlParameter("@ID", r.RequestID));
+            command.ExecuteNonQuery();
+
+
+        }
+
+
+        public void createRequest(Request request)
+        {
+            int admin = 0, committee = 0, donor = 0, app = 0;
             if (request.Admin)
                 admin = 1;
             if (request.Committee)
@@ -21,7 +97,7 @@ namespace FestivalOfTrees.Dao
                 donor = 1;
 
             SqlConnection conn = DBHelper.loadDB();
-            string query = "INSERT INTO REQUEST OUTPUT INSERTED.ID VALUES (@EMAIL, @ADMIN, @COMMITTEE, @DONOR);";
+            string query = "INSERT INTO REQUEST OUTPUT INSERTED.ID VALUES (@EMAIL, @ADMIN, @COMMITTEE, @DONOR, @APP);";
             try
             {
                 SqlCommand command = new SqlCommand(query, conn);
@@ -29,6 +105,7 @@ namespace FestivalOfTrees.Dao
                 command.Parameters.Add(new SqlParameter("@ADMIN", admin));
                 command.Parameters.Add(new SqlParameter("@COMMITTEE", committee));
                 command.Parameters.Add(new SqlParameter("@DONOR", donor));
+                command.Parameters.Add(new SqlParameter("@APP", app));
                 request.RequestID = (int)command.ExecuteScalar();
             }
             catch (SqlException ex)
@@ -104,8 +181,9 @@ namespace FestivalOfTrees.Dao
         public bool addNewUser(User user)
         {
             bool added = false;
+            int admin = 0, comm = 0, donor = 0;
             SqlConnection conn = DBHelper.loadDB();
-            String query = "INSERT INTO USERINFO VALUES (@EMAIL, @FNAME, @LNAME, @ADDRESS, @CITY, @STATE, @ZIP, @ADMIN, @COMMITTEE, @PHONE, @TEXT, @DONOR)";
+            String query = "INSERT INTO USERINFO OUTPUT INSERTED.USERID VALUES (@EMAIL, @FNAME, @LNAME, @ADDRESS, @CITY, @STATE, @ZIP, @ADMIN, @COMMITTEE, @PHONE, @TEXT, @DONOR)";
             try
             {
                 SqlCommand command = new SqlCommand(query, conn);
@@ -116,16 +194,19 @@ namespace FestivalOfTrees.Dao
                 command.Parameters.Add(new SqlParameter("@CITY", user.City));
                 command.Parameters.Add(new SqlParameter("@STATE", user.State));
                 command.Parameters.Add(new SqlParameter("@ZIP", user.Zip));
-                command.Parameters.Add(new SqlParameter("@ADMIN", user.Admin));
-                command.Parameters.Add(new SqlParameter("@COMMITTEE", user.Committee));
+                command.Parameters.Add(new SqlParameter("@ADMIN", admin));
+                command.Parameters.Add(new SqlParameter("@COMMITTEE", comm));
                 command.Parameters.Add(new SqlParameter("@PHONE", user.Phone));
                 command.Parameters.Add(new SqlParameter("@TEXT", user.Text));
-                command.Parameters.Add(new SqlParameter("@DONOR", user.Donor));
+                command.Parameters.Add(new SqlParameter("@DONOR", donor));
 
-                int result = command.ExecuteNonQuery();
+                int result = (int)command.ExecuteScalar();
 
-                if (result == 1)
+                if (result != 0)
+                {
                     added = true;
+                    user.UserID = result;
+                }
                 else
                     added = false;
             }
@@ -316,11 +397,11 @@ namespace FestivalOfTrees.Dao
                     + "', '" + user.City
                     + "', '" + user.State
                     + "', " + user.Zip
-                    + ", " + user.Admin
-                    + ", " + user.Committee
+                    + ", 0"
+                    + ", 0"
                     + ", '" + user.Phone
                     + "', " + user.Text
-                    + ", " + user.Donor
+                    + ", 0"
                     + ")";
             SqlCommand command = new SqlCommand(query, conn);
             user.UserID = (int)command.ExecuteScalar();
