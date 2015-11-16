@@ -9,6 +9,20 @@ namespace FestivalOfTrees.Dao
 {
     public class ItemDaoImpl : ItemDao
     {
+
+        public void createUserItem(string email, int itemID)
+        {
+            SqlConnection conn = DBHelper.loadDB();
+            string query = "INSERT INTO USERITEM VALUES ("
+                + "'@EMAIL'"
+                + ", @ITEMID);";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.Add(new SqlParameter("@EMAIL", email));
+            command.Parameters.Add(new SqlParameter("@ITEMID", itemID));
+
+            int rows = command.ExecuteNonQuery();
+        }
+
         public void createItem(Item item)
         {
             SqlConnection conn = DBHelper.loadDB();
@@ -21,8 +35,8 @@ namespace FestivalOfTrees.Dao
                     + ", " + item.MinBid
                     + ", 0)";
             SqlCommand command = new SqlCommand(query, conn);
-            int id = (int)command.ExecuteScalar();
-            item.ItemID = id;
+            item.ItemID = (int)command.ExecuteScalar();
+            
         }
 
         public int updateItem(Item item)

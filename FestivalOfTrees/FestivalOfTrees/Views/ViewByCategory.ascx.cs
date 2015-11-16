@@ -13,19 +13,19 @@ namespace FestivalOfTrees.Views
         private SearchItemController searchCatItem;
         protected void Page_Load(object sender, EventArgs e)
         {
-            searchCatItem = new SearchItemController();
+            //searchCatItem = new SearchItemController();
 
-            if (CatList.Items.Count <= 1)
-            {
-                List<ListItem> listCatItems = searchCatItem.allItemCategories();
-                int index = 1;
-                foreach (ListItem result in listCatItems)
-                {
+            //if (CatList.Items.Count <= 1)
+            //{
+            //    List<ListItem> listCatItems = searchCatItem.allItemCategories();
+            //    int index = 1;
+            //    foreach (ListItem result in listCatItems)
+            //    {
 
-                    CatList.Items.Insert(index, result);
-                    index++;
-                }
-            }
+            //        CatList.Items.Insert(index, result);
+            //        index++;
+            //    }
+            //}
         }
 
         protected void GridViewItemsByCategory_SelectedIndexChanged(object sender, EventArgs e)

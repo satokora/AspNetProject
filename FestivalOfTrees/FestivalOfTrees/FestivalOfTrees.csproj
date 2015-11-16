@@ -386,6 +386,9 @@
     <Compile Include="SingleView.aspx.designer.cs">
       <DependentUpon>SingleView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\ISession.cs" />
+    <Compile Include="Utilities\ISessionManager.cs" />
+    <Compile Include="Utilities\Session.cs" />
     <Compile Include="Utilities\SessionEnum.cs" />
     <Compile Include="Utilities\SessionManager.cs" />
     <Compile Include="Views\EnterCategory.ascx.cs">

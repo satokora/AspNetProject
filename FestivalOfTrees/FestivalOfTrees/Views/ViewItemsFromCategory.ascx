@@ -4,7 +4,7 @@
     <div class="ui stacked segment" style="min-height: 250px">
         <h3 style="text-align:center">Items</h3>
         <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ITEMID" DataSourceID="SqlDataSource1">
+        <asp:GridView ID="GridView1" runat="server" CssClass="ui red table center aligned" AutoGenerateColumns="False" DataKeyNames="ITEMID" DataSourceID="SqlDataSource1">
             <Columns>
                 <asp:BoundField DataField="ITEMID" HeaderText="ITEMID" InsertVisible="False" ReadOnly="True" SortExpression="ITEMID" />
                 <asp:BoundField DataField="CATEGORYID" HeaderText="CATEGORYID" SortExpression="CATEGORYID" />

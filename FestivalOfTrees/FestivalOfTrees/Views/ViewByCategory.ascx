@@ -4,7 +4,7 @@
         <h3 style="text-align:center">View Categories</h3>
             
          
-                <div class="two fields">                 
+<%--                <div class="two fields">                 
                     <div class="field">
                         <label class="account">Category</label>
                         <asp:DropDownList ID="CatList" runat="server" CssClass="ui dropdown">
@@ -14,7 +14,7 @@
                     <div class="field">
                     </div>
                 </div>
-                <asp:Button ID="BtnGetItemsByCategory" runat="server" Text="Search for Items" CssClass="ui secondary button"/>
+                <asp:Button ID="BtnGetItemsByCategory" runat="server" Text="Search for Items" CssClass="ui secondary button"/>--%>
 
         <br />
         <%--<div class="ui icon right floated buttons">

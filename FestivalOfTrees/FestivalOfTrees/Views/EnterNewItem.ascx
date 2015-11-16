@@ -10,15 +10,30 @@
             <div class="ui stackable grid"> 
                 <div class="two column row">
                     <div class="ten wide column">
+                        <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                <ContentTemplate>
                         <div class="field">
                             <label>Category</label>
-                            <asp:DropDownList ID="CatSelectList" runat="server" CssClass="ui fluid dropdown"></asp:DropDownList>
+                                        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="ui fluid dropdown" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="CATEGORYNAME" DataValueField="CATEGORYID" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:it368_Auction_ProjectConnectionString %>" SelectCommand="SELECT * FROM [CATEGORY] WHERE ([AUCTIONID] = @AUCTIONID)">
+                                            <SelectParameters>
+                                                <asp:SessionParameter Name="AUCTIONID" SessionField="Auction" Type="Int32" />
+                                            </SelectParameters>
+                                        </asp:SqlDataSource>
                         </div>
+                                </ContentTemplate>
+                                <Triggers> 
+                                    <asp:AsyncPostBackTrigger ControlID="DropDownList1" EventName="SelectedIndexChanged" /> 
+                                </Triggers>
+                            </asp:UpdatePanel>
+                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                            <ContentTemplate>
                         <div class="field">
                             <label>Value</label>
                             <div class="ui labeled input">
                               <div class="ui label">$</div>
-                                <asp:TextBox ID="TxtValPrice" runat="server" placeholder="Amount"></asp:TextBox>
+                                        <asp:TextBox ID="TxtValPrice" runat="server" placeholder="Amount" OnKeyUp="TxtValPrice_TextChanged"  OnTextChanged="TxtValPrice_TextChanged" AutoPostBack="True"></asp:TextBox>
                             </div>
                         </div>
                         <div class="field">
@@ -35,8 +50,12 @@
                               <div class="ui label">$</div>
                                 <asp:TextBox ID="TxtAngPrice" runat="server" placeholder="Amount"></asp:TextBox>
                             </div>
-                           
                         </div>
+                            </ContentTemplate>
+                            <Triggers> 
+                                    <asp:AsyncPostBackTrigger ControlID="TxtValPrice" EventName="TextChanged" /> 
+                                </Triggers>
+                        </asp:UpdatePanel>
                     </div>
                     <div class="six wide column">
                         <div>
@@ -47,14 +66,14 @@
                         </div>
                    </div>
                 </div>
-         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+         
                 <div class="sixteen wide column">
-                    <div class="field">
+                    <div class="field" id="designer-srch">
                         <label>Donor/Designer</label>
                         <div class="ui action input">
                             <asp:TextBox ID="DonorName" runat="server" placeholder="Search..." ></asp:TextBox>
                             <%--<ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender1" runat="server" TargetControlID="DonorName" ServiceMethod="GetCompletionList"></ajaxToolkit:AutoCompleteExtender>--%>
-                            <asp:Button ID="SearchDonor" runat="server" Text="Search" CssClass="ui red button" />
+                            <a class="ui red button">Search</a>
                         </div>
                     </div>
                     <div class="field">
@@ -86,12 +105,27 @@
     </div>
 </div>
 
-<div class="ui modal">
+<div class="ui modal" id="ConfirmUpdateMsg">
   <div class="header">Confirm Item Information</div>
   <div class="content">
     <p></p>
     <p></p>
     <p></p>
-      <asp:Button ID="BtnConfirmItem" runat="server" Text="Button" OnClick="BtnConfirmItem_Click" />
+      <asp:Button ID="BtnConfirmItem" runat="server" Text="Button" />
   </div>
 </div>
+
+<div class="ui modal designer">
+  <div class="header">Select Designer/Donor</div>
+  <div class="content">
+      <div class="ui form">
+          <div class="field">
+              <asp:ListBox ID="ListBox1" runat="server" SelectionMode="Multiple" CssClass="ui fluid dropdown" DataSourceID="SqlDataSource2"  DataTextField="LASTNAME" DataValueField="USERID" Rows="3"></asp:ListBox>
+      <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:it368_Auction_ProjectConnectionString %>" SelectCommand="Select USERID, FIRSTNAME, LASTNAME from USERINFO where DONOR=1"></asp:SqlDataSource>
+    <p></p>
+    <p></p>
+          </div></div>
+      <asp:Button ID="Button1" runat="server" Text="Button" />
+  </div>
+</div>
+

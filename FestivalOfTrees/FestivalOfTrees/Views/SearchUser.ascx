@@ -36,7 +36,7 @@
            
         </asp:MultiView>--%>
         <br />
-        <asp:GridView ID="GridViewUsers" runat="server"  CssClass="ui red table center aligned" AutoGenerateColumns="False" DataKeyNames="EMAIL" DataSourceID="Users">
+        <asp:GridView ID="GridViewUsers" runat="server" CssClass="ui red table center aligned" AutoGenerateColumns="False" DataKeyNames="EMAIL" DataSourceID="Users">
             <Columns>
                 <asp:TemplateField HeaderText="Print Invoice">
                     <ItemTemplate>

@@ -1,5 +1,6 @@
 ﻿using FestivalOfTrees.Dao;
 using FestivalOfTrees.Model;
+using FestivalOfTrees.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,8 @@ namespace FestivalOfTrees.Controller
             if(signUp.addNewUserCredentials(email, password))
             {
                 addSuccess = true;
+                UserCtrl newUser = new UserCtrl();
+                newUser.authenticate(email, password);
             }
             return addSuccess;
         }

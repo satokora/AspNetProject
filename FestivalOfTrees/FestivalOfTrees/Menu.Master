@@ -39,10 +39,17 @@
     </form>
     <script src="assets/semantic.min.js"></script>
     <script>
-        
-        $('.special.cards .image').dimmer({
-            on: 'hover'
+        $(document).ready(function () {
+            $('.special.cards .image').dimmer({
+                on: 'hover'
+            });
+
+            $("#designer-srch a").click(function () {
+                $(".ui.modal.designer").modal('show');
+            });
         });
+        
+
     </script>
 </body>
 </html>
