@@ -37,9 +37,9 @@ namespace FestivalOfTrees.Controller
             return dao.getItemByNumber(itemID);
         }
 
-        public void createItem(Item item)
+        public int createItem(Item item)
         {
-            dao.createItem(item);
+             return dao.createItem(item);
         }
 
         public void createItem(Item item, List<string> emailList)
@@ -74,6 +74,15 @@ namespace FestivalOfTrees.Controller
                 angel = value * Category.AngelRate;
             }
             return angel;
+        }
+
+        public List<User> getDesigners(String itemId)
+        {
+            return dao.getDesignersByItemId(Convert.ToInt32(itemId));
+        }
+        public string getSponsorName(string catId)
+        {
+            return catDao.getByID(catId).SponsorName;
         }
     }
 }

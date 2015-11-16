@@ -12,7 +12,7 @@ namespace FestivalOfTrees.Dao
 
         Item getItemByNumber(string itemNum);
 
-        void createItem(Item item);
+        int createItem(Item item);
 
         int updateItem(Item item);
 

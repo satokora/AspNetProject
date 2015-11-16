@@ -37,5 +37,11 @@ namespace FestivalOfTrees.Controller
             }
             return valid;
         }
+
+        public User getBuyerInfo(string userId)
+        {
+            UserDaoImpl user = new UserDaoImpl();
+            return user.getUserByNum(userId);
+        }
     }
 }

@@ -22,15 +22,6 @@ namespace FestivalOfTrees.Views {
         protected global::System.Web.UI.WebControls.Label LblTitleItemPage;
         
         /// <summary>
-        /// AllCatGridView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView AllCatGridView;
-        
-        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -92,6 +83,24 @@ namespace FestivalOfTrees.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ParentCatList;
+        
+        /// <summary>
+        /// MinBidRate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox MinBidRate;
+        
+        /// <summary>
+        /// AngPriceRate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AngPriceRate;
         
         /// <summary>
         /// BtnAddCategory control.

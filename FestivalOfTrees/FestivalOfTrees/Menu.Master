@@ -45,8 +45,10 @@
             });
 
             $("#designer-srch a").click(function () {
-                $(".ui.modal.designer").modal('show');
+                $(".ui.small.modal.designer").modal('show');
             });
+
+            
         });
         
 

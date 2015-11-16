@@ -23,7 +23,7 @@ namespace FestivalOfTrees.Dao
             int rows = command.ExecuteNonQuery();
         }
 
-        public void createItem(Item item)
+        public int createItem(Item item)
         {
             SqlConnection conn = DBHelper.loadDB();
             string query = "INSERT INTO ITEM OUTPUT INSERTED.ITEMID VALUES ("
@@ -33,10 +33,12 @@ namespace FestivalOfTrees.Dao
                     + ", " + item.ItemValue
                     + ", " + item.AngelPrice
                     + ", " + item.MinBid
-                    + ", 0)";
+                    + ", 0"
+                    + ", '" + item.Description + "')";
             SqlCommand command = new SqlCommand(query, conn);
             item.ItemID = (int)command.ExecuteScalar();
-            
+            return item.ItemID;
+
         }
 
         public int updateItem(Item item)
@@ -51,7 +53,8 @@ namespace FestivalOfTrees.Dao
                     + ", ANGELPRICE = " + item.AngelPrice
                     + ", MINBID = " + item.MinBid
                     + ", PAID = " + item.Paid
-                    + " WHERE ITEMID = " + item.ItemID + ";";
+                    + ", DESCR = '" + item.Description
+                    + "' WHERE ITEMID = " + item.ItemID + ";";
             SqlCommand command = new SqlCommand(query, conn);
             int rows = command.ExecuteNonQuery();
             return rows;
@@ -110,6 +113,50 @@ namespace FestivalOfTrees.Dao
 
             return iList;
         }
+
+        public List<User> getDesignersByItemId(int itemId)
+        {
+            List<User> uList = new List<User>();
+            SqlConnection conn = DBHelper.loadDB();
+            String query = "SELECT * FROM USERINFO WHERE EMAIL IN (SELECT EMAIL FROM USERITEM WHERE ITEMID = @ITEMID)";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.Add(new SqlParameter("@ITEMID", itemId));
+
+            try
+            {
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        User u = new User()
+                        {
+                            UserID = Convert.ToInt32(reader["userid"]),
+                            Email = Convert.ToString(reader["email"]),
+                            FirstName = Convert.ToString(reader["firstname"]),
+                            LastName = Convert.ToString(reader["lastname"]),
+                            Address = Convert.ToString(reader["streetadress"]),
+                            City = Convert.ToString(reader["city"]),
+                            State = Convert.ToString(reader["usertsate"]),
+                            Zip = Convert.ToInt32(reader["zip"]),
+                            Admin = Convert.ToBoolean(reader["admin"]),
+                            Committee = Convert.ToBoolean(reader["committee"]),
+                            Phone = Convert.ToString(reader["phone"]),
+                            Text = Convert.ToBoolean(reader["text"]),
+                            Donor = Convert.ToBoolean(reader["donor"])
+                        };
+                        
+                        uList.Add(u);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+
+            return uList;
+        }
         
         private Item getItem(SqlCommand command)
         {
@@ -142,7 +189,8 @@ namespace FestivalOfTrees.Dao
                 ItemValue = Convert.ToDouble(reader["itemvalue"]),
                 AngelPrice = Convert.ToDouble(reader["angelprice"]),
                 MinBid = Convert.ToDouble(reader["minbid"]),
-                Paid = Convert.ToBoolean(reader["paid"])
+                Paid = Convert.ToBoolean(reader["paid"]),
+                Description = Convert.ToString(reader["descr"])
             };
             return i;
         }

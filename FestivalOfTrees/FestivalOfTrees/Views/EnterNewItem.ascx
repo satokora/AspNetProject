@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="EnterNewItem.ascx.cs" Inherits="FestivalOfTrees.EnterNewItem" %>
-<%--<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>--%>
+
 
 <div class="ui middle aligned center aligned grid">
     <div class="column"  style="max-width:800px;">
@@ -59,7 +59,7 @@
                     </div>
                     <div class="six wide column">
                         <div>
-                            <img src="../assets/image/noimage.png" alt="No Image" class="upload-image" />
+                            <img src="../assets/image/noimage.png" alt="No Image" class="upload-image" id="myUploadedImg" />
                         </div>
                         <div>
                             <input type="file" id="File1">                            
@@ -68,25 +68,8 @@
                 </div>
          
                 <div class="sixteen wide column">
-                    <div class="field" id="designer-srch">
-                        <label>Donor/Designer</label>
-                        <div class="ui action input">
-                            <asp:TextBox ID="DonorName" runat="server" placeholder="Search..." ></asp:TextBox>
-                            <%--<ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender1" runat="server" TargetControlID="DonorName" ServiceMethod="GetCompletionList"></ajaxToolkit:AutoCompleteExtender>--%>
-                            <a class="ui red button">Search</a>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label>Sponsor Name (Optional)</label>
-                        <asp:TextBox ID="SponsorName" runat="server" ></asp:TextBox>
-                    </div>
-                    <div class="field">
-                        <label>Sponsor Link (Optional)</label>
-                        <div class="ui left icon input">
-                            <asp:TextBox ID="SponsorLink" runat="server" placeholder="Link to sponsor page" ></asp:TextBox>
-                            <i class="world icon"></i>
-                        </div>
-                    </div>
+                    
+                    
                     <div class="field">
                         <label>Item Name</label>
                         <asp:TextBox ID="ItemName" runat="server" ></asp:TextBox>
@@ -95,9 +78,19 @@
                         <label>Item Description (Optional)</label>
                         <asp:TextBox ID="Description" runat="server" TextMode="MultiLine" Rows="4"></asp:TextBox>
                     </div>
-                    <div class="field">
-                        <asp:Button ID="AddItem" runat="server" Text="Add Item"  CssClass="ui fluid large red button" />
+                    <div class="field" id="designer-srch">
+                        <label>Donor/Designer</label>
+                        <div class="ui action input">
+                            <asp:ListBox ID="DesignerList" runat="server" DataSourceID="SqlDataSource2"  DataTextField="FULLNAME" DataValueField="EMAIL" SelectionMode="Multiple" Height="100" Font-Size="Large"  OnDataBound="DesignerList_DataBound" >
+                                <asp:ListItem Value="" Text="Select Designer/Donor..."></asp:ListItem>
+                            </asp:ListBox>
+                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:it368_Auction_ProjectConnectionString %>" SelectCommand="SELECT EMAIL, (LASTNAME + ', ' + FIRSTNAME) AS FULLNAME FROM USERINFO WHERE DONOR=1 ORDER BY LASTNAME"></asp:SqlDataSource>
+                        </div>
                     </div>
+                    <div class="field">
+                        <asp:Button ID="AddItem" runat="server" Text="Add Item"  CssClass="ui fluid large red button" OnClick="AddItem_Click" />
+                    </div>
+                    
                 </div>
 
             </div>
@@ -115,17 +108,28 @@
   </div>
 </div>
 
-<div class="ui modal designer">
-  <div class="header">Select Designer/Donor</div>
-  <div class="content">
-      <div class="ui form">
-          <div class="field">
-              <asp:ListBox ID="ListBox1" runat="server" SelectionMode="Multiple" CssClass="ui fluid dropdown" DataSourceID="SqlDataSource2"  DataTextField="LASTNAME" DataValueField="USERID" Rows="3"></asp:ListBox>
-      <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:it368_Auction_ProjectConnectionString %>" SelectCommand="Select USERID, FIRSTNAME, LASTNAME from USERINFO where DONOR=1"></asp:SqlDataSource>
-    <p></p>
-    <p></p>
-          </div></div>
-      <asp:Button ID="Button1" runat="server" Text="Button" />
-  </div>
-</div>
+<%--<script>
+    function sendFile(file) {
+
+        var formData = new FormData();
+        formData.append('file', $('#File1')[0].files[0]);
+        $.ajax({
+            type: 'post',
+            url: 'fileUploader.ashx',
+            data: formData,
+            success: function (status) {
+                if (status != 'error') {
+                    var my_path = "MediaUploader/" + status;
+                    $("#myUploadedImg").attr("src", my_path);
+                }
+            },
+            processData: false,
+            contentType: false,
+            error: function () {
+                alert("Whoops something went wrong!");
+            }
+        });
+    }
+</script>
+--%>
 
