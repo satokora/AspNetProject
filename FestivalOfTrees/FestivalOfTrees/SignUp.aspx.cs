@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using FestivalOfTrees.Controller;
 using FestivalOfTrees.Model;
+using FestivalOfTrees.Dao;
 
 namespace FestivalOfTrees
 {
@@ -21,6 +22,7 @@ namespace FestivalOfTrees
 
         protected void SignUpBtn_Click(object sender, EventArgs e)
         {
+            
             string role = Request.QueryString["role"];
 
             bool ADMIN = false;
@@ -37,6 +39,16 @@ namespace FestivalOfTrees
 
             if (role.Equals("a"))
             {
+                Request r = new Request()
+                {
+                    RequestEmail = EMAIL,
+                    Admin = true,
+                    Committee = true,
+                    Donor = true
+                };
+                UserCtrl uCtrl = new UserCtrl();
+                uCtrl.createRequest(r);
+
                 ADMIN = true;
                 COMMITTEE = false;
             }

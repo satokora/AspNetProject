@@ -10,6 +10,33 @@ namespace FestivalOfTrees.Dao
 {
     public class UserDaoImpl : UserDao
     {
+        public void createRequest(Request request)
+        {
+            int admin = 0, committee = 0, donor = 0;
+            if (request.Admin)
+                admin = 1;
+            if (request.Committee)
+                committee = 1;
+            if (request.Donor)
+                donor = 1;
+
+            SqlConnection conn = DBHelper.loadDB();
+            string query = "INSERT INTO REQUEST OUTPUT INSERTED.ID VALUES (@EMAIL, @ADMIN, @COMMITTEE, @DONOR);";
+            try
+            {
+                SqlCommand command = new SqlCommand(query, conn);
+                command.Parameters.Add(new SqlParameter("@EMAIL", request.RequestEmail));
+                command.Parameters.Add(new SqlParameter("@ADMIN", admin));
+                command.Parameters.Add(new SqlParameter("@COMMITTEE", committee));
+                command.Parameters.Add(new SqlParameter("@DONOR", donor));
+                request.RequestID = (int)command.ExecuteScalar();
+            }
+            catch (SqlException ex)
+            {
+                //error handling
+            }
+            
+        }
         public int updateUser(User u)
         {
             SqlConnection conn = DBHelper.loadDB();
