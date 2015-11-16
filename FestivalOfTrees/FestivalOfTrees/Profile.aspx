@@ -71,7 +71,9 @@
                         </div>
                         <div class="ui tab segment left aligned" data-tab="second">
                             <h1>New User Request</h1>
-                            <asp:GridView ID="UserRequestGrid" runat="server"></asp:GridView>
+                            <asp:GridView ID="UserRequestGrid" runat="server"  class="ui grey table"></asp:GridView>
+                            <br />
+                            <asp:LinkButton ID="BtnAccept" runat="server" CssClass="ui teal button"><i class="thumbs up icon"></i>Accept selected requests</asp:LinkButton>
                         </div>
                     </div>
                 </div>
