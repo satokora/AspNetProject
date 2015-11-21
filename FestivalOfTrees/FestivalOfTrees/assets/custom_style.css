@@ -91,3 +91,10 @@ body {
 .upload-image{
     width: 250px;
 }
+
+/*
+    Item status view
+*/
+.margin-top-block{
+    margin-top: 30px;
+}

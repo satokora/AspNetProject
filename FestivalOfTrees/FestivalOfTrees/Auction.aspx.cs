@@ -43,6 +43,10 @@ namespace FestivalOfTrees
                     {
                         MainContentMultiView.ActiveViewIndex = 6;
                     }
+                    else if (Request.QueryString["menu"].Equals("8"))
+                    {
+                        MainContentMultiView.ActiveViewIndex = 7;
+                    }
                 }
                 else
                 {

@@ -10,7 +10,7 @@ using FestivalOfTrees.Dao;
 
 namespace FestivalOfTrees
 {
-    public partial class Login1 : System.Web.UI.Page
+    public partial class Login : System.Web.UI.Page
     {
         private UserCtrl loginCtrl;
         protected void Page_Load(object sender, EventArgs e)

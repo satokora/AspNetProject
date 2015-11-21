@@ -36,6 +36,9 @@
             <asp:View ID="View6" runat="server">
                 <uc:EnterCategory runat="server" id="EnterCategory" />
             </asp:View>
+            <asp:View ID="View7" runat="server">
+                
+            </asp:View>
             <asp:View ID="View8" runat="server">
                 <uc:Category runat="server" id="ViewFromCategory" />
             </asp:View>

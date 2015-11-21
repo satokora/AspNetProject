@@ -32,7 +32,7 @@ namespace FestivalOfTrees.Views
         {
             GridViewRow row = GridViewItemsByCategory.Rows[GridViewItemsByCategory.SelectedIndex];
             Session["Category"] = row.Cells[1].Text;
-            Response.Redirect("Auction.aspx?menu=7");
+            Response.Redirect("Auction.aspx?menu=8");
         }
     }
 }

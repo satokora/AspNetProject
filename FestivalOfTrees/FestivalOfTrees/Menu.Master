@@ -19,6 +19,7 @@
 </head>
 <body class="home-bg">
     <form id="form1" runat="server" class="ui form">
+        <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
         <div id="wrap">
             <div id="main">
                 <asp:MultiView ID="MenuMultiView" runat="server">

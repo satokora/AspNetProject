@@ -10,7 +10,7 @@
             <div class="ui stackable grid"> 
                 <div class="two column row">
                     <div class="ten wide column">
-                        <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
+                        
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                 <ContentTemplate>
                         <div class="field">

@@ -501,6 +501,7 @@
       <DependentUpon>ItemsWithCatName.xsd</DependentUpon>
     </Content>
     <Content Include="PDF\BidSheet.pdf" />
+    <None Include="Properties\PublishProfiles\Project.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

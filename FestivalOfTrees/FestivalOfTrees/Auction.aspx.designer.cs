@@ -31,13 +31,31 @@ namespace FestivalOfTrees {
         protected global::System.Web.UI.WebControls.View View1;
         
         /// <summary>
-        /// ItemStatusView control.
+        /// ItemViewByPaid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FestivalOfTrees.Views.ItemStatusView ItemStatusView;
+        protected global::FestivalOfTrees.Views.ItemStatusView ItemViewByPaid;
+        
+        /// <summary>
+        /// View9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View View9;
+        
+        /// <summary>
+        /// ItemStatusView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::FestivalOfTrees.Views.ItemStatusView ItemStatusView1;
         
         /// <summary>
         /// View2 control.
@@ -128,6 +146,15 @@ namespace FestivalOfTrees {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::FestivalOfTrees.Views.EnterCategory EnterCategory;
+        
+        /// <summary>
+        /// View7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View View7;
         
         /// <summary>
         /// View8 control.

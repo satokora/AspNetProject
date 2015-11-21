@@ -114,9 +114,13 @@ namespace FestivalOfTrees.Dao
             return iList;
         }
 
-        public List<User> getDesignersByItemId(int itemId)
+        public List<User> getDesignersByItemId(string itemId)
         {
             List<User> uList = new List<User>();
+            int firstDigit = itemId.IndexOfAny("0123456789".ToCharArray());
+            string categoryID = itemId.Substring(0, firstDigit);
+            string itemNumber = itemId.Substring(firstDigit);
+
             SqlConnection conn = DBHelper.loadDB();
             String query = "SELECT * FROM USERINFO WHERE EMAIL IN (SELECT EMAIL FROM USERITEM WHERE ITEMID = @ITEMID)";
             SqlCommand command = new SqlCommand(query, conn);

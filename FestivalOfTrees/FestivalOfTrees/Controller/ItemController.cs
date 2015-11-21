@@ -78,7 +78,7 @@ namespace FestivalOfTrees.Controller
 
         public List<User> getDesigners(String itemId)
         {
-            return dao.getDesignersByItemId(Convert.ToInt32(itemId));
+            return dao.getDesignersByItemId(itemId);
         }
         public string getSponsorName(string catId)
         {

@@ -10,7 +10,7 @@
 namespace FestivalOfTrees {
     
     
-    public partial class Login1 {
+    public partial class Login {
         
         /// <summary>
         /// MessagePanel control.
