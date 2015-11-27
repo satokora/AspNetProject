@@ -8,8 +8,7 @@
 <%@ Register Src="~/Views/SearchUser.ascx" TagPrefix="uc" TagName="SearchUser" %>
 <%@ Register Src="~/Views/EnterCategory.ascx" TagPrefix="uc" TagName="EnterCategory" %>
 <%@ Register Src="~/Views/ViewItemsFromCategory.ascx" TagPrefix="uc" TagName="Category" %>
-
-
+<%@ Register Src="~/Views/ItemSoldStatusView.ascx" TagPrefix="uc" TagName="ItemSoldStatusView" %>
 
 
 
@@ -20,6 +19,9 @@
         <asp:MultiView ID="MainContentMultiView" runat="server">
             <asp:View ID="View1" runat="server">
                 <uc:ItemStatusView runat="server" id="ItemStatusView" />
+            </asp:View>
+            <asp:View ID="View9" runat="server">
+                <uc:ItemSoldStatusView runat="server" id="ItemSoldStatusView" />
             </asp:View>
             <asp:View ID="View2" runat="server">
                 <uc:ViewByCategory runat="server" id="ViewByCategory" />               

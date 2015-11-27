@@ -26,6 +26,10 @@ label{
     color: #554843 !important;
 }
 
+.ui.basic.modal label{
+    color:#fff !important;
+}
+
 .ui.red.button{
     background-color: #930a2c!important;
 }
@@ -98,3 +102,4 @@ body {
 .margin-top-block{
     margin-top: 30px;
 }
+

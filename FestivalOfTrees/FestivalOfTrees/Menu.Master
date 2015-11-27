@@ -40,6 +40,12 @@
     </form>
     <script src="assets/semantic.min.js"></script>
     <script>
+        $(function () {
+            //declare function 
+            $.fn.onOK = function () {
+                $("#ContentPlaceHolder1_ItemStatusView_SelectColBtn").click();
+            };
+        });
         $(document).ready(function () {
             $('.special.cards .image').dimmer({
                 on: 'hover'
@@ -48,7 +54,27 @@
             $("#designer-srch a").click(function () {
                 $(".ui.small.modal.designer").modal('show');
             });
-
+            //$("#sold a").click(function () {
+            //    $(this).parent().appendTo("form");
+            //    $(".ui.basic.modal")
+            //        .modal({
+            //            onShow: function () {
+            //                $(this).parent().appendTo("form");
+            //            }
+            //        })
+            //        .modal('show');
+            //});
+            $("#paid a").click(function () {
+                $(this).parent().appendTo("form");
+                $(".ui.basic.modal")
+                    .modal({
+                        onShow: function () {
+                            $(this).parent().appendTo("form");
+                        }
+                    })
+                    .modal('show');
+                return false;
+            });
             
         });
         

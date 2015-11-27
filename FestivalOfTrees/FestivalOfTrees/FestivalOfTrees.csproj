@@ -236,6 +236,7 @@
     <Content Include="SingleView.aspx" />
     <Content Include="Views\EnterCategory.ascx" />
     <Content Include="Views\EnterNewItem.ascx" />
+    <Content Include="Views\ItemSoldStatusView.ascx" />
     <Content Include="Views\ItemStatusView.ascx" />
     <Content Include="Views\SearchItems.ascx" />
     <Content Include="Views\SearchUser.ascx" />
@@ -405,6 +406,13 @@
     <Compile Include="Views\EnterNewItem.ascx.designer.cs">
       <DependentUpon>EnterNewItem.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\ItemSoldStatusView.ascx.cs">
+      <DependentUpon>ItemSoldStatusView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ItemSoldStatusView.ascx.designer.cs">
+      <DependentUpon>ItemSoldStatusView.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Views\ItemStatusView.ascx.cs">
       <DependentUpon>ItemStatusView.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -512,7 +520,38 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

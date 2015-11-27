@@ -7,63 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FestivalOfTrees.PageComponent {
+namespace FestivalOfTrees.Views {
     
     
-    public partial class SideBarDesigner {
+    public partial class ItemSoldStatusView {
         
         /// <summary>
-        /// BtnViewItemsBySold control.
+        /// UpdatePanelForSoldStatusView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BtnViewItemsBySold;
+        protected global::System.Web.UI.UpdatePanel UpdatePanelForSoldStatusView;
         
         /// <summary>
-        /// BtnViewByCategory control.
+        /// SoldStatusList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BtnViewByCategory;
+        protected global::System.Web.UI.WebControls.DropDownList SoldStatusList;
         
         /// <summary>
-        /// BtnSearchItems control.
+        /// ExportSoldBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BtnSearchItems;
+        protected global::System.Web.UI.WebControls.LinkButton ExportSoldBtn;
         
         /// <summary>
-        /// BtnEnterItem control.
+        /// BtnPrintSoldInvoices control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BtnEnterItem;
+        protected global::System.Web.UI.WebControls.LinkButton BtnPrintSoldInvoices;
         
         /// <summary>
-        /// BtnCloseAuction control.
+        /// SoldStatusGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BtnCloseAuction;
+        protected global::System.Web.UI.WebControls.GridView SoldStatusGrid;
         
         /// <summary>
-        /// BtnLogOut control.
+        /// SqlDataSource2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BtnLogOut;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        
+        /// <summary>
+        /// SoldColumnList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList SoldColumnList;
+        
+        /// <summary>
+        /// SelectSoldColBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SelectSoldColBtn;
     }
 }

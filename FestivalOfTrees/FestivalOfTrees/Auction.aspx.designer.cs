@@ -31,13 +31,13 @@ namespace FestivalOfTrees {
         protected global::System.Web.UI.WebControls.View View1;
         
         /// <summary>
-        /// ItemViewByPaid control.
+        /// ItemStatusView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FestivalOfTrees.Views.ItemStatusView ItemViewByPaid;
+        protected global::FestivalOfTrees.Views.ItemStatusView ItemStatusView;
         
         /// <summary>
         /// View9 control.
@@ -49,13 +49,13 @@ namespace FestivalOfTrees {
         protected global::System.Web.UI.WebControls.View View9;
         
         /// <summary>
-        /// ItemStatusView1 control.
+        /// ItemSoldStatusView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FestivalOfTrees.Views.ItemStatusView ItemStatusView1;
+        protected global::FestivalOfTrees.Views.ItemSoldStatusView ItemSoldStatusView;
         
         /// <summary>
         /// View2 control.

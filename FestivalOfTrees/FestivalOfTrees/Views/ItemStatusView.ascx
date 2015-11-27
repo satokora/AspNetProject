@@ -1,13 +1,13 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ItemStatusView.ascx.cs" Inherits="FestivalOfTrees.Views.ItemStatusView" %>
 <div class="ui conatiner">
     <div class="ui stacked segment">
-        <h3 style="text-align: center">Item Status View</h3>
-        <div class="ui buttons" style="margin-bottom:30px">
-          <a class="ui red button" href="#SoldView">Items by Sold Status</a>
-          <a class="ui smoky-brown button" href="#PaidView">Items by Paid Status</a>
-        </div>
+        <h3 style="text-align: center">Item View by Paid Status</h3>
+    <%--    <div class="ui buttons" style="margin-bottom: 30px">
+            <a class="ui red button" href="#SoldView">Items by Paid Status</a>
+            <a class="ui smoky-brown button" href="#PaidView">Items by Paid Status</a>
+        </div>--%>
         <%--<asp:ScriptManager ID="ScriptManagerForStatusView" runat="server"></asp:ScriptManager>--%>
-        <asp:UpdatePanel ID="UpdatePanelForSoldStatusView" runat="server" style="margin-bottom:50px">
+        <%--<asp:UpdatePanel ID="UpdatePanelForSoldStatusView" runat="server" style="margin-bottom: 50px">
             <ContentTemplate>
 
                 <div class="ui grid" id="SoldView">
@@ -22,13 +22,13 @@
                     </div>
                     <div class="six wide column"></div>
                     <div class="six wide column bottom aligned right aligned">
-                        <asp:LinkButton ID="ExportSoldBtn" runat="server" CssClass="ui red button">
+                        <asp:LinkButton ID="ExportSoldBtn" runat="server" CssClass="ui red button" OnClick="ExportSoldBtn_Click">
                     <i class="file excel outline icon"></i>Export to CSV
                         </asp:LinkButton>
                         <asp:LinkButton ID="BtnPrintSoldInvoices" runat="server" CssClass="ui red button" OnClick="BtnPrintSoldInvoices_Click"><i class="print icon"></i>Print Bid Sheets</asp:LinkButton>
                     </div>
-                </div>
-                <div class="margin-top-block">
+                </div>--%>
+               <%-- <div class="margin-top-block">
                     <asp:GridView ID="SoldStatusGrid" runat="server" CssClass="ui celled red table center aligned" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" ShowHeaderWhenEmpty="True" OnSelectedIndexChanged="ItemSoldStatusGrid_SelectedIndexChanged">
                         <Columns>
                             <asp:TemplateField>
@@ -69,11 +69,11 @@
                     </asp:SqlDataSource>
                 </div>
             </ContentTemplate>
-        </asp:UpdatePanel>
-        <asp:UpdatePanel ID="UpdatePanelForPaidStatusView" runat="server" style="margin-bottom:50px">
+        </asp:UpdatePanel>--%>
+        <asp:UpdatePanel ID="UpdatePanelForPaidStatusView" runat="server" style="margin-bottom: 50px">
             <ContentTemplate>
 
-                <div class="ui grid"  id="PaidView">
+                <div class="ui grid" id="PaidView">
                     <div class="four wide column">
                         <div class="field">
                             <label>By Paid Status</label>
@@ -83,11 +83,11 @@
                             </asp:DropDownList>
                         </div>
                     </div>
-                    <div class="six wide column"></div>
-                    <div class="six wide column bottom aligned right aligned">
-                        <asp:LinkButton ID="BtnExportCSV" runat="server" CssClass="ui red button">
-                    <i class="file excel outline icon"></i>Export to CSV
-                        </asp:LinkButton>
+                    <div class="nine wide column bottom aligned right aligned" id="paid">
+<%--                        <a href="#" class="ui red button"><i class="file excel outline icon"></i>Export to CSV</a>--%>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="ui red button"><i class="file excel outline icon"></i>Export to CSV</asp:LinkButton>
+                    </div>
+                    <div class="three wide column bottom aligned right aligned">
                         <asp:LinkButton ID="BtnPrintPaidInvoices" runat="server" CssClass="ui red button" OnClick="BtnPrintPaidInvoices_Click"><i class="print icon"></i>Print Bid Sheets</asp:LinkButton>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                                 </HeaderTemplate>
                                 <ItemTemplate>
                                     <div class="ui fitted checkbox">
-                                        <asp:CheckBox ID="CheckBox2" runat="server" />
+                                        <asp:CheckBox ID="CheckBox2" runat="server" OnCheckedChanged="ItemPaidStatusGrid_CheckedIndexChanged" />
                                         <label></label>
                                     </div>
                                 </ItemTemplate>
@@ -133,6 +133,28 @@
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>
+        <div class="ui basic modal center aligned">
+            <div class="ui grid">
+                <div class="six wide column"></div>
+                <div class="four wide column">
+
+                    <div class="header"><h2>Export to Excel</h2></div>
+                    <div class="description">
+                        <h4>Select columns to export:</h4>
+                    </div>
+                    <div class="content">
+                        <div class="ui checkbox">
+                            <asp:CheckBoxList ID="ColumnList" runat="server">
+                            </asp:CheckBoxList>
+                        </div>
+                    </div>
+                    <div class="action">
+                        <asp:Button ID="SelectColBtn" runat="server" Text="Select" CssClass="ui button" OnClick="SelectColBtn_Click" />
+                    </div>
+                </div>
+            </div>
+            <div class="six wide column"></div>
+        </div>
         <%-- <table class="ui celled red table center aligned">
           <thead>
             <tr>

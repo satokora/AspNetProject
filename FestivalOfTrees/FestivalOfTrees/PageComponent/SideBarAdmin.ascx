@@ -4,7 +4,8 @@
     <div href="#" class="item">
         <img class="logo" src="assets/image/Logo_FestTree.png" />
     </div>
-    <asp:LinkButton ID="BtnViewItems" runat="server" CssClass="item" OnClick="BtnViewItems_Click">View Items by status</asp:LinkButton>
+    <asp:LinkButton ID="BtnViewItems" runat="server" CssClass="item" OnClick="BtnViewItems_Click">View Items by Paid Status</asp:LinkButton>
+    <asp:LinkButton ID="BtnViewItemsBySold" runat="server" CssClass="item" OnClick="BtnViewItemsBySold_Click">View Items by Sold Status</asp:LinkButton>
     <asp:LinkButton ID="BtnViewByCategory" runat="server" CssClass="item" OnClick="BtnViewByCategory_Click">View Categories</asp:LinkButton>
     <asp:LinkButton ID="BtnSearchItems" runat="server" CssClass="item" OnClick="BtnSearchItems_Click">Search Items</asp:LinkButton>
     <asp:LinkButton ID="BtnSearchUsers" runat="server" CssClass="item" OnClick="BtnSearchUsers_Click">Search Users</asp:LinkButton>

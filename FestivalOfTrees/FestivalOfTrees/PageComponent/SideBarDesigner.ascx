@@ -4,12 +4,17 @@
     <div href="#" class="item">
         <img class="logo" src="assets/image/Logo_FestTree.png" />
     </div>
-    <asp:LinkButton ID="BtnViewItems" runat="server" CssClass="item">View Items</asp:LinkButton>
-    <asp:LinkButton ID="BtnEnterItem" runat="server" CssClass="item">Enter Item</asp:LinkButton>
-    <asp:LinkButton ID="BtnViewByCategory" runat="server" CssClass="item">View by Category</asp:LinkButton>
-    <asp:LinkButton ID="BtnEnterCategory" runat="server" CssClass="item">Enter Category</asp:LinkButton>
-    <asp:LinkButton ID="BtnSearchItems" runat="server" CssClass="item">Search Items</asp:LinkButton>
-    <asp:LinkButton ID="BtnSearchUsers" runat="server" CssClass="item">Search Users</asp:LinkButton>
-    <asp:LinkButton ID="BtnCloseAuction" runat="server" CssClass="item">Close Auction</asp:LinkButton>
-    <asp:LinkButton ID="BtnLogOut" runat="server" CssClass="item">Log Out</asp:LinkButton>
+    <%--<asp:LinkButton ID="BtnViewItems" runat="server" CssClass="item" OnClick="BtnViewItems_Click">View Items by Paid Status</asp:LinkButton>
+    --%>
+    <asp:LinkButton ID="BtnViewItemsBySold" runat="server" CssClass="item" OnClick="BtnViewItemsBySold_Click">View Items by Sold Status</asp:LinkButton>
+    <asp:LinkButton ID="BtnViewByCategory" runat="server" CssClass="item" OnClick="BtnViewByCategory_Click">View Categories</asp:LinkButton>
+    <asp:LinkButton ID="BtnSearchItems" runat="server" CssClass="item" OnClick="BtnSearchItems_Click">Search Items</asp:LinkButton>
+    <%--<asp:LinkButton ID="BtnSearchUsers" runat="server" CssClass="item" OnClick="BtnSearchUsers_Click">Search Users</asp:LinkButton>
+    --%>
+    <asp:LinkButton ID="BtnEnterItem" runat="server" CssClass="item" OnClick="BtnEnterItem_Click">Enter Item</asp:LinkButton>
+    <%--<asp:LinkButton ID="BtnEnterCategory" runat="server" CssClass="item" OnClick="BtnEnterCategory_Click">Enter New Category</asp:LinkButton>
+    --%>
+    <asp:LinkButton ID="BtnCloseAuction" runat="server" CssClass="item" OnClick="BtnCloseAuction_Click">Close Auction</asp:LinkButton>
+    <asp:LinkButton ID="BtnLogOut" runat="server" CssClass="item" OnClick="BtnLogOut_Click">Log Out</asp:LinkButton>
+
 </div>
