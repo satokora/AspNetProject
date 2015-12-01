@@ -54,7 +54,7 @@ namespace FestivalOfTrees.PageComponent
 
             Session.RemoveAll();
 
-            Response.Redirect("Login.aspx");
+            Response.Redirect("Default.aspx");
         }
 
         protected void BtnViewItemsBySold_Click(object sender, EventArgs e)

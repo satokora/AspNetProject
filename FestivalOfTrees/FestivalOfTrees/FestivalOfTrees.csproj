@@ -227,7 +227,7 @@
     <Content Include="BidSheets.aspx" />
     <Content Include="DBTestPage.aspx" />
     <Content Include="Home.aspx" />
-    <Content Include="Login.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="PageComponent\FooterCtrl.ascx" />
     <Content Include="PageComponent\SideBarAdmin.ascx" />
     <Content Include="PageComponent\SideBarDesigner.ascx" />
@@ -323,12 +323,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemsWithCatName.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Menu.Master.cs">
       <DependentUpon>Menu.Master</DependentUpon>
@@ -509,6 +509,7 @@
       <DependentUpon>ItemsWithCatName.xsd</DependentUpon>
     </Content>
     <Content Include="PDF\BidSheet.pdf" />
+    <None Include="Properties\PublishProfiles\profile1.pubxml" />
     <None Include="Properties\PublishProfiles\Project.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
