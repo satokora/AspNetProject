@@ -1,4 +1,4 @@
-﻿using FestivalOfTrees.Utilities;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,10 +51,6 @@ namespace FestivalOfTrees.PageComponent
 
         protected void BtnLogOut_Click(object sender, EventArgs e)
         {
-            //None of this actually works
-            //SessionManager sm = SessionManager.getInstance();
-            //sm.removeSession(Session.SessionID);
-            //Session.Remove(sender.ToString());
 
             Session.RemoveAll();
 

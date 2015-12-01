@@ -28,8 +28,17 @@ namespace FestivalOfTrees
 
         protected void LoginBtn_Click(object sender, EventArgs e)
         {
+            //loginCtrl.SesId = Session.SessionID;
+            Session["StartTime"] = DateTime.UtcNow;
+            Session["Name"] = userEmailTxt.Text;
+
             if (loginCtrl.authenticate(userEmailTxt.Text, password.Text))
             {
+                if(loginCtrl.isAdmin(userEmailTxt.Text, password.Text))
+                {
+                    Session["Admin"] = "admin";
+                }
+                Session["Admin"] = "no";
                 Response.Redirect("Profile.aspx");
             }
         }
@@ -46,7 +55,12 @@ namespace FestivalOfTrees
                 if (true)
                 {
                     Credentials creds = c;
+                    
                     valid = true;
+                    Session["StartTime"] = DateTime.UtcNow;
+                    Session["Name"] = userEmailTxt.Text;
+                    Session["Admin"] = "No";
+                    Response.Redirect("Profile.aspx");
                 }
             }
             return valid;

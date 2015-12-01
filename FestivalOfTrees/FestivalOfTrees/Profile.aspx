@@ -19,7 +19,7 @@
                         <div class="ui vertical fluid pointing menu">
                             <a class="active item" data-tab="first">Select Auctions
                             </a>
-                            <a class="item" data-tab="second">User Request
+                            <a class="item" id="UserRequest" runat="server" data-tab="second" visible="false">User Request
                             </a>
                         </div>
                     </div>
