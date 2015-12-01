@@ -64,5 +64,10 @@ namespace FestivalOfTrees.PageComponent
         {
             Response.Redirect("Auction.aspx?menu=2");
         }
+
+        protected void BtnEditProfile_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SignUp.aspx");
+        }
     }
 }

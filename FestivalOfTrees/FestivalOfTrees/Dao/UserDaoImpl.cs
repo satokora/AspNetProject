@@ -121,10 +121,10 @@ namespace FestivalOfTrees.Dao
                     + "FIRSTNAME = '" + u.FirstName
                     + "', LASTNAME = '" + u.LastName
                     + "', STREETADDRESS = '" + u.Address
-                    + "', CITY = " + u.City
+                    + "', CITY = '" + u.City
                     + "', USERSTATE = '" + u.State
-                    + "', ZIP = " + u.Zip
-                    + ", PHONE = '" + u.Phone
+                    + "', ZIP = '" + u.Zip
+                    + "', PHONE = '" + u.Phone
                     + "' WHERE EMAIL = '" + u.Email + "';";
             SqlCommand command = new SqlCommand(query, conn);
             int rows = command.ExecuteNonQuery();

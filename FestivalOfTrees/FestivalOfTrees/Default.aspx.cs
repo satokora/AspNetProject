@@ -34,11 +34,14 @@ namespace FestivalOfTrees
 
             if (loginCtrl.authenticate(userEmailTxt.Text, password.Text))
             {
-                if(loginCtrl.isAdmin(userEmailTxt.Text, password.Text))
+                if (loginCtrl.isAdmin(userEmailTxt.Text, password.Text))
                 {
                     Session["Admin"] = "admin";
                 }
-                Session["Admin"] = "no";
+                else
+                {
+                    Session["Admin"] = "no";
+                }
                 Response.Redirect("Profile.aspx");
             }
         }

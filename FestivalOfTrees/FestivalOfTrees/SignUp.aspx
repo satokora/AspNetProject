@@ -11,7 +11,12 @@
         </div>
         <div class="ui piled segment signup">
             <%--<form id="form1" runat="server" class="ui form">--%>
-                <h3 class="ui dividing header">Sign up for an account</h3>
+               <div id="SignUpTitle" runat="server" ><h3 class="ui dividing header">Sign up for an account</h3></div>
+                <div id="EditProfileTitle" runat="server"><h3 class="ui dividing header">Edit Profile</h3>
+                    <p class="ui dividing header">
+                        <asp:Label ID="ResultLabel" runat="server"></asp:Label>
+                    </p>
+            </div>
                 <div class="field">
                     <label>Name</label>
                     <div class="two fields">
@@ -147,6 +152,7 @@
                 </div>
 
                 <asp:Button ID="SignUpBtn" runat="server" Text="Send Request" CssClass="ui fluid large red submit button" OnClick="SignUpBtn_Click" />
+                <asp:Button ID="EditProfileBtn" runat="server" Text="Save Changes" CssClass="ui fluid large red submit button" Visible="false" OnClick="EditProfileBtn_Click" />
             <%--</form>--%>
         </div>
     </div>

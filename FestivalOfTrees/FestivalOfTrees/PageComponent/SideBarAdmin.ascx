@@ -13,6 +13,7 @@
     <asp:LinkButton ID="BtnEnterCategory" runat="server" CssClass="item" OnClick="BtnEnterCategory_Click">Enter New Category</asp:LinkButton>
     <asp:LinkButton ID="BtnCloseAuction" runat="server" CssClass="item" OnClick="BtnCloseAuction_Click">Close Auction</asp:LinkButton>
     <asp:LinkButton ID="BtnLogOut" runat="server" CssClass="item" OnClick="BtnLogOut_Click">Log Out</asp:LinkButton>
+    <asp:Linkbutton ID="BtnEditProfile" runat="server" CssClass="item" OnClick="BtnEditProfile_Click">Edit Profile</asp:Linkbutton>
 </div>
 
 

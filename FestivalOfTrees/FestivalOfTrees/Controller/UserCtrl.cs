@@ -31,22 +31,25 @@ namespace FestivalOfTrees.Controller
             uDao.createRequest(request);
         }
 
+        public User getProfileInfo(string email)
+        {
+            UserDaoImpl uDao = new UserDaoImpl();
+            User currentUser = uDao.getUserByEmail(email);
+
+            return currentUser;
+        }
 
         public bool authenticate(string userEmail, string pass)
         {
             bool valid = false;
             UserDaoImpl user = new UserDaoImpl();
             Credentials c = user.getCredentialsByEmail(userEmail);
+            Credentials inputCreds = new Credentials(userEmail, pass);
 
-            if (c != null)
+            if (c.Password.Equals(inputCreds.Password) && c.Email.Equals(inputCreds.Email))
             {
                 User u = user.getUserByEmail(c.Email);
-                valid = true;
-
-                //Setting session data here
-                //SessionManager sm = SessionManager.getInstance();
-                //string sessionId = sm.createSessionId(u);
-                //ISession objS = (ISession)sm.getSession(sessionId);   
+                valid = true;  
             }
             return valid;
         }
