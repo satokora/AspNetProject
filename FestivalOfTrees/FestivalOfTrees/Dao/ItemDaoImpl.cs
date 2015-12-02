@@ -37,16 +37,16 @@ namespace FestivalOfTrees.Dao
         public int createItem(Item item)
         {
             SqlConnection conn = DBHelper.loadDB();
-            string query = "INSERT INTO ITEM OUTPUT INSERTED.ITEMID VALUES ("
-                    + "'" + item.CategoryID + "'"
-                    + ", " + item.UserID
-                    + ", '" + item.ItemName + "'"
-                    + ", " + item.ItemValue
-                    + ", " + item.AngelPrice
-                    + ", " + item.MinBid
-                    + ", 0"
-                    + ", '" + item.Description + "')";
+            string query = "INSERT INTO ITEM (CATEGORYID, USERID, ITEMNAME, ITEMVALUE, ANGELPRICE, MINBID, DESCR) OUTPUT INSERTED.ITEMID  "
+                            + "VALUES (@CATEGORYID, @USERID, @ITEMNAME, @ITEMVALUE, @ANGELPRICE, @MINBID, @DESCRIPTION)";
             SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.Add(new SqlParameter("@CATEGORYID", item.CategoryID));
+            command.Parameters.Add(new SqlParameter("@USERID", item.UserID));
+            command.Parameters.Add(new SqlParameter("@ITEMNAME", item.ItemName));
+            command.Parameters.Add(new SqlParameter("@ITEMVALUE", item.ItemValue));
+            command.Parameters.Add(new SqlParameter("@ANGELPRICE", item.AngelPrice));
+            command.Parameters.Add(new SqlParameter("@MINBID", item.MinBid));
+            command.Parameters.Add(new SqlParameter("@DESCRIPTION", item.Description));
             item.ItemID = (int)command.ExecuteScalar();
             return item.ItemID;
 
