@@ -36,7 +36,7 @@
            
         </asp:MultiView>--%>
         <br />
-        <asp:GridView ID="GridViewUsers" runat="server" CssClass="ui red table center aligned" AutoGenerateColumns="False" DataKeyNames="EMAIL" DataSourceID="Users">
+        <asp:GridView ID="GridViewUsers" runat="server" CssClass="ui red table center aligned" AutoGenerateColumns="False" DataKeyNames="EMAIL" DataSourceID="Users" OnSelectedIndexChanged="GridViewItemsByItemId_SelectedIndexChanged">
             <Columns>
                 <asp:TemplateField HeaderText="Print Invoice">
                     <ItemTemplate>
@@ -50,6 +50,7 @@
                 <asp:BoundField DataField="PHONE" HeaderText="Phone" SortExpression="PHONE" />
                 <asp:BoundField DataField="CITY" HeaderText="City" SortExpression="CITY" />
                 <asp:BoundField DataField="USERSTATE" HeaderText="State" SortExpression="USERSTATE" />
+                <asp:CommandField ShowSelectButton="True"  ControlStyle-CssClass="ui button" SelectText="View" />
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="Users" runat="server" ConnectionString="<%$ ConnectionStrings:it368_Auction_ProjectConnectionString %>" SelectCommand="SELECT [USERID], [EMAIL], [FIRSTNAME], [LASTNAME], [PHONE], [CITY], [USERSTATE] FROM [USERINFO] WHERE (([LASTNAME] LIKE '%' + @LASTNAME + '%') OR ([PHONE] LIKE '%' + @PHONE + '%'))">

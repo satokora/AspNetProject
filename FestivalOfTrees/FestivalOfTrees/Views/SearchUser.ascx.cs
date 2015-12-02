@@ -26,7 +26,12 @@ namespace FestivalOfTrees.Views
 
         }
 
+        protected void GridViewItemsByItemId_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-      
+            GridViewRow row = GridViewUsers.SelectedRow;
+            Response.Redirect("SingleView.aspx?userId=" + row.Cells[1].Text);
+        }
+
     }
 }

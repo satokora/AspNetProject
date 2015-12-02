@@ -5,6 +5,7 @@ using System.Web;
 using System.Data;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
+using  OfficeOpenXml;
 
 /*
     For Use Case 9: Export selected information to Excel
@@ -49,6 +50,10 @@ namespace FestivalOfTrees.Controller
             excelWorkBook.SaveAs(fullFileName);
             excelWorkBook.Close();
             excelApp.Quit();
+
+        }
+        public void ExportDataSetToExcelWithPlus(DataSet ds)
+        {
 
         }
     }
