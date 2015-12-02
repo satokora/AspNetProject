@@ -63,6 +63,7 @@ namespace FestivalOfTrees
             }
 
             userCtrl.approveRequest(idList);
+            UserRequestGrid.DataBind();
         }
     }
 }
