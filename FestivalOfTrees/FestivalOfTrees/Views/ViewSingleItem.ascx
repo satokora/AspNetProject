@@ -87,10 +87,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <asp:LinkButton ID="BtnAddEditBuyer" runat="server" CssClass="ui floated primary button">
+                           <%-- <asp:LinkButton ID="BtnAddEditBuyer" runat="server" CssClass="ui floated primary button">
                               Edit buyer
                               <i class="right chevron icon"></i>
-                            </asp:LinkButton>
+                            </asp:LinkButton>--%>
                             <asp:LinkButton ID="BtnPrintBid" runat="server" CssClass="ui right floated red button">
                                 <i class="right print icon"></i>  
                                 Print Bid Sheet

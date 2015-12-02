@@ -15,9 +15,47 @@ namespace FestivalOfTrees
 
             private User toAdd;
         private SignUpController signUp;
+        private UserCtrl userControl;
+        private User u;
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             signUp = new SignUpController();
+            userControl = new UserCtrl();
+
+            //Manage title and button visibility for Sign Up
+            EditProfileTitle.Visible = false;
+            SignUpTitle.Visible = true;
+            EditProfileBtn.Visible = false;
+            SignUpBtn.Visible = true;
+
+            if (!IsPostBack)
+            {
+                //Manage title and button visibility for Edit Profile
+                EditProfileBtn.Visible = true;
+                SignUpBtn.Visible = false;
+                SignUpTitle.Visible = false;
+                EditProfileTitle.Visible = true;
+
+                email.ReadOnly = true;
+                confEmail.ReadOnly = true;
+                string emailString = Session["name"].ToString();
+                u = userControl.getProfileInfo(emailString);
+
+                email.Text = u.Email;
+                confEmail.Text = u.Email;
+                firstName.Text = u.FirstName;
+                lastName.Text = u.LastName;
+                address.Text = u.Address;
+                city.Text = u.City;
+                DropDownList1.SelectedValue = u.State;
+                zipCode.Text = u.Zip.ToString();
+                //Phone.Text = u.Phone;
+                MobilePhone.Text = u.Phone;
+                checkToText.Checked = u.Text;
+            }
+            else { }
+
         }
 
         protected void SignUpBtn_Click(object sender, EventArgs e)
@@ -85,6 +123,42 @@ namespace FestivalOfTrees
 
             //This adds usercredentials right away ... needs to be modified if there is an approval action
             signUp.addUserCredentials(email.Text, password1.Text);
+        }
+
+        protected void EditProfileBtn_Click(object sender, EventArgs e)
+        {
+            int rows = 0;
+            UserDaoImpl dao = new UserDaoImpl();
+            u = new User();
+            u.Email = email.Text;
+            u.Address = address.Text;
+            u.City = city.Text;
+            u.LastName = lastName.Text;
+            u.Phone = MobilePhone.Text;
+            u.FirstName = firstName.Text;
+            u.State = DropDownList1.SelectedValue;
+            u.Zip = Convert.ToInt32(zipCode.Text);
+
+            //Verifies correct password was input to modify profile info
+            if (userControl.authenticate(email.Text, password1.Text))
+            {
+                rows = dao.updateUser(u);
+            }
+            else
+            {
+                //These errors aren't showing up for some reason
+                ResultLabel.Text = "Password was incorrect.  Please try again.";
+                Response.Redirect("SignUp.aspx");
+            }
+            //Upon successful update of profile user is redirected back to Auction.aspx
+            if (rows == 1)
+                Response.Redirect("Auction.aspx");
+            else
+            {
+                //This one doesn't show up either
+                ResultLabel.Text = "Unable to update your profile at this time.";
+                Response.Redirect("SignUp.aspx");
+            }
         }
     }
 

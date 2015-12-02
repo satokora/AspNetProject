@@ -1,4 +1,4 @@
-﻿using FestivalOfTrees.Utilities;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,19 +51,20 @@ namespace FestivalOfTrees.PageComponent
 
         protected void BtnLogOut_Click(object sender, EventArgs e)
         {
-            //None of this actually works
-            //SessionManager sm = SessionManager.getInstance();
-            //sm.removeSession(Session.SessionID);
-            //Session.Remove(sender.ToString());
 
             Session.RemoveAll();
 
-            Response.Redirect("Login.aspx");
+            Response.Redirect("Default.aspx");
         }
 
         protected void BtnViewItemsBySold_Click(object sender, EventArgs e)
         {
             Response.Redirect("Auction.aspx?menu=2");
+        }
+
+        protected void BtnEditProfile_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SignUp.aspx");
         }
     }
 

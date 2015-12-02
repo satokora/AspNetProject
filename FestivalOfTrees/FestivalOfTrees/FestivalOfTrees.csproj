@@ -227,8 +227,8 @@
     <Content Include="Auction.aspx" />
     <Content Include="BidSheets.aspx" />
     <Content Include="DBTestPage.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="Home.aspx" />
-    <Content Include="Login.aspx" />
     <Content Include="PageComponent\EnterBid.ascx" />
     <Content Include="PageComponent\FooterCtrl.ascx" />
     <Content Include="PageComponent\SideBarAdmin.ascx" />
@@ -310,6 +310,13 @@
     <Compile Include="DBTestPage.aspx.designer.cs">
       <DependentUpon>DBTestPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -326,13 +333,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemsWithCatName.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Menu.Master.cs">
       <DependentUpon>Menu.Master</DependentUpon>

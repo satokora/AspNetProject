@@ -12,7 +12,10 @@ namespace FestivalOfTrees
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Admin"].Equals("admin"))
+            {
+                UserRequest.Visible = true;
+            }
         }
 
         protected void BtnGoAuction_Click(object sender, EventArgs e)
