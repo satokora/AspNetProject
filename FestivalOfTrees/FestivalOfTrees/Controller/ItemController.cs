@@ -84,5 +84,14 @@ namespace FestivalOfTrees.Controller
         {
             return catDao.getByID(catId).SponsorName;
         }
+        public int updateBidItem(Item bidItem, User winningUser, string price)
+        {
+            Item updateItem = bidItem;
+            updateItem.UserID = winningUser.UserID;
+            updateItem.ItemValue = Convert.ToDouble(price);
+            int i = dao.updateItem(updateItem);
+
+            return i;
+        }
     }
 }

@@ -63,11 +63,7 @@
                         <div class="description">
                             <p>
                                 <asp:Label ID="ItemDesc" runat="server">
-                                This item is designed by.... blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-                                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-                                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-                                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-                                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                                
                                 </asp:Label>
                             </p>
                             <h4>Buyer:</h4>
@@ -75,19 +71,19 @@
                                 <div class="item">
                                     <i class="user icon"></i>
                                     <div class="content">
-                                        <asp:Label ID="BuyerName" runat="server" Text="Label">Satoko Kora</asp:Label>
+                                        <asp:Label ID="BuyerName" runat="server"></asp:Label>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <i class="phone icon"></i>
                                     <div class="content">
-                                        <asp:HyperLink ID="BuyerPhone" runat="server">(309)123-4567</asp:HyperLink>
+                                        <asp:HyperLink ID="BuyerPhone" runat="server"></asp:HyperLink>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <i class="mail icon"></i>
                                     <div class="content">
-                                        <asp:HyperLink ID="BuyerEmail" runat="server">satokorambxl@gmail.com</asp:HyperLink>
+                                        <asp:HyperLink ID="BuyerEmail" runat="server"></asp:HyperLink>
                                     </div>
                                 </div>
                             </div>
