@@ -107,6 +107,7 @@
     <Content Include="assets\components\embed.js" />
     <Content Include="assets\components\embed.min.css" />
     <Content Include="assets\components\embed.min.js" />
+    <Content Include="assets\components\EXCEL.EXE" />
     <Content Include="assets\components\feed.css" />
     <Content Include="assets\components\feed.min.css" />
     <Content Include="assets\components\flag.css" />

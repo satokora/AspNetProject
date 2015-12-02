@@ -13,7 +13,7 @@
                         <a >
                             <asp:Label ID="LblItemStatus" runat="server" Text="Label"></asp:Label>
                         </a>
-                        <img src="../assets/image/wr.jpg" />
+                        <img src="assets/image/wr.jpg" />
                     </div>
                     <div class="content">
 
