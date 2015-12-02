@@ -17,6 +17,7 @@ namespace FestivalOfTrees.Model
         private bool paid;
         private string description;
         private string filePath;
+        private double bidAmount;
 
         public override string ToString()
         {
@@ -157,6 +158,19 @@ namespace FestivalOfTrees.Model
             set
             {
                 filePath = value;
+            }
+        }
+
+        public double BidAmount
+        {
+            get
+            {
+                return bidAmount;
+            }
+
+            set
+            {
+                bidAmount = value;
             }
         }
     }
