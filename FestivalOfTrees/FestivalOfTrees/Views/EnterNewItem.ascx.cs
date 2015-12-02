@@ -13,51 +13,54 @@ namespace FestivalOfTrees
     public partial class EnterNewItem : System.Web.UI.UserControl
     {
         ItemController itemCtrl;
-       
+        private int itemID;
         protected void Page_Load(object sender, EventArgs e)
         {
-            EditItem.Visible = false;
-            itemCtrl = new ItemController();
 
-            if (!Page.IsPostBack)
+            try
             {
-                if (Request.QueryString["itemId"] != null)
-                {
-                    AddItem.Visible = false;
-                    EditItem.Visible = true;
-                    Item editItem = itemCtrl.getItemByID(Request.QueryString["itemId"].ToString());
+                EditItem.Visible = false;
+                itemCtrl = new ItemController();
 
-                    if (editItem != null)
+                string tempId = Request.QueryString["itemId"].ToString();
+                int firstDigit = tempId.IndexOfAny("0123456789".ToCharArray());
+                tempId = tempId.Substring(firstDigit);
+
+                itemID = Convert.ToInt32(tempId);
+
+                //if (!Page.IsPostBack)
+                //{
+                    if (Request.QueryString["itemId"] != null)
                     {
-                        DropDownList1.SelectedValue = editItem.CategoryID;
-                        ItemName.Text = editItem.ItemName;
-                        Description.Text = editItem.Description;
-                        TxtValPrice.Text = editItem.ItemValue.ToString();
-                        TxtMinBid.Text = editItem.MinBid.ToString();
-                        TxtAngPrice.Text = editItem.AngelPrice.ToString();
+                        AddItem.Visible = false;
+                        EditItem.Visible = true;
+                        itemCtrl = new ItemController();
+                        Item editItem = itemCtrl.getItemByID(itemID.ToString());
+
+                        if (editItem != null)
+                        {
+                            DropDownList1.SelectedValue = editItem.CategoryID;
+                            ItemName.Text = editItem.ItemName;
+                            Description.Text = editItem.Description;
+                            TxtValPrice.Text = editItem.ItemValue.ToString();
+                            TxtMinBid.Text = editItem.MinBid.ToString();
+                            TxtAngPrice.Text = editItem.AngelPrice.ToString();
 
 
-                        //List<User> designers = itemCtrl.getDesigners(editItem.ItemID.ToString());
-
-                        //foreach (ListItem li in DesignerList.Items)
-                        //{
-                        //    foreach (User d in designers)
-                        //    {
-                        //        if (d.Email.Equals(li.Value))
-                        //        {
-                        //            li.Selected = true;
-                        //        }
-                        //    }
-                        //}
+                        }
                     }
-                }
-            }
-            else
-            {
+                //}
+                //else
+                //{
 
+                //}
+            }catch(Exception ex)
+            {
+                Console.Write(ex.Message);
             }
             
-            
+           
+
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
@@ -160,6 +163,7 @@ namespace FestivalOfTrees
         {
             Item updateItem = new Item
             {
+                ItemID = itemID,
                 CategoryID = DropDownList1.SelectedValue,
                 ItemName = ItemName.Text,
                 Description = Description.Text,
@@ -181,10 +185,13 @@ namespace FestivalOfTrees
                 }
             }
 
-            itemCtrl.removeDonors(emailList, modifiedId);
-            itemCtrl.addDonors(emailList, modifiedId);
-            
-            
+            if(emailList.Count > 0)
+            {
+                itemCtrl.removeDonors(emailList, modifiedId);
+                itemCtrl.addDonors(emailList, modifiedId);
+            }
+
+ 
 
             Response.Redirect("SingleView.aspx?ItemId=" + modifiedId);
         }
