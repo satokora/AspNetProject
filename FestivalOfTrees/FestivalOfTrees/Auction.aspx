@@ -9,6 +9,8 @@
 <%@ Register Src="~/Views/EnterCategory.ascx" TagPrefix="uc" TagName="EnterCategory" %>
 <%@ Register Src="~/Views/ViewItemsFromCategory.ascx" TagPrefix="uc" TagName="Category" %>
 <%@ Register Src="~/Views/ItemSoldStatusView.ascx" TagPrefix="uc" TagName="ItemSoldStatusView" %>
+<%@ Register Src="~/Views/CloseAuction.ascx" TagPrefix="uc" TagName="CloseAuction" %>
+
 
 
 
@@ -39,7 +41,7 @@
                 <uc:EnterCategory runat="server" id="EnterCategory" />
             </asp:View>
             <asp:View ID="View7" runat="server">
-                
+                <uc:CloseAuction runat="server" id="CloseAuction" />
             </asp:View>
             <asp:View ID="View8" runat="server">
                 <uc:Category runat="server" id="ViewFromCategory" />

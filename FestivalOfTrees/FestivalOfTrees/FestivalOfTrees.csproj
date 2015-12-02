@@ -54,6 +54,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -226,14 +227,16 @@
     <Content Include="Auction.aspx" />
     <Content Include="BidSheets.aspx" />
     <Content Include="DBTestPage.aspx" />
-    <Content Include="Home.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="PageComponent\EnterBid.ascx" />
     <Content Include="PageComponent\FooterCtrl.ascx" />
     <Content Include="PageComponent\SideBarAdmin.ascx" />
     <Content Include="PageComponent\SideBarDesigner.ascx" />
     <Content Include="Profile.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="SingleView.aspx" />
+    <Content Include="Views\CloseAuction.ascx" />
     <Content Include="Views\EnterCategory.ascx" />
     <Content Include="Views\EnterNewItem.ascx" />
     <Content Include="Views\ItemSoldStatusView.ascx" />
@@ -244,6 +247,7 @@
     <Content Include="Views\ViewItemsFromCategory.ascx" />
     <Content Include="Views\ViewSingleItem.ascx" />
     <Content Include="Views\ViewSingleUser.ascx" />
+    <None Include="Web References\CEAAPI_v2\CEAAPI_v2.disco" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -306,6 +310,13 @@
     <Compile Include="DBTestPage.aspx.designer.cs">
       <DependentUpon>DBTestPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -323,13 +334,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemsWithCatName.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Menu.Master.cs">
       <DependentUpon>Menu.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -344,6 +348,13 @@
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\Request.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="PageComponent\EnterBid.ascx.cs">
+      <DependentUpon>EnterBid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageComponent\EnterBid.ascx.designer.cs">
+      <DependentUpon>EnterBid.ascx</DependentUpon>
+    </Compile>
     <Compile Include="PageComponent\FooterCtrl.ascx.cs">
       <DependentUpon>FooterCtrl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -392,6 +403,13 @@
     <Compile Include="Utilities\Session.cs" />
     <Compile Include="Utilities\SessionEnum.cs" />
     <Compile Include="Utilities\SessionManager.cs" />
+    <Compile Include="Views\CloseAuction.ascx.cs">
+      <DependentUpon>CloseAuction.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CloseAuction.ascx.designer.cs">
+      <DependentUpon>CloseAuction.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Views\EnterCategory.ascx.cs">
       <DependentUpon>EnterCategory.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -461,6 +479,11 @@
     <Compile Include="Views\ViewSingleUser.ascx.designer.cs">
       <DependentUpon>ViewSingleUser.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Web References\CEAAPI_v2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\themes\basic\assets\fonts\icons.eot" />
@@ -509,8 +532,11 @@
       <DependentUpon>ItemsWithCatName.xsd</DependentUpon>
     </Content>
     <Content Include="PDF\BidSheet.pdf" />
-    <None Include="Properties\PublishProfiles\profile1.pubxml" />
     <None Include="Properties\PublishProfiles\Project.pubxml" />
+    <Content Include="Web References\CEAAPI_v2\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -552,6 +578,24 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://staging-api.call-em-all.com/Webservices/CEAAPI_v2.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CEAAPI_v2\</RelPath>
+      <UpdateFromURL>http://staging-api.call-em-all.com/Webservices/CEAAPI_v2.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -52,7 +52,7 @@ namespace FestivalOfTrees.Dao
                     + "', ITEMVALUE = " + item.ItemValue
                     + ", ANGELPRICE = " + item.AngelPrice
                     + ", MINBID = " + item.MinBid
-                    + ", PAID = " + item.Paid
+                    + ", PAID = " + Convert.ToInt32(item.Paid)
                     + ", DESCR = '" + item.Description
                     + "' WHERE ITEMID = " + item.ItemID + ";";
             SqlCommand command = new SqlCommand(query, conn);
