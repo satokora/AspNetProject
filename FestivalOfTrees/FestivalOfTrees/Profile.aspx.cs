@@ -1,4 +1,6 @@
 ﻿using FestivalOfTrees.Controller;
+using FestivalOfTrees.Model;
+using FestivalOfTrees.Dao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,15 @@ namespace FestivalOfTrees
             {
                 UserRequest.Visible = true;
             }
+
+            if (Session["Name"] != null)
+            {
+                UserDao dao = new UserDaoImpl();
+
+                User u = dao.getUserByEmail(Session["Name"].ToString());
+                LblUserName.Text = u.FirstName + "!";
+            }
+            
         }
 
         protected void BtnGoAuction_Click(object sender, EventArgs e)

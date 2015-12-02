@@ -14,8 +14,8 @@ namespace FestivalOfTrees.Views
         private ExportToCsvController exportCtrl;
         protected void Page_Load(object sender, EventArgs e)
         {
-            BtnPrintPaidInvoices.Enabled = false;
-            LinkButton1.Enabled = false;
+            //BtnPrintPaidInvoices.Enabled = false;
+            //LinkButton1.Enabled = false;
             exportCtrl = new ExportToCsvController();
 
             if(ColumnList.Items.Count < 1)
