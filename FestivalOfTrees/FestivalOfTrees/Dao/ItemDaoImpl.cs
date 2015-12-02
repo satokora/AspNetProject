@@ -54,6 +54,7 @@ namespace FestivalOfTrees.Dao
                     + ", MINBID = " + item.MinBid
                     + ", PAID = " + Convert.ToInt32(item.Paid)
                     + ", DESCR = '" + item.Description
+                    + ", BIDAMOUNT = " + item.BidAmount
                     + "' WHERE ITEMID = " + item.ItemID + ";";
             SqlCommand command = new SqlCommand(query, conn);
             int rows = command.ExecuteNonQuery();
