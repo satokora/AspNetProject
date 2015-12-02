@@ -100,7 +100,7 @@ namespace FestivalOfTrees.Controller
         {
             Item updateItem = bidItem;
             updateItem.UserID = winningUser.UserID;
-            updateItem.ItemValue = Convert.ToDouble(price);
+            updateItem.BidAmount = Convert.ToDouble(price);
             int i = dao.updateItem(updateItem);
 
             return i;
