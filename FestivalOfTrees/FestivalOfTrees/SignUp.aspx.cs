@@ -13,7 +13,7 @@ namespace FestivalOfTrees
     public partial class SignUp1 : System.Web.UI.Page
     {
 
-            private User toAdd;
+        private User toAdd;
         private SignUpController signUp;
         private UserCtrl userControl;
         private User u;
@@ -22,20 +22,20 @@ namespace FestivalOfTrees
         {
             signUp = new SignUpController();
             userControl = new UserCtrl();
-
-            //Manage title and button visibility for Sign Up
-            EditProfileTitle.Visible = false;
-            SignUpTitle.Visible = true;
-            EditProfileBtn.Visible = false;
-            SignUpBtn.Visible = true;
+            if (IsPostBack)
+            {
+                ResultLabel.Visible = true;
+            }
 
             if (!IsPostBack)
             {
                 //Manage title and button visibility for Edit Profile
                 EditProfileBtn.Visible = true;
                 SignUpBtn.Visible = false;
+                BackButton.Visible = true;
                 SignUpTitle.Visible = false;
                 EditProfileTitle.Visible = true;
+                ResultLabel.Visible = false;
 
                 email.ReadOnly = true;
                 confEmail.ReadOnly = true;
@@ -54,7 +54,6 @@ namespace FestivalOfTrees
                 MobilePhone.Text = u.Phone;
                 checkToText.Checked = u.Text;
             }
-            else { }
 
         }
 
@@ -146,19 +145,21 @@ namespace FestivalOfTrees
             }
             else
             {
-                //These errors aren't showing up for some reason
                 ResultLabel.Text = "Password was incorrect.  Please try again.";
-                Response.Redirect("SignUp.aspx");
+                return;
             }
-            //Upon successful update of profile user is redirected back to Auction.aspx
+            //Upon successful update of profile user is redirected back to Auction.asp
             if (rows == 1)
-                Response.Redirect("Auction.aspx");
+                ResultLabel.Text = "Changes Successfully Saved!";
             else
             {
-                //This one doesn't show up either
                 ResultLabel.Text = "Unable to update your profile at this time.";
-                Response.Redirect("SignUp.aspx");
             }
+        }
+
+        protected void BackButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Auction.aspx");
         }
     }
 

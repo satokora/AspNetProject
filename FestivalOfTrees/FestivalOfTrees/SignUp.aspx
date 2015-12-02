@@ -16,6 +16,9 @@
                     <p class="ui dividing header">
                         <asp:Label ID="ResultLabel" runat="server"></asp:Label>
                     </p>
+                    <p class="ui dividing header">
+                        <asp:Button ID="BackButton" runat="server" CssClass="ui fluid large red submit button" Visible="false" Text="Back" OnClick="BackButton_Click" />
+                    </p>
             </div>
                 <div class="field">
                     <label>Name</label>
