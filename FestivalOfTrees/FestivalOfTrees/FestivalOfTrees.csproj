@@ -284,19 +284,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Categories.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Controller\AuctionCtrl.cs" />
     <Compile Include="Controller\BidSheetPrinter.cs" />
-    <Compile Include="Controller\CategoryCtrl.cs" />
     <Compile Include="Controller\EmailToBidderController.cs" />
-    <Compile Include="Controller\EnterEditItemController.cs" />
     <Compile Include="Controller\ExportToCsvController.cs" />
     <Compile Include="Controller\ItemController.cs" />
-    <Compile Include="Controller\ItemStatusViewController.cs" />
-    <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\PrintBidSheetController.cs" />
-    <Compile Include="Controller\PrintInvoiceController.cs" />
-    <Compile Include="Controller\SearchController.cs" />
-    <Compile Include="Controller\SearchItemController.cs" />
     <Compile Include="Controller\SearchUserController.cs" />
     <Compile Include="Controller\SignUpController.cs" />
     <Compile Include="Controller\TextCallController.cs" />

@@ -10,7 +10,6 @@ namespace FestivalOfTrees.Views
 {
     public partial class ViewByCategory : System.Web.UI.UserControl
     {
-        private SearchItemController searchCatItem;
         protected void Page_Load(object sender, EventArgs e)
         {
             //searchCatItem = new SearchItemController();
