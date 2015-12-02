@@ -10,7 +10,7 @@
             <div class="ui items">
                 <div class="item">
                     <div class="ui round image">
-                        <a class="ui green ribbon big label">
+                        <a >
                             <asp:Label ID="LblItemStatus" runat="server" Text="Label"></asp:Label>
                         </a>
                         <img src="../assets/image/wr.jpg" />
@@ -91,19 +91,19 @@
                               Edit buyer
                               <i class="right chevron icon"></i>
                             </asp:LinkButton>--%>
-                            <asp:LinkButton ID="BtnPrintBid" runat="server" CssClass="ui right floated red button">
-                                <i class="right print icon"></i>  
-                                Print Bid Sheet
-                            </asp:LinkButton>
-                            <asp:LinkButton ID="BtnEditItem" runat="server" CssClass="ui right floated secondary button">
-                                <i class="right edit icon"></i>  
-                                Edit Item                    
-                            </asp:LinkButton>
+                            
                         </div>
 
 
                         <div class="extra">
-                            
+                            <asp:LinkButton ID="BtnPrintBid" runat="server" CssClass="ui  red button" OnClick="BtnPrintBid_Click">
+                                <i class="right print icon"></i>  
+                                Print Bid Sheet
+                            </asp:LinkButton>
+                            <asp:LinkButton ID="BtnEditItem" runat="server" CssClass="ui  secondary button" OnClick="BtnEditItem_Click">
+                                <i class="right edit icon"></i>  
+                                Edit Item                    
+                            </asp:LinkButton>
                         </div>
                     </div>
                 </div>

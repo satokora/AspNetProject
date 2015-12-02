@@ -27,14 +27,25 @@ namespace FestivalOfTrees.Views
                 lblAngelPrice.Text = result.AngelPrice.ToString();
                 ItemDesc.Text = result.Description.ToString();
 
-                if (result.Paid)
+                if (String.IsNullOrEmpty(result.UserID.ToString()))
                 {
-                    LblItemStatus.Text = "Paid";
+                    LblItemStatus.Text = "UnSold";
+                    LblItemStatus.CssClass = "ui grey ribbon big label";
                 }
                 else
                 {
-                    LblItemStatus.Text = "Unpaid";
+                    if (result.Paid)
+                    {
+                        LblItemStatus.Text = "Paid";
+                        LblItemStatus.CssClass = "ui green ribbon big label";
+                    }
+                    else
+                    {
+                        LblItemStatus.Text = "Sold";
+                        LblItemStatus.CssClass = "ui red ribbon big label";
+                    }
                 }
+                
 
                 User buyer = userCtrl.getBuyerInfo(result.UserID.ToString());
 
@@ -43,6 +54,12 @@ namespace FestivalOfTrees.Views
                     BuyerName.Text = buyer.FirstName + " " + buyer.LastName;
                     BuyerEmail.Text = buyer.Email;
                     BuyerPhone.Text = "(" + buyer.Phone.Substring(0, 3) + ")" + buyer.Phone.Substring(3, 3) + "-" + buyer.Phone.Substring(6);
+                }
+                else
+                {
+
+                        LblItemStatus.Text = "UnSold";
+                        LblItemStatus.CssClass = "ui grey ribbon big label";
                 }
 
                 List<User> designers = itemCtrl.getDesigners(selectedItemId);
@@ -59,6 +76,27 @@ namespace FestivalOfTrees.Views
                 SponsorName.Text = itemCtrl.getSponsorName(result.CategoryID);
 
             }
+        }
+
+        protected void BtnPrintBid_Click(object sender, EventArgs e)
+        {
+            PrintBidSheetController bsCtrl = new PrintBidSheetController();
+            List<string> itemNumbersToPrint = new List<string>();
+            itemNumbersToPrint.Add(ItemID.Text);
+            string templatePath = Server.MapPath("~\\PDF\\BidSheet.pdf");
+            string temporaryPath = Server.MapPath("~\\PDF\\temp.pdf");
+            string savePath = Server.MapPath("~\\PDF\\Filled.pdf");
+
+            int i = bsCtrl.PrintSheets(itemNumbersToPrint, savePath, templatePath, temporaryPath);
+            if (i > 0)
+            {
+                Response.Redirect("BidSheets.aspx");
+            }
+        }
+
+        protected void BtnEditItem_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Auction.aspx?menu=6&itemId=" + ItemID.Text);
         }
     }
 }

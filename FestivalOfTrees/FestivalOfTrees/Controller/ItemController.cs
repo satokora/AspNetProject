@@ -55,6 +55,18 @@ namespace FestivalOfTrees.Controller
                 dao.createUserItem(email, itemID);
             }
         }
+        public int removeDonors(List<string> emailList, int itemID)
+        {
+            int success = 0;
+            foreach (string email in emailList)
+            {
+                dao.deleteUserItem(email, itemID);
+            }
+
+            success = 1;
+            return success;
+        }
+
 
         public double calcMinBid(double value)
         {
@@ -92,6 +104,11 @@ namespace FestivalOfTrees.Controller
             int i = dao.updateItem(updateItem);
 
             return i;
+        }
+        public int updateItem(Item upItem)
+        {
+            dao.updateItem(upItem);
+            return upItem.ItemID;
         }
     }
 }

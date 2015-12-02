@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="SingleView.aspx.cs" Inherits="FestivalOfTrees.SingleView1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="SingleView.aspx.cs" Inherits="FestivalOfTrees.SingleView1"  %>
 <%@ Register Src="~/Views/ViewSingleUser.ascx" TagPrefix="uc" TagName="ViewSingleUser" %>
 <%@ Register Src="~/Views/ViewSingleItem.ascx" TagPrefix="uc" TagName="ViewSingleItem" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

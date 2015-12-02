@@ -54,7 +54,15 @@ namespace FestivalOfTrees
                 }
                 else
                 {
-                    MainContentMultiView.ActiveViewIndex = 0;
+                    if (Session["Admin"].Equals("admin"))
+                    {
+                        MainContentMultiView.ActiveViewIndex = 0;
+                    }
+                    else
+                    {
+                        MainContentMultiView.ActiveViewIndex = 1;
+                    }
+                    
                 }
 
             }

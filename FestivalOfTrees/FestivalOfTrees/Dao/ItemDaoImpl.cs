@@ -23,6 +23,17 @@ namespace FestivalOfTrees.Dao
             int rows = command.ExecuteNonQuery();
         }
 
+        public void deleteUserItem(string email, int itemID)
+        {
+            SqlConnection conn = DBHelper.loadDB();
+            string query = "DELETE USERITEM where EMAIL='@EMAIL' and ITEMID = @ITEMID";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.Add(new SqlParameter("@EMAIL", email));
+            command.Parameters.Add(new SqlParameter("@ITEMID", itemID));
+
+            int rows = command.ExecuteNonQuery();
+        }
+
         public int createItem(Item item)
         {
             SqlConnection conn = DBHelper.loadDB();

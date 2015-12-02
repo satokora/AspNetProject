@@ -16,8 +16,47 @@ namespace FestivalOfTrees
        
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            EditItem.Visible = false;
             itemCtrl = new ItemController();
+
+            if (!Page.IsPostBack)
+            {
+                if (Request.QueryString["itemId"] != null)
+                {
+                    AddItem.Visible = false;
+                    EditItem.Visible = true;
+                    Item editItem = itemCtrl.getItemByID(Request.QueryString["itemId"].ToString());
+
+                    if (editItem != null)
+                    {
+                        DropDownList1.SelectedValue = editItem.CategoryID;
+                        ItemName.Text = editItem.ItemName;
+                        Description.Text = editItem.Description;
+                        TxtValPrice.Text = editItem.ItemValue.ToString();
+                        TxtMinBid.Text = editItem.MinBid.ToString();
+                        TxtAngPrice.Text = editItem.AngelPrice.ToString();
+
+
+                        //List<User> designers = itemCtrl.getDesigners(editItem.ItemID.ToString());
+
+                        //foreach (ListItem li in DesignerList.Items)
+                        //{
+                        //    foreach (User d in designers)
+                        //    {
+                        //        if (d.Email.Equals(li.Value))
+                        //        {
+                        //            li.Selected = true;
+                        //        }
+                        //    }
+                        //}
+                    }
+                }
+            }
+            else
+            {
+
+            }
+            
             
         }
 
@@ -115,6 +154,39 @@ namespace FestivalOfTrees
 
             Response.Redirect("SingleView.aspx?ItemId=" + newItemId);
 
+        }
+
+        protected void EditItem_Click(object sender, EventArgs e)
+        {
+            Item updateItem = new Item
+            {
+                CategoryID = DropDownList1.SelectedValue,
+                ItemName = ItemName.Text,
+                Description = Description.Text,
+                ItemValue = Convert.ToDouble(TxtValPrice.Text),
+                MinBid = Convert.ToDouble(TxtMinBid.Text),
+                AngelPrice = Convert.ToDouble(TxtAngPrice.Text)
+            };
+
+            // int newItemId = itemCtrl.u .createItem(updateItem);
+            int modifiedId = itemCtrl.updateItem(updateItem);
+
+            List<string> emailList = new List<string>();
+
+            foreach (ListItem li in DesignerList.Items)
+            {
+                if (li.Selected)
+                {
+                    emailList.Add(li.Value);
+                }
+            }
+
+            itemCtrl.removeDonors(emailList, modifiedId);
+            itemCtrl.addDonors(emailList, modifiedId);
+            
+            
+
+            Response.Redirect("SingleView.aspx?ItemId=" + modifiedId);
         }
     }
 }
