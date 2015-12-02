@@ -22,6 +22,7 @@ namespace FestivalOfTrees
         {
             signUp = new SignUpController();
             userControl = new UserCtrl();
+            
             if (IsPostBack)
             {
                 ResultLabel.Visible = true;
@@ -29,17 +30,22 @@ namespace FestivalOfTrees
 
             if (!IsPostBack)
             {
-                //Manage title and button visibility for Edit Profile
-                EditProfileBtn.Visible = true;
-                SignUpBtn.Visible = false;
-                BackButton.Visible = true;
-                SignUpTitle.Visible = false;
-                EditProfileTitle.Visible = true;
-                ResultLabel.Visible = false;
+                EditProfileTitle.Visible = false;
 
-                email.ReadOnly = true;
-                confEmail.ReadOnly = true;
-                string emailString = Session["name"].ToString();
+                if (Session["name"]!= null)
+                {
+                    //Manage title and button visibility for Edit Profile
+                    EditProfileBtn.Visible = true;
+                    SignUpBtn.Visible = false;
+                    BackButton.Visible = true;
+                    SignUpTitle.Visible = false;
+                    EditProfileTitle.Visible = true;
+                    ResultLabel.Visible = false;
+
+                    email.ReadOnly = true;
+                    confEmail.ReadOnly = true;
+                    string emailString = Session["name"].ToString();
+                
                 u = userControl.getProfileInfo(emailString);
 
                 email.Text = u.Email;
@@ -53,6 +59,20 @@ namespace FestivalOfTrees
                 //Phone.Text = u.Phone;
                 MobilePhone.Text = u.Phone;
                 checkToText.Checked = u.Text;
+
+                }
+            }
+
+            ServiceReference1.SUSMSClient isuService = new ServiceReference1.SUSMSClient();
+
+            string[] carriers = isuService.getCarriers();
+
+            if (carriers.Length > 0 && CarrierList.Items.Count <= 1)
+            {
+                foreach (string carrier in carriers)
+                {
+                    CarrierList.Items.Add(new ListItem(carrier, carrier));
+                }
             }
 
         }
@@ -73,6 +93,7 @@ namespace FestivalOfTrees
             string CITY = city.Text;
             string STATE = DropDownList1.SelectedValue;
             int ZIP = Convert.ToInt32(zipCode.Text);
+           
 
             if (role.Equals("a"))
             {
@@ -93,9 +114,10 @@ namespace FestivalOfTrees
             string HPHONE = Phone.Text;
             string MPHONE = MobilePhone.Text;
             bool TEXT = checkToText.Checked;
+            string CARRIER = CarrierList.SelectedValue;
 
             //ID is produced in database
-            toAdd = new User(-1, EMAIL, FNAME, LNAME, ADDRESS, CITY, STATE, ZIP, ADMIN, COMMITTEE, DONOR, MPHONE, TEXT);
+            toAdd = new User(-1, EMAIL, FNAME, LNAME, ADDRESS, CITY, STATE, ZIP, ADMIN, COMMITTEE, DONOR, MPHONE, TEXT, CARRIER);
             if (signUp.addUser(toAdd))
             {
                 signUp.addUserCredentials(email.Text, password1.Text);
@@ -112,12 +134,12 @@ namespace FestivalOfTrees
                     uCtrl.createRequest(r);
                 }
                 //Do we wnat to add a message here letting user know request was submitted successfully?
-                Response.Redirect("Login.aspx?signup=1");
+                Response.Redirect("Default.aspx?signup=1");
             }
             else
             {
                 //Is this the preferred action if a user is already signed up or sign up fails?
-                Response.Redirect("Login.aspx");
+                Response.Redirect("Default.aspx");
             }
 
             //This adds usercredentials right away ... needs to be modified if there is an approval action
@@ -137,6 +159,8 @@ namespace FestivalOfTrees
             u.FirstName = firstName.Text;
             u.State = DropDownList1.SelectedValue;
             u.Zip = Convert.ToInt32(zipCode.Text);
+            u.Text = checkToText.Checked;
+            u.Carrier = CarrierList.SelectedValue;
 
             //Verifies correct password was input to modify profile info
             if (userControl.authenticate(email.Text, password1.Text))

@@ -116,15 +116,29 @@
                 </div>
 
                 <div class="field">
-                    <label>Mobile Phone</label>
+                    
                     <div class="fields">
                         <div class="eight wide field">
+                            <div class="field">
+                            <label>Mobile Phone</label>
                             <asp:TextBox ID="MobilePhone" runat="server" TextMode="Phone" placeholder="(XXX)XXXX-XXXX"></asp:TextBox>
                         </div>
-                        <div class="eight wide field">
+                            </div>
+                        <div class="four wide field bottom aligned">
+                            <div class="field">
+                            <label>Text notification</label>
                             <div class="ui toggle checkbox">
                                 <asp:CheckBox ID="checkToText" runat="server" />
-                                <label>Receive text notification</label>
+                                <label>Receive texts</label>
+                            </div>
+                                </div>
+                        </div>
+                        <div class="four wide field">
+                            <div class="field">
+                                <label>Select Carrier</label>
+                                <asp:DropDownList ID="CarrierList" runat="server" CssClass="ui fluid dropdown" >
+                                    <asp:ListItem Value="" Text="Select Carrier"></asp:ListItem>
+                                </asp:DropDownList>
                             </div>
                         </div>
                     </div>

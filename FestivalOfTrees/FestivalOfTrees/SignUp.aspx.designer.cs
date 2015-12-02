@@ -130,6 +130,15 @@ namespace FestivalOfTrees {
         protected global::System.Web.UI.WebControls.CheckBox checkToText;
         
         /// <summary>
+        /// CarrierList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CarrierList;
+        
+        /// <summary>
         /// email control.
         /// </summary>
         /// <remarks>

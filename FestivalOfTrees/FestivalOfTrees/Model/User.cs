@@ -20,12 +20,13 @@ namespace FestivalOfTrees.Model
         private bool donor;
         private string phone;
         private bool text;
+        private string carrier;
 
         public User() { }
 
         public User(int userID, string email, string firstName, string lastName, 
                     string address, string city, string state, int zip, bool admin, 
-                    bool committee, bool donor, string phone, bool text)
+                    bool committee, bool donor, string phone, bool text, string carrier)
         {
             this.userID = userID;
             this.email = email;
@@ -40,6 +41,7 @@ namespace FestivalOfTrees.Model
             this.donor = donor;
             this.phone = phone;
             this.text = text;
+            this.Carrier = carrier;
         }
         
         public override string ToString()
@@ -56,7 +58,8 @@ namespace FestivalOfTrees.Model
                 + "<br/>Committee: " + committee
                 + "<br/>Donor: " + donor
                 + "<br/>Phone: " + phone
-                + "<br/>Text: " + text;
+                + "<br/>Text: " + text
+                + "<br/>Phone Carrier: " + carrier;
         }
 
         public int UserID
@@ -225,6 +228,19 @@ namespace FestivalOfTrees.Model
             set
             {
                 text = value;
+            }
+        }
+
+        public string Carrier
+        {
+            get
+            {
+                return carrier;
+            }
+
+            set
+            {
+                carrier = value;
             }
         }
     }

@@ -14,10 +14,12 @@ namespace FestivalOfTrees.Views
     {
         private ItemController itemCtrl;
         private UserCtrl userCtrl;
+        private TextCallController smsCtrl;
         protected void Page_Load(object sender, EventArgs e)
         {
             itemCtrl = new ItemController();
             userCtrl = new UserCtrl();
+            smsCtrl = new TextCallController();
             MsgPanel.Visible = false;
             if(Request.QueryString["success"] != null)
             {
@@ -71,7 +73,15 @@ namespace FestivalOfTrees.Views
                     {
                         errorNum = " " + updateItemPnl.CloseItem.CategoryID + updateItemPnl.CloseItem.ItemID;
                     }
+
+                    if(bidUser.Text)
+                    {
+                        string msg = "Hello, we're BabyFold's Festival of Trees. We're pleased to let you know that you won the item: " + closeItem.ItemName + " with $" + updateItemPnl.WinPrice + "!";
+                        smsCtrl.sendText(bidUser.Phone, msg);
+                    }
                 }
+
+                
             }
             
 

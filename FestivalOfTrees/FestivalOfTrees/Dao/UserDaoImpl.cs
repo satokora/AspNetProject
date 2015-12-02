@@ -125,6 +125,8 @@ namespace FestivalOfTrees.Dao
                     + "', USERSTATE = '" + u.State
                     + "', ZIP = '" + u.Zip
                     + "', PHONE = '" + u.Phone
+                    + "', TEXT = '" + Convert.ToInt32(u.Text)
+                    + "', CARRIER = '" + u.Carrier
                     + "' WHERE EMAIL = '" + u.Email + "';";
             SqlCommand command = new SqlCommand(query, conn);
             int rows = command.ExecuteNonQuery();
@@ -183,7 +185,7 @@ namespace FestivalOfTrees.Dao
             bool added = false;
             int admin = 0, comm = 0, donor = 0;
             SqlConnection conn = DBHelper.loadDB();
-            String query = "INSERT INTO USERINFO OUTPUT INSERTED.USERID VALUES (@EMAIL, @FNAME, @LNAME, @ADDRESS, @CITY, @STATE, @ZIP, @ADMIN, @COMMITTEE, @PHONE, @TEXT, @DONOR)";
+            String query = "INSERT INTO USERINFO OUTPUT INSERTED.USERID VALUES (@EMAIL, @FNAME, @LNAME, @ADDRESS, @CITY, @STATE, @ZIP, @ADMIN, @COMMITTEE, @PHONE, @TEXT, @DONOR, @CARRIER)";
             try
             {
                 SqlCommand command = new SqlCommand(query, conn);
@@ -199,6 +201,7 @@ namespace FestivalOfTrees.Dao
                 command.Parameters.Add(new SqlParameter("@PHONE", user.Phone));
                 command.Parameters.Add(new SqlParameter("@TEXT", user.Text));
                 command.Parameters.Add(new SqlParameter("@DONOR", donor));
+                command.Parameters.Add(new SqlParameter("@CARRIER", user.Carrier));
 
                 int result = (int)command.ExecuteScalar();
 
@@ -337,7 +340,8 @@ namespace FestivalOfTrees.Dao
                             Committee = Convert.ToBoolean(reader["committee"]),
                             Donor = Convert.ToBoolean(reader["donor"]),
                             Phone = Convert.ToString(reader["phone"]),
-                            Text = Convert.ToBoolean(reader["text"])
+                            Text = Convert.ToBoolean(reader["text"]),
+                            Carrier = Convert.ToString(reader["carrier"])
                         };
                         array.Add(u);
                     }
@@ -381,7 +385,8 @@ namespace FestivalOfTrees.Dao
                 Committee = Convert.ToBoolean(reader["committee"]),
                 Donor = Convert.ToBoolean(reader["donor"]),
                 Phone = Convert.ToString(reader["phone"]),
-                Text = Convert.ToBoolean(reader["text"])
+                Text = Convert.ToBoolean(reader["text"]),
+                Carrier = Convert.ToString(reader["carrier"])
             };
             return u;
         }
@@ -402,6 +407,7 @@ namespace FestivalOfTrees.Dao
                     + ", '" + user.Phone
                     + "', " + user.Text
                     + ", 0"
+                    + "," + user.Carrier
                     + ")";
             SqlCommand command = new SqlCommand(query, conn);
             user.UserID = (int)command.ExecuteScalar();
