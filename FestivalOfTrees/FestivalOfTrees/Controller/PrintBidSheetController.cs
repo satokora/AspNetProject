@@ -16,7 +16,7 @@ namespace FestivalOfTrees.Controller
     {
         private BidSheetPrinter bsp;
         ItemDaoImpl dao = new ItemDaoImpl();
-        public void PrintSheets(List<string> itemNumbers, string destinationPath, string templatePath, string temporaryPath)
+        public int PrintSheets(List<string> itemNumbers, string destinationPath, string templatePath, string temporaryPath)
         {
             bsp = new BidSheetPrinter();
             bsp.formPath = templatePath;
@@ -30,7 +30,8 @@ namespace FestivalOfTrees.Controller
                 itemList.Add(t);
             }
             Print(itemList);
-            
+            return 1;
+
         }
         private void Print(List<Item> items)
         {
@@ -42,6 +43,27 @@ namespace FestivalOfTrees.Controller
                 {
                     bsp.addToPDF(items[count], items[count +1]);
                     count = count + 2;
+                }
+            }
+            else
+            {
+                int count = items.Count;
+                int index = 0;
+                while (count > 0)
+                {
+
+                    if (count >=2)
+                    {
+                        bsp.addToPDF(items[index], items[index + 1]);
+                        count = count - 2;
+                        index += 2;
+                    }
+                    else if(count ==1)
+                    {
+                        bsp.addToPDFWithOneItem(items[index]);
+                        count = count - 1;
+                        index -= 1;
+                    }
                 }
             }
             bsp.closePDF();

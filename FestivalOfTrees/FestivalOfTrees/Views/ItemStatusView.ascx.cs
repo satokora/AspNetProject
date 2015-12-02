@@ -67,16 +67,16 @@ namespace FestivalOfTrees.Views
                 
             }
 
-            if (count > 0)
-            {
-                BtnPrintPaidInvoices.Enabled = true;
-                LinkButton1.Enabled = true;
-            }
-            else
-            {
-                BtnPrintPaidInvoices.Enabled = false;
-                LinkButton1.Enabled = false;
-            }
+            //if (count > 0)
+            //{
+            //    BtnPrintPaidInvoices.Enabled = true;
+            //    LinkButton1.Enabled = true;
+            //}
+            //else
+            //{
+            //    BtnPrintPaidInvoices.Enabled = false;
+            //    LinkButton1.Enabled = false;
+            //}
         }
 
         protected void BtnPrintPaidInvoices_Click(object sender, EventArgs e)
@@ -98,8 +98,12 @@ namespace FestivalOfTrees.Views
                     itemNumbersToPrint.Add(itemNumber);
                 }
             }
-            bspCtrl.PrintSheets(itemNumbersToPrint, savePath, templatePath, temporaryPath);
-            Response.Redirect("BidSheets.aspx");
+            int i = bspCtrl.PrintSheets(itemNumbersToPrint, savePath, templatePath, temporaryPath);
+            if(i>0)
+            {
+                Response.Redirect("BidSheets.aspx");
+            }
+            
         }
 
 

@@ -44,10 +44,35 @@ namespace WebApplication3
             fields.SetField("Value#1", i1.ItemValue.ToString());
             fields.SetField("MinBid#1", i1.MinBid.ToString());
 
-            fields.SetField("ID#2", i2.CategoryID + i1.ItemID.ToString());
+            fields.SetField("ID#2", i2.CategoryID + i2.ItemID.ToString());
             fields.SetField("Name#2", i2.ItemName);
             fields.SetField("Value#2", i2.ItemValue.ToString());
             fields.SetField("MinBid#2", i2.MinBid.ToString());
+
+            pdfStamper.Close();
+            tempFile.Close();
+            pdfReader.Close();
+            addPage();
+
+            return true;
+        }
+
+        public bool addToPDFWithOneItem(Item i1)
+        {
+            FileStream tempFile = new FileStream(tempFilePath, FileMode.Create);
+
+            PdfReader pdfReader = new PdfReader(formPath);
+            PdfStamper pdfStamper = new PdfStamper(pdfReader, tempFile);
+            AcroFields fields = pdfStamper.AcroFields;
+            fields.SetField("ID#1", i1.CategoryID + i1.ItemID.ToString());
+            fields.SetField("Name#1", i1.ItemName);
+            fields.SetField("Value#1", i1.ItemValue.ToString());
+            fields.SetField("MinBid#1", i1.MinBid.ToString());
+
+            fields.SetField("ID#2", "");
+            fields.SetField("Name#2", "");
+            fields.SetField("Value#2", "");
+            fields.SetField("MinBid#2", "");
 
             pdfStamper.Close();
             tempFile.Close();
