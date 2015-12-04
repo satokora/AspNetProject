@@ -134,9 +134,20 @@ namespace FestivalOfTrees.Views
 
                         for (int j = 0; j < SoldStatusGrid.Columns.Count; j++)
                         {
+
                             if (SoldStatusGrid.Columns[j].HeaderText.Equals(selectedColumns[i]))
                             {
-                                dr[selectedColumns[i]] = row.Cells[j].Text;
+                                if (selectedColumns[i].Equals("Status"))
+                                {
+                                    Label lb = (Label)row.FindControl("Label1");
+                                    dr[selectedColumns[i]] = lb.Text;
+                                }
+                                else
+                                {
+
+                                    dr[selectedColumns[i]] = row.Cells[j].Text;
+
+                                }
                             }
                         }
                     }
@@ -145,7 +156,7 @@ namespace FestivalOfTrees.Views
                 }
             }
 
-            exportCtrl.ExportDataSetToExcel(ds);
+            exportCtrl.ExportDataSetToExcelWithPlus(ds);
         }
     }
 }

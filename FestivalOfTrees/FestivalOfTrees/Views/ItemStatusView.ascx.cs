@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using FestivalOfTrees.Controller;
 using System.Data;
+using OfficeOpenXml;
 
 namespace FestivalOfTrees.Views
 {
@@ -136,12 +137,22 @@ namespace FestivalOfTrees.Views
                     for (int i=0;i< count;i++)
                     {
                         
-                        
                         for (int j=0;j< ItemStatusGrid.Columns.Count;j++)
                         {
                             if (ItemStatusGrid.Columns[j].HeaderText.Equals(selectedColumns[i]))
                             {
-                                dr[selectedColumns[i]] = row.Cells[j].Text;
+                                if(selectedColumns[i].Equals("Status"))
+                                {
+                                    Label lb = (Label)row.FindControl("Label1");
+                                    dr[selectedColumns[i]] = lb.Text;
+                                }
+                                else
+                                {
+                                    
+                                    dr[selectedColumns[i]] = row.Cells[j].Text;
+                                    
+                                }
+                                
                             }
                         }
                     }
@@ -150,7 +161,8 @@ namespace FestivalOfTrees.Views
                 }
             }
 
-            exportCtrl.ExportDataSetToExcel(ds);
+            exportCtrl.ExportDataSetToExcelWithPlus(ds);
+            
         }
     }
 }

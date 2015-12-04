@@ -16,9 +16,9 @@
                             </asp:DropDownList>
                         </div>
                     </div>
-                    <div class="nine wide column bottom aligned right aligned" id="paid">
+                    <div class="nine wide column bottom aligned right aligned" id="sold">
                         <asp:LinkButton ID="ExportSoldBtn" runat="server" CssClass="ui red button">
-                            <i class="file excel outline icon"></i>Export to CSV
+                            <i class="file excel outline icon"></i>Export to SpreadSheet
                         </asp:LinkButton>
                     </div>
                     <div class="three wide column bottom aligned right aligned">
@@ -41,10 +41,9 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Status" SortExpression="Status">
                                 <ItemTemplate>
-                                    <%# (Eval("Status").ToString().Equals("Unsold")) ? 
-                                    "<a class='ui grey label'>Unsold</a>": "" %>
-                                    <%# (Eval("Status").ToString().Equals("Sold")) ? 
-                                    "<a class='ui red label'>Sold</a>": "" %>
+                                    <asp:Label ID="Label1" runat="server" Text=<%# Eval("Status").ToString() %> CssClass=<%# (Eval("Status").ToString().Equals("Unsold")) ? 
+                                    "ui grey label": 
+                                    "ui red label" %>></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="CATITEMID" HeaderText="Item ID" SortExpression="CATITEMID" ReadOnly="True" />
@@ -69,7 +68,8 @@
 
             </ContentTemplate>
         </asp:UpdatePanel>
-        <div class="ui basic modal center aligned">
+        <div class="ui basic modal center aligned" id="soldmodal">
+            <i class="close icon"></i>
             <div class="ui grid">
                 <div class="six wide column"></div>
                 <div class="four wide column">
@@ -88,6 +88,7 @@
                     </div>
                     <div class="action">
                         <asp:Button ID="SelectSoldColBtn" runat="server" Text="Select" CssClass="ui button" OnClick="SelectSoldColBtn_Click" />
+                        <div class="ui cancel button">Cancel</div>
                     </div>
                 </div>
             </div>

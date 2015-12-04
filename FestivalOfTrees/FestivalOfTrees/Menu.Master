@@ -54,19 +54,19 @@
             $("#designer-srch a").click(function () {
                 $(".ui.small.modal.designer").modal('show');
             });
-            //$("#sold a").click(function () {
-            //    $(this).parent().appendTo("form");
-            //    $(".ui.basic.modal")
-            //        .modal({
-            //            onShow: function () {
-            //                $(this).parent().appendTo("form");
-            //            }
-            //        })
-            //        .modal('show');
-            //});
+            $("#sold a").click(function () {
+                
+                $("#soldmodal")
+                    .modal({
+                        onShow: function () {
+                            $(this).parent().appendTo("form");
+                        }
+                    })
+                    .modal('show');
+            });
             $("#paid a").click(function () {
-                $(this).parent().appendTo("form");
-                $(".ui.basic.modal")
+                
+                $("#paidmodal")
                     .modal({
                         onShow: function () {
                             $(this).parent().appendTo("form");

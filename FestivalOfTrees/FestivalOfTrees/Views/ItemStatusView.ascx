@@ -85,7 +85,7 @@
                     </div>
                     <div class="nine wide column bottom aligned right aligned" id="paid">
 <%--                        <a href="#" class="ui red button"><i class="file excel outline icon"></i>Export to CSV</a>--%>
-                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="ui red button"><i class="file excel outline icon"></i>Export to CSV</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="ui red button"><i class="file excel outline icon"></i>Export to SpreadSheet</asp:LinkButton>
                     </div>
                     <div class="three wide column bottom aligned right aligned">
                         <asp:LinkButton ID="BtnPrintPaidInvoices" runat="server" CssClass="ui red button" OnClick="BtnPrintPaidInvoices_Click"><i class="print icon"></i>Print Bid Sheets</asp:LinkButton>
@@ -107,10 +107,10 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Status" SortExpression="Status">
                                 <ItemTemplate>
-                                    <%# (Eval("Status").ToString().Equals("Unpaid")) ? 
-                                    "<a class='ui blue label'>Unpaid</a>": "" %>
-                                    <%# (Eval("Status").ToString().Equals("Paid")) ? 
-                                    "<a class='ui green label'>Paid</a>": "" %>
+                                    <asp:Label ID="Label1" runat="server" Text=<%# Eval("Status").ToString() %> CssClass=<%# (Eval("Status").ToString().Equals("Unpaid")) ? 
+                                    "ui blue label": 
+                                    "ui green label" %>></asp:Label>
+                                    
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="CATITEMID" HeaderText="Item ID" SortExpression="CATITEMID" ReadOnly="True" />
@@ -133,7 +133,8 @@
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>
-        <div class="ui basic modal center aligned">
+        <div class="ui basic modal center aligned" id="paidmodal">
+            <i class="close icon"></i>
             <div class="ui grid">
                 <div class="six wide column"></div>
                 <div class="four wide column">
@@ -150,6 +151,7 @@
                     </div>
                     <div class="action">
                         <asp:Button ID="SelectColBtn" runat="server" Text="Select" CssClass="ui button" OnClick="SelectColBtn_Click" />
+                        <div class="ui cancel button">Cancel</div>
                     </div>
                 </div>
             </div>
