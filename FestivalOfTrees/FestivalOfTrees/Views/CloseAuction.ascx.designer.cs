@@ -40,57 +40,21 @@ namespace FestivalOfTrees.Views {
         protected global::System.Web.UI.WebControls.Panel SuccessPanel;
         
         /// <summary>
-        /// EnterBid1 control.
+        /// CloseItemView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FestivalOfTrees.PageComponent.EnterBid EnterBid1;
+        protected global::System.Web.UI.WebControls.GridView CloseItemView;
         
         /// <summary>
-        /// EnterBid2 control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FestivalOfTrees.PageComponent.EnterBid EnterBid2;
-        
-        /// <summary>
-        /// EnterBid3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::FestivalOfTrees.PageComponent.EnterBid EnterBid3;
-        
-        /// <summary>
-        /// EnterBid4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::FestivalOfTrees.PageComponent.EnterBid EnterBid4;
-        
-        /// <summary>
-        /// EnterBid5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::FestivalOfTrees.PageComponent.EnterBid EnterBid5;
-        
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

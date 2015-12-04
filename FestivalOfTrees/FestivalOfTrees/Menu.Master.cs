@@ -13,14 +13,22 @@ namespace FestivalOfTrees
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Admin"].Equals("admin"))
+            if(Session["Name"]!=null)
             {
-                MenuMultiView.ActiveViewIndex = 0;
+                if (Session["Admin"].Equals("admin"))
+                {
+                    MenuMultiView.ActiveViewIndex = 0;
+                }
+                else
+                {
+                    MenuMultiView.ActiveViewIndex = 1;
+                }
             }
             else
             {
-                MenuMultiView.ActiveViewIndex = 1;
+                Response.Redirect("Default.aspx");
             }
+            
         }
     }
 }

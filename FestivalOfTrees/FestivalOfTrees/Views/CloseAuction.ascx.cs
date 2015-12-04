@@ -32,60 +32,36 @@ namespace FestivalOfTrees.Views
             
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        
+
+        protected void CloseItemView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string errorNumbers = "";
+            GridViewRow row = CloseItemView.SelectedRow;
 
-            errorNumbers += updateBidItems(EnterBid1);
-            errorNumbers += updateBidItems(EnterBid2);
-            errorNumbers += updateBidItems(EnterBid3);
-            errorNumbers += updateBidItems(EnterBid4);
-            errorNumbers += updateBidItems(EnterBid5);
+            Label lb = (Label)row.FindControl("Label1");
+            TextBox bidTxt = (TextBox)row.FindControl("BidTextBox");
+            TextBox winText = (TextBox)row.FindControl("WinValTextBox");
 
-            if (!errorNumbers.Equals(""))
+            Item closeItem = itemCtrl.getItemByID(row.Cells[0].Text);
+            User winUser = userCtrl.getBuyerInfo(bidTxt.Text);
+
+            if(closeItem != null && winUser !=null)
             {
-                ErrorNumsLbl.Text = errorNumbers;
-                MsgPanel.Visible = true;
-            }
-            else
-            {
-                
-                Response.Redirect("Auction.aspx?menu=8&success=1");
-               
-            }
-
-
-        }
-        private string updateBidItems(EnterBid updateItemPnl)
-        {
-            string errorNum = "";
-
-            if (updateItemPnl.ItemNumberTxt.Length > 0 && updateItemPnl.BidNoTxt.Length>0)
-            {
-                Item closeItem = itemCtrl.getItemByID(updateItemPnl.ItemNumberTxt);
-                User bidUser = userCtrl.getBuyerInfo(updateItemPnl.BidNoTxt);
-
-
-                if (closeItem != null && bidUser != null)
+                int i = itemCtrl.updateBidItem(closeItem, winUser, winText.Text);
+                if (i <= 0)
                 {
-                    int i = itemCtrl.updateBidItem(closeItem, bidUser, updateItemPnl.WinPrice);
-                    if (i <= 0)
-                    {
-                        errorNum = " " + updateItemPnl.CloseItem.CategoryID + updateItemPnl.CloseItem.ItemID;
-                    }
-
-                    if(bidUser.Text)
-                    {
-                        string msg = "Hello, we're BabyFold's Festival of Trees. We're pleased to let you know that you won the item: " + closeItem.ItemName + " with $" + updateItemPnl.WinPrice + "!";
-                        smsCtrl.sendText(bidUser.Phone, msg);
-                    }
+                    ErrorNumsLbl.Text = closeItem.CategoryID + closeItem.ItemID;
                 }
 
-                
+                if (winUser.Text)
+                {
+                    string msg = "Hello, we're BabyFold's Festival of Trees. We're pleased to let you know that you won the item: " + closeItem.ItemName + " with $" + winText.Text + "!";
+                    smsCtrl.sendText(winUser.Phone, msg);
+                }
             }
-            
 
-            return errorNum;
+            CloseItemView.DataBind();     
+
         }
     }
 }
