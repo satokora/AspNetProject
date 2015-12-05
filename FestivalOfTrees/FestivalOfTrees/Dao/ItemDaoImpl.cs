@@ -71,7 +71,18 @@ namespace FestivalOfTrees.Dao
             int rows = command.ExecuteNonQuery();
             return rows;
         }
-        
+        public int updatePaidStatus(int itemId, int status)
+        {
+
+            SqlConnection conn = DBHelper.loadDB();
+            String query = "UPDATE ITEM SET "
+                    + "PAID = " + status
+                    + " WHERE ITEMID = " + itemId + ";";
+            SqlCommand command = new SqlCommand(query, conn);
+            int rows = command.ExecuteNonQuery();
+            return rows;
+        }
+
         //This itemNum can contain the letter prefix. G307 will return item with itemNum 307.
         public Item getItemByNumber(string itemNum)
         {

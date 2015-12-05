@@ -110,5 +110,9 @@ namespace FestivalOfTrees.Controller
             dao.updateItem(upItem);
             return upItem.ItemID;
         }
+        public void updateToPaid(string paidItemId, int paid)
+        {
+            dao.updatePaidStatus(Convert.ToInt32(paidItemId), paid);
+        }
     }
 }
