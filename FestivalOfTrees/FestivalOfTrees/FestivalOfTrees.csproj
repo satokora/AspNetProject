@@ -46,8 +46,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\Users\it3680117\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="EPPlus">
-      <HintPath>assets\components\EPPlus.dll</HintPath>
+    <Reference Include="EPPlus, Version=4.0.4.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.0.4\lib\net20\EPPlus.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="itextsharp, Version=5.5.7.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -238,6 +239,7 @@
     <Content Include="PageComponent\SideBarAdmin.ascx" />
     <Content Include="PageComponent\SideBarDesigner.ascx" />
     <Content Include="Profile.aspx" />
+    <Content Include="packages.config" />
     <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
     <None Include="Service References\ServiceReference1\configuration.svcinfo" />
     <Content Include="Service References\ServiceReference1\FestivalOfTrees.ServiceReference1.getCarriersResponse.datasource">
@@ -266,7 +268,9 @@
     <Content Include="Views\ViewItemsFromCategory.ascx" />
     <Content Include="Views\ViewSingleItem.ascx" />
     <Content Include="Views\ViewSingleUser.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auction.aspx.cs">
@@ -603,7 +607,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>2609</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

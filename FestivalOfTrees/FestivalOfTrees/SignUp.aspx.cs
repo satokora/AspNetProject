@@ -32,7 +32,8 @@ namespace FestivalOfTrees
             {
                 EditProfileTitle.Visible = false;
 
-                if (Session["name"]!= null)
+                //if (Session["name"]!= null)
+                if (Page.PreviousPage == null && Session["name"]!= null)
                 {
                     //Manage title and button visibility for Edit Profile
                     EditProfileBtn.Visible = true;
@@ -45,20 +46,20 @@ namespace FestivalOfTrees
                     email.ReadOnly = true;
                     confEmail.ReadOnly = true;
                     string emailString = Session["name"].ToString();
-                
-                u = userControl.getProfileInfo(emailString);
 
-                email.Text = u.Email;
-                confEmail.Text = u.Email;
-                firstName.Text = u.FirstName;
-                lastName.Text = u.LastName;
-                address.Text = u.Address;
-                city.Text = u.City;
-                DropDownList1.SelectedValue = u.State;
-                zipCode.Text = u.Zip.ToString();
-                //Phone.Text = u.Phone;
-                MobilePhone.Text = u.Phone;
-                checkToText.Checked = u.Text;
+                    u = userControl.getProfileInfo(emailString);
+
+                    email.Text = u.Email;
+                    confEmail.Text = u.Email;
+                    firstName.Text = u.FirstName;
+                    lastName.Text = u.LastName;
+                    address.Text = u.Address;
+                    city.Text = u.City;
+                    DropDownList1.SelectedValue = u.State;
+                    zipCode.Text = u.Zip.ToString();
+                    //Phone.Text = u.Phone;
+                    MobilePhone.Text = u.Phone;
+                    checkToText.Checked = u.Text;
 
                 }
             }
