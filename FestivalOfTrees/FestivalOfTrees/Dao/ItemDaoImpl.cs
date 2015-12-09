@@ -14,7 +14,7 @@ namespace FestivalOfTrees.Dao
         {
             SqlConnection conn = DBHelper.loadDB();
             string query = "INSERT INTO USERITEM VALUES ("
-                + "'@EMAIL'"
+                + "@EMAIL"
                 + ", @ITEMID);";
             SqlCommand command = new SqlCommand(query, conn);
             command.Parameters.Add(new SqlParameter("@EMAIL", email));
@@ -23,12 +23,11 @@ namespace FestivalOfTrees.Dao
             int rows = command.ExecuteNonQuery();
         }
 
-        public void deleteUserItem(string email, int itemID)
+        public void deleteUserItem(int itemID)
         {
             SqlConnection conn = DBHelper.loadDB();
-            string query = "DELETE USERITEM where EMAIL='@EMAIL' and ITEMID = @ITEMID";
+            string query = "DELETE USERITEM where ITEMID = @ITEMID";
             SqlCommand command = new SqlCommand(query, conn);
-            command.Parameters.Add(new SqlParameter("@EMAIL", email));
             command.Parameters.Add(new SqlParameter("@ITEMID", itemID));
 
             int rows = command.ExecuteNonQuery();
@@ -58,15 +57,13 @@ namespace FestivalOfTrees.Dao
             SqlConnection conn = DBHelper.loadDB();
             String query = "UPDATE ITEM SET "
                     + "CATEGORYID = '" + item.CategoryID
-                    + "', USERID = '" + item.UserID
                     + "', ITEMNAME = '" + item.ItemName
                     + "', ITEMVALUE = " + item.ItemValue
                     + ", ANGELPRICE = " + item.AngelPrice
                     + ", MINBID = " + item.MinBid
                     + ", PAID = " + Convert.ToInt32(item.Paid)
                     + ", DESCR = '" + item.Description
-                    + "', BIDAMOUNT = " + item.BidAmount
-                    + " WHERE ITEMID = " + item.ItemID + ";";
+                    + "' WHERE ITEMID = " + item.ItemID + ";";
             SqlCommand command = new SqlCommand(query, conn);
             int rows = command.ExecuteNonQuery();
             return rows;
@@ -162,15 +159,16 @@ namespace FestivalOfTrees.Dao
                             Email = Convert.ToString(reader["email"]),
                             FirstName = Convert.ToString(reader["firstname"]),
                             LastName = Convert.ToString(reader["lastname"]),
-                            Address = Convert.ToString(reader["streetadress"]),
+                            Address = Convert.ToString(reader["streetaddress"]),
                             City = Convert.ToString(reader["city"]),
-                            State = Convert.ToString(reader["usertsate"]),
+                            State = Convert.ToString(reader["userstate"]),
                             Zip = Convert.ToInt32(reader["zip"]),
                             Admin = Convert.ToBoolean(reader["admin"]),
                             Committee = Convert.ToBoolean(reader["committee"]),
                             Phone = Convert.ToString(reader["phone"]),
                             Text = Convert.ToBoolean(reader["text"]),
-                            Donor = Convert.ToBoolean(reader["donor"])
+                            Donor = Convert.ToBoolean(reader["donor"]),
+                            Carrier = Convert.ToString(reader["carrier"])
                         };
                         
                         uList.Add(u);

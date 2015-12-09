@@ -14,6 +14,7 @@ namespace FestivalOfTrees
     {
         ItemController itemCtrl;
         private int itemID;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -28,8 +29,8 @@ namespace FestivalOfTrees
 
                 itemID = Convert.ToInt32(tempId);
 
-                //if (!Page.IsPostBack)
-                //{
+                if (!Page.IsPostBack)
+                {
                     if (Request.QueryString["itemId"] != null)
                     {
                         AddItem.Visible = false;
@@ -41,15 +42,16 @@ namespace FestivalOfTrees
                         {
                             DropDownList1.SelectedValue = editItem.CategoryID;
                             ItemName.Text = editItem.ItemName;
-                            Description.Text = editItem.Description;
+                        DescriptionTxtBox.Text = editItem.Description;
                             TxtValPrice.Text = editItem.ItemValue.ToString();
                             TxtMinBid.Text = editItem.MinBid.ToString();
                             TxtAngPrice.Text = editItem.AngelPrice.ToString();
 
+                            
 
                         }
                     }
-                //}
+                }
                 //else
                 //{
 
@@ -126,6 +128,32 @@ namespace FestivalOfTrees
         protected void DesignerList_DataBound(object sender, EventArgs e)
         {
             DesignerList.Items.Insert(0, new ListItem("==Select Designer==", ""));
+
+
+                if (Request.QueryString["itemId"] != null)
+                {
+                 
+
+                        List<User> designers = itemCtrl.getDesigners(itemID.ToString());
+
+                        if (designers != null)
+                        {
+                            foreach (User des in designers)
+                            {
+                                foreach (ListItem item in DesignerList.Items)
+                                {
+                                    if (des.Email.Equals(item.Value))
+                                    {
+                                        item.Selected = true;
+                                    }
+                                }
+                            }
+
+
+                        }
+
+                    }
+
         }
 
         protected void AddItem_Click(object sender, EventArgs e)
@@ -134,7 +162,7 @@ namespace FestivalOfTrees
             {
                 CategoryID = DropDownList1.SelectedValue,
                 ItemName = ItemName.Text,
-                Description = Description.Text,
+                Description = DescriptionTxtBox.Text,
                 ItemValue = Convert.ToDouble(TxtValPrice.Text),
                 MinBid = Convert.ToDouble(TxtMinBid.Text),
                 AngelPrice = Convert.ToDouble(TxtAngPrice.Text)
@@ -161,15 +189,15 @@ namespace FestivalOfTrees
 
         protected void EditItem_Click(object sender, EventArgs e)
         {
-            Item updateItem = new Item
+            Item updateItem = new Item()
             {
                 ItemID = itemID,
                 CategoryID = DropDownList1.SelectedValue,
                 ItemName = ItemName.Text,
-                Description = Description.Text,
-                ItemValue = Convert.ToDouble(TxtValPrice.Text),
-                MinBid = Convert.ToDouble(TxtMinBid.Text),
-                AngelPrice = Convert.ToDouble(TxtAngPrice.Text)
+                Description = DescriptionTxtBox.Text,
+                ItemValue = Math.Round(Convert.ToDouble(TxtValPrice.Text),2,MidpointRounding.AwayFromZero) ,
+                MinBid = Math.Round(Convert.ToDouble(TxtMinBid.Text), 2, MidpointRounding.AwayFromZero),
+                AngelPrice = Math.Round(Convert.ToDouble(TxtAngPrice.Text), 2, MidpointRounding.AwayFromZero)
             };
 
             // int newItemId = itemCtrl.u .createItem(updateItem);
@@ -187,8 +215,14 @@ namespace FestivalOfTrees
 
             if(emailList.Count > 0)
             {
-                itemCtrl.removeDonors(emailList, modifiedId);
-                itemCtrl.addDonors(emailList, modifiedId);
+                if(itemCtrl.getDesigners(modifiedId.ToString()).Count > 0)
+                {
+                    itemCtrl.removeDonors(modifiedId);
+                }
+
+                    itemCtrl.addDonors(emailList, modifiedId);
+
+                
             }
 
  

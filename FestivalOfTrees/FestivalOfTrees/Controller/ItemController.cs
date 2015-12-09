@@ -55,13 +55,12 @@ namespace FestivalOfTrees.Controller
                 dao.createUserItem(email, itemID);
             }
         }
-        public int removeDonors(List<string> emailList, int itemID)
+        public int removeDonors(int itemID)
         {
             int success = 0;
-            foreach (string email in emailList)
-            {
-                dao.deleteUserItem(email, itemID);
-            }
+
+                dao.deleteUserItem(itemID);
+
 
             success = 1;
             return success;

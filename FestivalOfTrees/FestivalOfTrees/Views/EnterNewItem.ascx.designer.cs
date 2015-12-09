@@ -94,13 +94,13 @@ namespace FestivalOfTrees {
         protected global::System.Web.UI.WebControls.TextBox ItemName;
         
         /// <summary>
-        /// Description control.
+        /// DescriptionTxtBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Description;
+        protected global::System.Web.UI.WebControls.TextBox DescriptionTxtBox;
         
         /// <summary>
         /// DesignerList control.

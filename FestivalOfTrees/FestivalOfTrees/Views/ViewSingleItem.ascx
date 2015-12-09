@@ -54,10 +54,10 @@
                             </div>
                             <div>
                                 <span>Donated/designed by
-                                    <asp:Label ID="DesignerName" runat="server" Text="John Doe"></asp:Label>
+                                    <asp:Label ID="DesignerName" runat="server" Text=""></asp:Label>
                                     <br />
                                     Sponsored by
-                                    <asp:Label ID="SponsorName" runat="server" Text="XXX Organization"></asp:Label></span>
+                                    <asp:Label ID="SponsorName" runat="server" Text=""></asp:Label></span>
                             </div>
                         </div>
                         <div class="description">

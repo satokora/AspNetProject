@@ -33,7 +33,7 @@
                             <label>Value</label>
                             <div class="ui labeled input">
                               <div class="ui label">$</div>
-                                        <asp:TextBox ID="TxtValPrice" runat="server" placeholder="Amount" OnKeyUp="TxtValPrice_TextChanged"  OnTextChanged="TxtValPrice_TextChanged" AutoPostBack="True"></asp:TextBox>
+                                        <asp:TextBox ID="TxtValPrice" runat="server" placeholder="Amount" OnKeyUp="TxtValPrice_TextChanged"  OnTextChanged="TxtValPrice_TextChanged" AutoPostBack="True" CausesValidation="false"></asp:TextBox>
                             </div>
                         </div>
                         <div class="field">
@@ -76,7 +76,7 @@
                     </div>
                     <div class="field">
                         <label>Item Description (Optional)</label>
-                        <asp:TextBox ID="Description" runat="server" TextMode="MultiLine" Rows="4"></asp:TextBox>
+                        <asp:TextBox ID="DescriptionTxtBox" runat="server" TextMode="MultiLine" Rows="4"></asp:TextBox>
                     </div>
                     <div class="field" id="designer-srch">
                         <label>Donor/Designer</label>
@@ -88,8 +88,8 @@
                         </div>
                     </div>
                     <div class="field">
-                        <asp:Button ID="AddItem" runat="server" Text="Add Item"  CssClass="ui fluid large red button" OnClick="AddItem_Click" />
-                        <asp:Button ID="EditItem" runat="server" Text="Update Item" CssClass="ui fluid large red button" OnClick="EditItem_Click" />
+                        <asp:Button ID="AddItem" runat="server" Text="Add Item"  CssClass="ui fluid large red button" OnClick="AddItem_Click" CausesValidation="false" />
+                        <asp:Button ID="EditItem" runat="server" Text="Update Item" CssClass="ui fluid large red button" OnClick="EditItem_Click" CausesValidation="false" />
                     </div>
                     
                 </div>
