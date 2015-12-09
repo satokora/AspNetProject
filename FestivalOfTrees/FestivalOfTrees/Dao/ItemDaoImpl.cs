@@ -68,6 +68,18 @@ namespace FestivalOfTrees.Dao
             int rows = command.ExecuteNonQuery();
             return rows;
         }
+        public int updateBid(Item item)
+        {
+
+            SqlConnection conn = DBHelper.loadDB();
+            String query = "UPDATE ITEM SET "
+                    + "USERID = " + item.UserID
+                    + ", BIDAMOUNT = " + item.BidAmount
+                    + " WHERE ITEMID = " + item.ItemID + ";";
+            SqlCommand command = new SqlCommand(query, conn);
+            int rows = command.ExecuteNonQuery();
+            return rows;
+        }
         public int updatePaidStatus(int itemId, int status)
         {
 

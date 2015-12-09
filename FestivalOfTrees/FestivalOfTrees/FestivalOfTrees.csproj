@@ -212,6 +212,7 @@
     <Content Include="assets\image\bg1.jpg" />
     <Content Include="assets\image\bg2.jpg" />
     <Content Include="assets\image\bg3.jpg" />
+    <Content Include="assets\image\Email.jpg" />
     <Content Include="assets\image\Logo.PNG" />
     <Content Include="assets\image\Logo_FestTree - Copy.png" />
     <Content Include="assets\image\Logo_FestTree.png" />

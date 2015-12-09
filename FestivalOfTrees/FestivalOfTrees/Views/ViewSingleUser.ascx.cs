@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using FestivalOfTrees.Controller;
 using FestivalOfTrees.Model;
+using System.Data;
 
 namespace FestivalOfTrees.Views
 {
@@ -46,6 +47,8 @@ namespace FestivalOfTrees.Views
             if (!Page.IsPostBack)
             {
                 MessageSent.Visible = false;
+                EmailSentMsg.Visible = false;
+                
             }
 
             InvoiceView.DataBind();
@@ -89,6 +92,20 @@ namespace FestivalOfTrees.Views
                 txtCtrl.sendText(singleUser.Phone,SMSMessage.Text);
                 MessageSent.Visible = true;
             }
+        }
+
+        protected void BtnEmail_Click(object sender, EventArgs e)
+        {
+            EmailToBidderController emailCtrl = new EmailToBidderController();
+
+            DataView view = (DataView)SqlDataSource1.Select(DataSourceSelectArguments.Empty);
+
+            DataTable table = view.ToTable();
+            DataSet ds = new DataSet();
+            ds.Tables.Add(table);
+
+            emailCtrl.sendInvoiceEmail(singleUser.Email, ds);
+            EmailSentMsg.Visible = true;
         }
     }
 }

@@ -46,12 +46,13 @@
                 </div>
                 <div class="item">
                     <div class="right floated content">
-                        <asp:LinkButton ID="BtnEmail" runat="server" CssClass="tiny ui red button"><i class="mail icon"></i>Email Invoice</asp:LinkButton>
+                        <asp:LinkButton ID="BtnEmail" runat="server" CssClass="tiny ui red button" OnClick="BtnEmail_Click"><i class="mail icon"></i>Email Invoice</asp:LinkButton>
 
                     </div>
                     <i class="mail icon"></i>
                     <div class="middle aligned content">
                         <asp:Label ID="LblEmail" runat="server">jack@semantic-ui.com</asp:Label>
+                        <asp:Label ID="EmailSentMsg" runat="server" Text="Label" ForeColor="Red">Email Sent</asp:Label>
                     </div>
                 </div>
             </div>
