@@ -22,9 +22,9 @@ namespace FestivalOfTrees.Views
                 Item result = itemCtrl.getItemByID(selectedItemId);
                 ItemID.Text = result.CategoryID + result.ItemID;
                 ItemName.Text = result.ItemName;
-                lblCurrentPrice.Text = result.ItemValue.ToString();
-                lblMinPrice.Text = result.MinBid.ToString();
-                lblAngelPrice.Text = result.AngelPrice.ToString();
+                lblCurrentPrice.Text = String.Format("{0:0.##}", result.ItemValue); 
+                lblMinPrice.Text = String.Format("{0:0.##}", result.MinBid); 
+                lblAngelPrice.Text = String.Format("{0:0.##}", result.AngelPrice);
                 ItemDesc.Text = result.Description.ToString();
 
                 if (String.IsNullOrEmpty(result.UserID.ToString()))
