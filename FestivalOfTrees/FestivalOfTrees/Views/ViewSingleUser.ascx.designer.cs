@@ -76,15 +76,6 @@ namespace FestivalOfTrees.Views {
         protected global::System.Web.UI.WebControls.LinkButton BtnText;
         
         /// <summary>
-        /// BtnCall control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BtnCall;
-        
-        /// <summary>
         /// LblMobilePhone control.
         /// </summary>
         /// <remarks>
@@ -92,6 +83,24 @@ namespace FestivalOfTrees.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LblMobilePhone;
+        
+        /// <summary>
+        /// MessageSent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MessageSent;
+        
+        /// <summary>
+        /// SMSMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SMSMessage;
         
         /// <summary>
         /// BtnEmail control.

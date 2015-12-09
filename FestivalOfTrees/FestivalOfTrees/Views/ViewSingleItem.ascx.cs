@@ -74,6 +74,7 @@ namespace FestivalOfTrees.Views
                 
 
                 SponsorName.Text = itemCtrl.getSponsorName(result.CategoryID);
+                
 
             }
         }

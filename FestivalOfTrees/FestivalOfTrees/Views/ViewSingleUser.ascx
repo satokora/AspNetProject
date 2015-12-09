@@ -27,14 +27,22 @@
                     </div>
                 </div>
                 <div class="item">
+                    
+                    
                     <div class="right floated content">
-                        <asp:LinkButton ID="BtnText" runat="server" CssClass="tiny ui primary  button"><i class="mail icon"></i>Text</asp:LinkButton>
-                        <asp:LinkButton ID="BtnCall" runat="server" CssClass="tiny ui primary button"><i class="phone icon"></i>Call</asp:LinkButton>
-                    </div>
-                    <i class="mobile icon"></i>
+                        
+                        <asp:LinkButton ID="BtnText" runat="server" CssClass="tiny ui primary  button" OnClick="BtnText_Click"><i class="mail icon"></i>Send</asp:LinkButton>
+                        <%--<asp:LinkButton ID="BtnCall" runat="server" CssClass="tiny ui primary button"><i class="phone icon"></i>Call</asp:LinkButton>--%>
+                        </div>
+                    
                     <div class="content">
-                        <asp:Label ID="LblMobilePhone" runat="server">(309)310-3740</asp:Label>
-                    </div>
+                        <i class="mobile icon"></i><asp:Label ID="LblMobilePhone" runat="server">(309)310-3740</asp:Label>
+                        <asp:Label ID="MessageSent" runat="server" Text="Label" ForeColor="Red">Message Sent</asp:Label>
+                    
+                    <div class="field">
+                            <asp:TextBox ID="SMSMessage" runat="server" TextMode="MultiLine" placeholder="Enter message" Rows="3"></asp:TextBox>
+                          </div>
+                        </div>
                 </div>
                 <div class="item">
                     <div class="right floated content">

@@ -13,6 +13,7 @@ namespace FestivalOfTrees.Views
     {
         private SearchUserController userController;
         private ItemController itemCtrl;
+        private User singleUser;
         protected void Page_Load(object sender, EventArgs e)
         {
             userController = new SearchUserController();
@@ -20,20 +21,31 @@ namespace FestivalOfTrees.Views
 
             if (Request.QueryString["userId"] != null)
             {
-                User singleUser = userController.getSingleUser(Request.QueryString["userId"]);
+                singleUser = userController.getSingleUser(Request.QueryString["userId"]);
 
                 if (singleUser != null)
                 {
                     LblUserName.Text = singleUser.FirstName + " " + singleUser.LastName;
                     LblAddress.Text = singleUser.Address;
-                    LblCity.Text =  singleUser.City;
+                    LblCity.Text = singleUser.City;
                     LblState.Text = singleUser.State;
                     LblHomePhone.Text = singleUser.Phone;
                     LblMobilePhone.Text = formatPhoneNum(singleUser.Phone);
                     lblZip.Text = singleUser.Zip.ToString();
                     LblEmail.Text = singleUser.Email;
+
+                    if (!singleUser.Text)
+                    {
+                        BtnText.Visible = false;
+                        SMSMessage.Visible = false;
+                    }
                 }
                 
+            }
+
+            if (!Page.IsPostBack)
+            {
+                MessageSent.Visible = false;
             }
 
             InvoiceView.DataBind();
@@ -68,5 +80,15 @@ namespace FestivalOfTrees.Views
             InvoiceView.DataBind();
         }
 
+        protected void BtnText_Click(object sender, EventArgs e)
+        {
+            if(String.IsNullOrEmpty(SMSMessage.Text))
+            {
+                TextCallController txtCtrl = new TextCallController();
+
+                txtCtrl.sendText(singleUser.Phone,SMSMessage.Text);
+                MessageSent.Visible = true;
+            }
+        }
     }
 }
