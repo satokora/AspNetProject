@@ -21,6 +21,7 @@
                             </a>
                             <a class="item" id="UserRequest" runat="server" data-tab="second" visible="false">User Request
                             </a>
+                            <asp:LinkButton ID="LinkButton2" runat="server" CssClass="item" OnClick="LogOut_Click">Log Out</asp:LinkButton>
                         </div>
                     </div>
                     <div class="twelve wide stretched column">

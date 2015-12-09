@@ -81,7 +81,7 @@
                 </div>
             </div>
                 <div class="field">
-                    <asp:Button ID="BtnAddCategory" runat="server" Text="Add Category" CssClass="ui fluid large red button" />
+                    <asp:Button ID="BtnAddCategory" runat="server" Text="Add Category" CssClass="ui fluid large red button" OnClick="BtnAddCategory_Click" />
                 </div>
             
         </div>

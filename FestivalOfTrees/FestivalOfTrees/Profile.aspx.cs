@@ -65,5 +65,12 @@ namespace FestivalOfTrees
             userCtrl.approveRequest(idList);
             UserRequestGrid.DataBind();
         }
+
+        protected void LogOut_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+
+            Response.Redirect("Default.aspx");
+        }
     }
 }
