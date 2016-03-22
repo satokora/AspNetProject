@@ -1,5 +1,7 @@
 # IT485 Asp.net based web application project
 
+![](auct.png)
+
 ## Project statement
 This project is to create an information management system that stores and provides information about auction items donated for a local charity auction event. 
 The system let users sign-in, donate items, retrieve item information, register bidders, manage payment status, and produces reports about items and buyers. The web-based system is developed in C# using ASP.NET. 
